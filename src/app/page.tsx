@@ -1,3 +1,5 @@
+import WaitlistSection from "@/components/WaitlistSection";
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -211,6 +213,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Waitlist */}
+      <WaitlistSection />
 
       {/* Footer */}
       <footer className="border-t border-[var(--card-border)] py-8 px-6">
