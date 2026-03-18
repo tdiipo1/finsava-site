@@ -1,5 +1,6 @@
 import SocialProof from "@/components/SocialProof";
 import WaitlistSection from "@/components/WaitlistSection";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -20,6 +21,9 @@ export default async function Home() {
             </a>
             <a href="#open-source" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
               Open Source
+            </a>
+            <a href="/pricing" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
+              Pricing
             </a>
             <a
               href="https://github.com/tdiipo1/Finsava"
@@ -227,6 +231,20 @@ export default async function Home() {
           <div className="flex items-center gap-2">
             <span className="text-lg">💸</span>
             <span className="font-semibold">Finsava</span>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
           <p className="text-sm text-[var(--muted)]">
             &copy; {new Date().getFullYear()} Finsava. Open source under AGPL-3.0.
