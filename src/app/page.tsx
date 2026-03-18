@@ -1,6 +1,7 @@
+import SocialProof from "@/components/SocialProof";
 import WaitlistSection from "@/components/WaitlistSection";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen">
       {/* Nav */}
@@ -75,6 +76,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Social Proof */}
+      <SocialProof />
 
       {/* Features */}
       <section id="features" className="py-24 px-6">
