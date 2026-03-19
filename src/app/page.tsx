@@ -28,6 +28,9 @@ export default async function Home() {
             <a href="/changelog" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
               Changelog
             </a>
+            <a href="/blog" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
+              Blog
+            </a>
             <a
               href="https://github.com/tdiipo1/Finsava"
               target="_blank"
@@ -98,7 +101,8 @@ export default async function Home() {
             <FeatureCard
               icon="🤖"
               title="Local AI Advisor"
-              description="Chat with Phi-4, Mistral, Llama, DeepSeek, or Qwen running on your hardware via Ollama. Get spending analysis and budget advice."
+              description="Chat with Phi-4, Mistral, Llama, DeepSeek, or Qwen running on your hardware via Ollama. Get spending analysis and budget insights."
+              disclaimer="AI features are for informational and educational purposes only — not financial advice."
             />
             <FeatureCard
               icon="🏦"
@@ -140,6 +144,74 @@ export default async function Home() {
               title="Privacy-First"
               description="SQLite on your machine. No cloud, no telemetry, no tracking. Your financial data never leaves your hardware."
             />
+            <FeatureCard
+              icon="📱"
+              title="Installable PWA"
+              description="Install Finsava on your phone or desktop as a Progressive Web App. Full offline-capable experience."
+            />
+            <FeatureCard
+              icon="🔔"
+              title="Smart Notifications"
+              description="Get alerted when you overspend a budget, a subscription raises its price, or you hit a savings goal milestone."
+            />
+            <FeatureCard
+              icon="👥"
+              title="Account Sharing"
+              description="Share read or read-write access with a partner. Each person sees the same data with granular permissions."
+            />
+            <FeatureCard
+              icon="📉"
+              title="Forecasting"
+              description="30-60 day cashflow projections with 80% confidence intervals. Year-over-year comparison and income stability analysis."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Finsava */}
+      <section className="py-24 px-6 border-t border-[var(--card-border)]">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold sm:text-4xl">Why Finsava?</h2>
+            <p className="mt-4 text-[var(--muted)] text-lg">Features you won&apos;t find anywhere else — especially not for free.</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-[var(--card-border)]">
+                  <th className="text-left py-3 px-4 font-medium text-[var(--muted)]">Capability</th>
+                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">Free</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$15/mo</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$10/mo</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Actual Budget<br /><span className="text-xs">Free</span></th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                {[
+                  ["Local AI Advisor", true, false, false, false],
+                  ["Anomaly Detection", true, false, false, false],
+                  ["Financial Health Score", true, false, false, false],
+                  ["Modular Features (17)", true, false, false, false],
+                  ["Per-User ML Categorization", true, false, false, false],
+                  ["Self-Hosted", true, false, false, true],
+                  ["Bank Sync", true, true, true, true],
+                  ["Docker Deployment", true, false, false, true],
+                  ["Open Source (AGPL-3.0)", true, false, false, true],
+                ].map(([feature, ...supported]) => (
+                  <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
+                    <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
+                    {(supported as boolean[]).map((s, i) => (
+                      <td key={i} className="py-3 px-4">
+                        {s
+                          ? <span className="text-[var(--income)] text-lg">&#10003;</span>
+                          : <span className="text-[var(--muted)] opacity-40">—</span>
+                        }
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -235,7 +307,7 @@ export default async function Home() {
             <span className="text-lg">💸</span>
             <span className="font-semibold">Finsava</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link
               href="/privacy"
               className="text-sm text-[var(--muted)] hover:text-white transition-colors"
@@ -247,6 +319,12 @@ export default async function Home() {
               className="text-sm text-[var(--muted)] hover:text-white transition-colors"
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/privacy#ccpa"
+              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
+            >
+              Do Not Sell My Info
             </Link>
           </div>
           <div className="flex items-center gap-4">
@@ -278,6 +356,13 @@ export default async function Home() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
+            {/* Substack */}
+            <a href="https://substack.com/@finsava" target="_blank" rel="noopener noreferrer"
+              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="Substack">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+              </svg>
+            </a>
           </div>
           <p className="text-sm text-[var(--muted)]">
             &copy; {new Date().getFullYear()} Finsava. Open source under AGPL-3.0.
@@ -292,16 +377,21 @@ function FeatureCard({
   icon,
   title,
   description,
+  disclaimer,
 }: {
   icon: string;
   title: string;
   description: string;
+  disclaimer?: string;
 }) {
   return (
     <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 transition-colors hover:border-[var(--muted)]">
       <span className="text-3xl">{icon}</span>
       <h3 className="mt-4 text-lg font-semibold">{title}</h3>
       <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">{description}</p>
+      {disclaimer && (
+        <p className="mt-2 text-xs text-[var(--muted)] italic opacity-75">{disclaimer}</p>
+      )}
     </div>
   );
 }

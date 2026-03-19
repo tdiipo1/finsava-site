@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Link from "next/link";
 
 export default function WaitlistSection() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -19,6 +21,12 @@ export default function WaitlistSection() {
     if (!isValidEmail(trimmed)) {
       setStatus("error");
       setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!consent) {
+      setStatus("error");
+      setMessage("Please agree to receive email updates before joining.");
       return;
     }
 
@@ -76,12 +84,28 @@ export default function WaitlistSection() {
           />
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={status === "loading" || !consent}
             className="rounded-xl sm:rounded-l-none bg-[var(--primary)] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === "loading" ? "Joining..." : "Join Waitlist"}
           </button>
         </form>
+
+        <label className="mt-4 flex items-start gap-2 text-left max-w-md mx-auto cursor-pointer">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 h-4 w-4 rounded border-[var(--card-border)] accent-[var(--primary)]"
+          />
+          <span className="text-xs text-[var(--muted)]">
+            I agree to receive email updates about Finsava. You can unsubscribe at any time.
+            See our{" "}
+            <Link href="/privacy" className="text-[var(--primary)] hover:underline">
+              Privacy Policy
+            </Link>.
+          </span>
+        </label>
 
         {message && (
           <p
