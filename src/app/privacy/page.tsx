@@ -103,6 +103,21 @@ export default function PrivacyPolicy() {
                 </a>
                 .
               </li>
+              <li>
+                <strong className="text-[var(--foreground)]">Plaid</strong> — Alternative bank
+                sync provider. If you connect via Plaid, your bank credentials
+                are handled by Plaid and transaction data is routed through
+                their servers. See{" "}
+                <a
+                  href="https://plaid.com/legal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--primary)] hover:underline"
+                >
+                  Plaid&apos;s Privacy Policy
+                </a>
+                .
+              </li>
             </ul>
           </section>
 
@@ -233,6 +248,33 @@ export default function PrivacyPolicy() {
             </ul>
           </section>
 
+          {/* Cookies */}
+          <section>
+            <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
+              Cookies
+            </h2>
+            <p>
+              The Finsava application uses a single httpOnly authentication cookie
+              to maintain your login session. We do not use tracking cookies,
+              analytics cookies, advertising cookies, or third-party cookies.
+              The finsava.com landing page uses only essential cookies set by
+              our hosting provider (Vercel).
+            </p>
+          </section>
+
+          {/* Do Not Sell */}
+          <section>
+            <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
+              We Do Not Sell Your Data
+            </h2>
+            <p className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 font-semibold text-[var(--foreground)]">
+              Finsava does not sell, rent, lease, or share your personal information
+              or financial data with any third party for monetary or other valuable
+              consideration. This applies to all users across all tiers and
+              deployment methods.
+            </p>
+          </section>
+
           {/* CCPA/CPRA Rights */}
           <section id="ccpa">
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
@@ -296,10 +338,10 @@ export default function PrivacyPolicy() {
             <p className="mt-3">
               To exercise any of these rights, contact us at{" "}
               <a
-                href="mailto:owotumi.oladipupo@gmail.com"
+                href="mailto:privacy@finsava.com"
                 className="text-[var(--primary)] hover:underline"
               >
-                owotumi.oladipupo@gmail.com
+                privacy@finsava.com
               </a>. We will respond within 30 days.
             </p>
           </section>
@@ -341,10 +383,10 @@ export default function PrivacyPolicy() {
               If you have any questions about this Privacy Policy, please
               contact us at{" "}
               <a
-                href="mailto:owotumi.oladipupo@gmail.com"
+                href="mailto:privacy@finsava.com"
                 className="text-[var(--primary)] hover:underline"
               >
-                owotumi.oladipupo@gmail.com
+                privacy@finsava.com
               </a>
               .
             </p>
@@ -359,6 +401,10 @@ export default function PrivacyPolicy() {
             <span className="text-lg">💸</span>
             <span className="font-semibold">Finsava</span>
           </Link>
+          <div className="flex items-center gap-4 text-sm text-[var(--muted)]">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          </div>
           <p className="text-sm text-[var(--muted)]">
             &copy; {new Date().getFullYear()} Finsava. Open source under
             AGPL-3.0.

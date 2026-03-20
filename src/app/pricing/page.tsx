@@ -7,24 +7,35 @@ export const metadata: Metadata = {
 };
 
 const freeTierFeatures = [
-  "All core features included",
-  "Bank sync (SimpleFin)",
+  "Dashboard with income, spending & trends",
+  "Transaction search & filtering",
+  "Budget planning & alerts",
+  "Bank sync (SimpleFin / Plaid)",
   "CSV import",
-  "Budget planning",
-  "Dashboard & charts",
-  "Transaction mapping",
   "AI Advisor (local Ollama)",
+  "Spending reports & breakdowns",
+  "Subscription & recurring detection",
   "Community support",
 ];
 
-const cloudFeatures = [
+const proFeatures = [
   "Everything in Free, plus:",
-  "Cloud AI Advisor (Gemini)",
-  "Advanced analytics & forecasting",
-  "Multi-account bank sync",
-  "Automatic daily backups",
+  "Savings goals with deadline tracking",
+  "Forecasting & advanced analytics",
+  "Auto-categorize (AI-powered)",
+  "Category & merchant mapping rules",
+  "Merchant cleanup & dedup",
+  "Transaction filter rules",
   "Priority support",
-  "No Docker required",
+];
+
+const cloudFeatures = [
+  "Everything in Pro, plus:",
+  "Cloud AI Advisor (Gemini)",
+  "No Docker, no servers, no setup",
+  "Automatic daily backups",
+  "Multi-device access",
+  "Team sharing & collaboration",
 ];
 
 export default function PricingPage() {
@@ -92,7 +103,7 @@ export default function PricingPage() {
 
       {/* Pricing Cards */}
       <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
           {/* Free Tier */}
           <div className="flex flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8">
             <div className="mb-8">
@@ -103,54 +114,62 @@ export default function PricingPage() {
                 <span className="text-[var(--muted)]">/forever</span>
               </div>
               <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                Full platform on your own hardware. No limits, no catches.
+                Core budgeting on your own hardware. No limits, no catches.
               </p>
             </div>
 
-            <ul className="mb-10 flex-1 space-y-3">
-              {freeTierFeatures.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-3 text-sm leading-relaxed"
-                >
-                  <svg
-                    className="mt-0.5 h-4 w-4 shrink-0 text-[var(--income)]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <FeatureList features={freeTierFeatures} color="var(--income)" />
 
             <a
               href="https://github.com/tdiipo1/Finsava"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)] py-3.5 text-center text-base font-semibold hover:border-[var(--muted)] transition-colors"
+              className="mt-auto block w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)] py-3.5 text-center text-base font-semibold hover:border-[var(--muted)] transition-colors"
             >
               Get Started
             </a>
           </div>
 
-          {/* Cloud Tier */}
+          {/* Pro Tier */}
           <div className="relative flex flex-col rounded-2xl border-2 border-[var(--primary)] bg-[var(--card)] p-8">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span className="rounded-full bg-[var(--primary)] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                Most Popular
+              </span>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold">Pro</h2>
+              <p className="mt-1 text-sm text-[var(--muted)]">Self-Hosted</p>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span className="text-5xl font-bold tracking-tight">$4.99</span>
+                <span className="text-[var(--muted)]">/mo</span>
+              </div>
+              <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
+                Advanced analytics, AI categorization, and savings goals.
+              </p>
+            </div>
+
+            <FeatureList features={proFeatures} color="var(--primary)" />
+
+            <a
+              href="/#waitlist"
+              className="mt-auto block w-full rounded-xl bg-[var(--primary)] py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
+            >
+              Join Waitlist
+            </a>
+          </div>
+
+          {/* Cloud / Team Tier */}
+          <div className="relative flex flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+              <span className="rounded-full bg-[var(--card-border)] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
                 Coming Soon
               </span>
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-bold">Finsava Cloud</h2>
+              <h2 className="text-2xl font-bold">Cloud</h2>
               <p className="mt-1 text-sm text-[var(--muted)]">Managed</p>
               <div className="mt-6 flex items-baseline gap-1">
                 <span className="text-5xl font-bold tracking-tight">$9.99</span>
@@ -161,43 +180,11 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <ul className="mb-10 flex-1 space-y-3">
-              {cloudFeatures.map((feature, idx) => (
-                <li
-                  key={feature}
-                  className={`flex items-start gap-3 text-sm leading-relaxed ${
-                    idx === 0 ? "text-[var(--muted)]" : ""
-                  }`}
-                >
-                  <svg
-                    className={`mt-0.5 h-4 w-4 shrink-0 ${
-                      idx === 0
-                        ? "text-[var(--muted)]"
-                        : "text-[var(--primary)]"
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d={
-                        idx === 0
-                          ? "M5 13l4 4L19 7"
-                          : "M12 4v16m8-8H4"
-                      }
-                    />
-                  </svg>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <FeatureList features={cloudFeatures} color="var(--primary)" />
 
             <a
               href="/#waitlist"
-              className="block w-full rounded-xl bg-[var(--primary)] py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
+              className="mt-auto block w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)] py-3.5 text-center text-base font-semibold hover:border-[var(--muted)] transition-colors"
             >
               Join Waitlist
             </a>
@@ -214,19 +201,23 @@ export default function PricingPage() {
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
               question="Is the free version actually free?"
-              answer="Yes. Finsava is open source under AGPL-3.0. Self-host it on your own hardware with all features enabled, no trial period, no feature gates."
+              answer="Yes. Finsava is open source under AGPL-3.0. Self-host it on your own hardware with core budgeting, bank sync, AI advisor, and spending reports included. No trial period."
             />
             <FaqItem
-              question="What does Finsava Cloud add?"
-              answer="Cloud hosting so you don't need Docker, Gemini-powered AI instead of local Ollama, automatic backups, and priority support. The same app, just managed for you."
+              question="What does Pro add over Free?"
+              answer="Pro unlocks advanced features: savings goals with deadlines, spending forecasts and trend analytics, AI-powered auto-categorization, merchant cleanup tools, and custom filter rules. These are power-user tools that go beyond basic budgeting."
             />
             <FaqItem
-              question="Can I switch between free and cloud?"
-              answer="Yes. Your data format is the same either way. Export from one, import into the other."
+              question="What does Cloud add over Pro?"
+              answer="Cloud is fully managed hosting — no Docker, no servers. It includes cloud AI (Google Gemini), automatic daily backups, multi-device access, and team collaboration features. The same app, just managed for you."
             />
             <FaqItem
-              question="When will Finsava Cloud launch?"
-              answer="We're building it now. Join the waitlist and you'll be the first to know when it's ready."
+              question="Can I switch between tiers?"
+              answer="Yes. Your data format is the same across all tiers. Export from one, import into the other. Upgrading instantly unlocks the additional features."
+            />
+            <FaqItem
+              question="When will Pro and Cloud launch?"
+              answer="We're building billing infrastructure now. Join the waitlist and you'll be the first to know when paid tiers are available."
             />
           </div>
         </div>
@@ -246,6 +237,37 @@ export default function PricingPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function FeatureList({ features, color }: { features: string[]; color: string }) {
+  return (
+    <ul className="mb-10 flex-1 space-y-3">
+      {features.map((feature, idx) => (
+        <li
+          key={feature}
+          className={`flex items-start gap-3 text-sm leading-relaxed ${
+            idx === 0 && feature.startsWith("Everything") ? "text-[var(--muted)]" : ""
+          }`}
+        >
+          <svg
+            className="mt-0.5 h-4 w-4 shrink-0"
+            style={{ color: idx === 0 && feature.startsWith("Everything") ? "var(--muted)" : color }}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d={idx === 0 && feature.startsWith("Everything") ? "M5 13l4 4L19 7" : "M5 13l4 4L19 7"}
+            />
+          </svg>
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 

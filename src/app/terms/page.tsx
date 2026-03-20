@@ -127,12 +127,46 @@ export default function TermsOfService() {
               </li>
               <li>
                 Managing API keys and credentials for third-party integrations
-                such as SimpleFin.
+                such as SimpleFin and Plaid.
               </li>
             </ul>
             <p className="mt-3">
               We do not have access to your self-hosted data and cannot recover
               it if lost.
+            </p>
+          </section>
+
+          {/* Subscription and Billing */}
+          <section>
+            <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
+              Subscription and Billing
+            </h2>
+            <p>
+              Finsava offers the following tiers:
+            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-6">
+              <li>
+                <strong className="text-[var(--foreground)]">Free (Self-Hosted):</strong>{" "}
+                Core features at no cost. You host on your own hardware.
+              </li>
+              <li>
+                <strong className="text-[var(--foreground)]">Pro (Self-Hosted):</strong>{" "}
+                Advanced features including analytics, auto-categorization, savings
+                goals, and priority support. Billed monthly or annually.
+              </li>
+              <li>
+                <strong className="text-[var(--foreground)]">Cloud (Managed):</strong>{" "}
+                Everything in Pro plus managed hosting, cloud AI, automatic backups,
+                and team collaboration. Billed monthly or annually.
+              </li>
+            </ul>
+            <p className="mt-3">
+              For paid tiers: billing is recurring at the interval selected at checkout.
+              You may cancel at any time; cancellation takes effect at the end of the
+              current billing period. We do not offer refunds for partial billing periods.
+              We reserve the right to change pricing with 30 days&apos; notice to existing
+              subscribers. If payment fails, your account may be downgraded to the Free
+              tier after a 7-day grace period.
             </p>
           </section>
 
@@ -283,10 +317,10 @@ export default function TermsOfService() {
               Commercial licensing is available for organizations that need to
               use Finsava without AGPL-3.0 obligations. Contact{" "}
               <a
-                href="mailto:owotumi.oladipupo@gmail.com"
+                href="mailto:legal@finsava.com"
                 className="text-[var(--primary)] hover:underline"
               >
-                owotumi.oladipupo@gmail.com
+                legal@finsava.com
               </a>{" "}
               for details.
             </p>
@@ -307,6 +341,19 @@ export default function TermsOfService() {
                 <strong className="text-[var(--foreground)]">SimpleFin</strong>{" "}
                 — Bank account synchronization. Your bank data passes through
                 SimpleFin&apos;s servers.
+              </li>
+              <li>
+                <strong className="text-[var(--foreground)]">Plaid</strong>{" "}
+                — Bank account synchronization (alternative provider). Your bank
+                data passes through Plaid&apos;s servers. See{" "}
+                <a
+                  href="https://plaid.com/legal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--primary)] hover:underline"
+                >
+                  Plaid&apos;s Privacy Policy
+                </a>.
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Google Gemini</strong>{" "}
@@ -337,10 +384,10 @@ export default function TermsOfService() {
             </h2>
             <p>
               These Terms are governed by and construed in accordance with the
-              laws of the State of Maryland, United States, without regard to
-              its conflict of laws principles. Any disputes arising under or in
+              laws of the State of Texas, United States, without regard to
+              its conflict of law provisions. Any disputes arising under or in
               connection with these Terms shall be subject to the exclusive
-              jurisdiction of the courts located in the State of Maryland.
+              jurisdiction of the courts located in the State of Texas.
             </p>
           </section>
 
@@ -354,9 +401,9 @@ export default function TermsOfService() {
               these Terms or your use of Finsava shall first be addressed
               through good-faith negotiation. If the parties cannot resolve the
               dispute within 30 days, either party may pursue binding
-              arbitration administered in accordance with the rules of the
-              American Arbitration Association. Arbitration shall take place in
-              the State of Maryland.
+              arbitration administered by the American Arbitration Association
+              (AAA) under its Commercial Arbitration Rules. Arbitration shall
+              take place in the State of Texas.
             </p>
             <p className="mt-3 font-semibold text-[var(--foreground)] uppercase text-sm tracking-wide">
               YOU AGREE TO RESOLVE DISPUTES ON AN INDIVIDUAL BASIS. YOU WAIVE
@@ -404,10 +451,10 @@ export default function TermsOfService() {
             <p>
               If you have any questions about these Terms, please contact us at{" "}
               <a
-                href="mailto:owotumi.oladipupo@gmail.com"
+                href="mailto:legal@finsava.com"
                 className="text-[var(--primary)] hover:underline"
               >
-                owotumi.oladipupo@gmail.com
+                legal@finsava.com
               </a>
               .
             </p>
@@ -422,6 +469,10 @@ export default function TermsOfService() {
             <span className="text-lg">💸</span>
             <span className="font-semibold">Finsava</span>
           </Link>
+          <div className="flex items-center gap-4 text-sm text-[var(--muted)]">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          </div>
           <p className="text-sm text-[var(--muted)]">
             &copy; {new Date().getFullYear()} Finsava. Open source under
             AGPL-3.0.
