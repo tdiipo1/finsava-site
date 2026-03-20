@@ -19,8 +19,8 @@ export default async function Home() {
             <a href="#how-it-works" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
               How It Works
             </a>
-            <a href="#open-source" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Open Source
+            <a href="#security" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
+              Security
             </a>
             <a href="/pricing" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
               Pricing
@@ -51,7 +51,7 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            Open source &middot; AGPL-3.0
+            Self-hosted &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Your money.
@@ -196,7 +196,7 @@ export default async function Home() {
                   ["Self-Hosted", true, false, false, true],
                   ["Bank Sync", true, true, true, true],
                   ["Docker Deployment", true, false, false, true],
-                  ["Open Source (AGPL-3.0)", true, false, false, true],
+                  ["Self-Hosted Option", true, false, false, true],
                 ].map(([feature, ...supported]) => (
                   <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
                     <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
@@ -273,26 +273,39 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Open Source */}
-      <section id="open-source" className="py-24 px-6 border-t border-[var(--card-border)]">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Free & Open Source</h2>
+      {/* Security & Transparency */}
+      <section id="security" className="py-24 px-6 border-t border-[var(--card-border)]">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold sm:text-4xl">Security & Transparency</h2>
           <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
-            Finsava is licensed under AGPL-3.0. Self-host on your own hardware at no cost.
-            The source code is fully auditable — no hidden data collection, no vendor lock-in.
+            Your financial data deserves the highest level of protection. Finsava is built
+            with privacy as an architectural principle, not an afterthought.
           </p>
-          <div className="mt-10">
-            <a
-              href="https://github.com/tdiipo1/Finsava"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[var(--card)] border border-[var(--card-border)] px-8 py-3.5 text-base font-medium hover:border-[var(--muted)] transition-colors"
-            >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              View on GitHub
-            </a>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">🔒</div>
+              <h3 className="font-semibold text-lg">Local-Only Data</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                Self-hosted deployments keep your database on your own hardware.
+                No cloud sync unless you choose Finsava Cloud.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">📡</div>
+              <h3 className="font-semibold text-lg">Zero Telemetry</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                No analytics, no tracking cookies, no data collection.
+                The self-hosted version makes zero network calls home.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">🤖</div>
+              <h3 className="font-semibold text-lg">Local AI</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                AI advisor runs on your hardware via Ollama. Your financial
+                conversations never leave your machine.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -328,11 +341,11 @@ export default async function Home() {
             </Link>
           </div>
           <div className="flex items-center gap-4">
-            {/* GitHub */}
-            <a href="https://github.com/tdiipo1/Finsava" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="GitHub">
+            {/* X/Twitter */}
+            <a href="https://x.com/finsava" target="_blank" rel="noopener noreferrer"
+              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="X">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
             {/* X/Twitter */}
@@ -365,7 +378,7 @@ export default async function Home() {
             </a>
           </div>
           <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. Open source under AGPL-3.0.
+            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
           </p>
         </div>
       </footer>

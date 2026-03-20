@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
         <div className="mt-12 space-y-10 text-[var(--muted)] leading-relaxed">
           {/* Intro */}
           <p>
-            Finsava is a self-hosted, open-source personal finance tool. Privacy
+            Finsava is a privacy-first personal finance tool. Privacy
             is at the core of the project. This policy explains what data is
             collected by the <strong className="text-[var(--foreground)]">finsava.com landing page</strong> and
             how the <strong className="text-[var(--foreground)]">self-hosted Finsava application</strong> handles
@@ -346,31 +346,16 @@ export default function PrivacyPolicy() {
             </p>
           </section>
 
-          {/* Source Code */}
+          {/* Security Transparency */}
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
-              Source Code Availability
+              Security Transparency
             </h2>
             <p>
-              Finsava is licensed under the{" "}
-              <a
-                href="https://www.gnu.org/licenses/agpl-3.0.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--primary)] hover:underline"
-              >
-                GNU Affero General Public License v3.0 (AGPL-3.0)
-              </a>
-              . The full source code is available on{" "}
-              <a
-                href="https://github.com/tdiipo1/Finsava"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--primary)] hover:underline"
-              >
-                GitHub
-              </a>
-              , so you can audit exactly what the software does.
+              Finsava is built with a local-first architecture. Self-hosted
+              deployments keep all data on your own hardware with zero telemetry
+              or tracking. Bank credentials are encrypted at rest. AI processing
+              runs locally via Ollama unless you explicitly opt into cloud AI.
             </p>
           </section>
 
@@ -406,8 +391,7 @@ export default function PrivacyPolicy() {
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
           <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. Open source under
-            AGPL-3.0.
+            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
           </p>
         </div>
       </footer>

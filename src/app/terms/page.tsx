@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service — Finsava",
   description:
-    "Terms governing your use of Finsava, a self-hosted personal finance tool licensed under AGPL-3.0.",
+    "Terms governing your use of Finsava, a personal finance application.",
 };
 
 export default function TermsOfService() {
@@ -55,39 +55,23 @@ export default function TermsOfService() {
               License
             </h2>
             <p>
-              Finsava is free and open-source software licensed under the{" "}
+              Finsava is proprietary software. All rights reserved. You may use
+              the Software in accordance with the terms of the LICENSE file
+              provided with the software. You may not copy, modify, distribute,
+              sublicense, or create derivative works without prior written
+              consent from the owner.
+            </p>
+            <p className="mt-3">
+              A limited community edition may be released in the future under a
+              separate license. For licensing inquiries, contact{" "}
               <a
-                href="https://www.gnu.org/licenses/agpl-3.0.html"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:legal@finsava.com"
                 className="text-[var(--primary)] hover:underline"
               >
-                GNU Affero General Public License v3.0 (AGPL-3.0)
+                legal@finsava.com
               </a>
-              . You may use, modify, and distribute the software in accordance
-              with the terms of this license. Key obligations include:
+              .
             </p>
-            <ul className="mt-3 list-disc space-y-2 pl-6">
-              <li>
-                Any modified versions must also be licensed under AGPL-3.0.
-              </li>
-              <li>
-                If you run a modified version as a network service, you must
-                make the source code available to its users.
-              </li>
-              <li>
-                The full license text is included in the{" "}
-                <a
-                  href="https://github.com/tdiipo1/Finsava"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--primary)] hover:underline"
-                >
-                  source repository
-                </a>
-                .
-              </li>
-            </ul>
           </section>
 
           {/* No Warranty */}
@@ -189,7 +173,7 @@ export default function TermsOfService() {
               </li>
               <li>
                 Redistribute modified versions of Finsava without complying with
-                the AGPL-3.0 license.
+                the applicable license terms.
               </li>
             </ul>
           </section>
@@ -306,23 +290,11 @@ export default function TermsOfService() {
               Intellectual Property
             </h2>
             <p>
-              The Finsava source code is licensed under the AGPL-3.0 as
-              described in the License section above. The &quot;Finsava&quot;
-              name, logo, and branding are trademarks of Oladipupo Owotumi and
-              are not licensed under the AGPL-3.0. You may not use the Finsava
-              trademarks in a way that suggests endorsement or affiliation
-              without prior written permission.
-            </p>
-            <p className="mt-3">
-              Commercial licensing is available for organizations that need to
-              use Finsava without AGPL-3.0 obligations. Contact{" "}
-              <a
-                href="mailto:legal@finsava.com"
-                className="text-[var(--primary)] hover:underline"
-              >
-                legal@finsava.com
-              </a>{" "}
-              for details.
+              Finsava is proprietary software. All rights reserved. The
+              &quot;Finsava&quot; name, logo, and branding are trademarks of
+              Oladipupo Owotumi. You may not use the Finsava trademarks in a
+              way that suggests endorsement or affiliation without prior
+              written permission.
             </p>
           </section>
 
@@ -474,8 +446,7 @@ export default function TermsOfService() {
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
           <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. Open source under
-            AGPL-3.0.
+            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
           </p>
         </div>
       </footer>

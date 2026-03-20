@@ -25,8 +25,8 @@ export default async function SocialProof() {
       href: "#features",
     },
     {
-      label: "AGPL-3.0 Open Source",
-      href: "#open-source",
+      label: "Privacy-First",
+      href: "#security",
     },
   ];
 

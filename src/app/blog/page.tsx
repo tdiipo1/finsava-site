@@ -118,8 +118,7 @@ export default function BlogIndex() {
             <span className="font-semibold">Finsava</span>
           </Link>
           <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. Open source under
-            AGPL-3.0.
+            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
           </p>
         </div>
       </footer>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing — Finsava",
   description:
-    "Finsava is free and open source. Self-host with all features included, or join the waitlist for Finsava Cloud.",
+    "Simple, transparent pricing. Self-host for free or let us handle the infrastructure with Finsava Cloud.",
 };
 
 const freeTierFeatures = [
@@ -62,7 +62,7 @@ export default function PricingPage() {
               How It Works
             </a>
             <a
-              href="/#open-source"
+              href="/#security"
               className="text-sm text-[var(--muted)] hover:text-white transition-colors"
             >
               Open Source
@@ -201,7 +201,7 @@ export default function PricingPage() {
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
               question="Is the free version actually free?"
-              answer="Yes. Finsava is open source under AGPL-3.0. Self-host it on your own hardware with core budgeting, bank sync, AI advisor, and spending reports included. No trial period."
+              answer="Yes. Self-host Finsava on your own hardware with core budgeting, bank sync, AI advisor, and spending reports included. No trial period, no credit card required."
             />
             <FaqItem
               question="What does Pro add over Free?"
@@ -231,8 +231,7 @@ export default function PricingPage() {
             <span className="font-semibold">Finsava</span>
           </a>
           <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. Open source under
-            AGPL-3.0.
+            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
           </p>
         </div>
       </footer>

@@ -17,14 +17,12 @@ export const metadata: Metadata = {
     "self-hosted",
     "local AI",
     "budgeting",
-    "open source",
     "privacy",
     "bank sync",
     "anomaly detection",
     "expense tracker",
     "docker",
     "ollama",
-    "AGPL-3.0",
   ],
   authors: [{ name: "Finsava", url: siteUrl }],
   metadataBase: new URL(siteUrl),
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "Self-hosted personal finance with a local AI advisor, anomaly detection, and modular feature selection. Free and open-source under AGPL-3.0.",
+      "Personal finance with a local AI advisor, anomaly detection, and modular feature selection. Self-host or use Finsava Cloud.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,
