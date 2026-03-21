@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = "https://finsava.com";
 const siteTitle = "Finsava — Private Finance with Local AI";
 const siteDescription =
-  "Self-hosted personal finance with a local AI advisor, anomaly detection, and bank sync. Your money, your machine, your rules.";
+  "Self-hosted personal finance with a local AI assistant, anomaly detection, and bank sync. Your money, your machine, your rules.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "Personal finance with a local AI advisor, anomaly detection, and modular feature selection. Self-host or use Finsava Cloud.",
+      "Personal finance with a local AI assistant, anomaly detection, and modular feature selection. Self-host or use Finsava Cloud.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,

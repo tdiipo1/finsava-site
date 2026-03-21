@@ -12,7 +12,7 @@ const freeTierFeatures = [
   "Budget planning & alerts",
   "Bank sync (SimpleFin / Plaid)",
   "CSV import",
-  "AI Advisor (local Ollama)",
+  "AI Assistant (local Ollama)",
   "Spending reports & breakdowns",
   "Subscription & recurring detection",
   "Community support",
@@ -31,7 +31,7 @@ const proFeatures = [
 
 const cloudFeatures = [
   "Everything in Pro, plus:",
-  "Cloud AI Advisor (Gemini)",
+  "Cloud AI Assistant (Gemini)",
   "No Docker, no servers, no setup",
   "Automatic daily backups",
   "Multi-device access",
@@ -201,7 +201,7 @@ export default function PricingPage() {
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
               question="Is the free version actually free?"
-              answer="Yes. Self-host Finsava on your own hardware with core budgeting, bank sync, AI advisor, and spending reports included. No trial period, no credit card required."
+              answer="Yes. Self-host Finsava on your own hardware with core budgeting, bank sync, AI assistant, and spending reports included. No trial period, no credit card required."
             />
             <FaqItem
               question="What does Pro add over Free?"

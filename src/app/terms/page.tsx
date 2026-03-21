@@ -43,7 +43,7 @@ export default function TermsOfService() {
             <p>
               Finsava is a self-hosted personal finance tool that runs on your
               own hardware. It provides budgeting, transaction tracking, AI-powered
-              financial advice, bank sync, anomaly detection, and related
+              financial analysis, bank sync, anomaly detection, and related
               features. You are responsible for deploying, configuring, and
               maintaining your own instance.
             </p>
@@ -201,22 +201,22 @@ export default function TermsOfService() {
             </p>
           </section>
 
-          {/* Financial Advice Disclaimer */}
+          {/* Financial Disclaimer */}
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
-              Financial Advice Disclaimer
+              Financial Disclaimer
             </h2>
             <p className="font-semibold text-[var(--foreground)] uppercase text-sm tracking-wide">
-              FINSAVA IS NOT A FINANCIAL ADVISOR, INVESTMENT ADVISOR, TAX
-              ADVISOR, OR LEGAL ADVISOR. FINSAVA DOES NOT PROVIDE FINANCIAL,
-              INVESTMENT, TAX, OR LEGAL ADVICE.
+              FINSAVA IS NOT A FINANCIAL ADVISORY SERVICE, INVESTMENT SERVICE, TAX
+              SERVICE, OR LEGAL SERVICE. FINSAVA DOES NOT PROVIDE PROFESSIONAL FINANCIAL,
+              INVESTMENT, TAX, OR LEGAL GUIDANCE.
             </p>
             <p className="mt-3">
               Any AI-generated suggestions, financial health scores, anomaly
               alerts, budget recommendations, spending analyses, or other
               outputs provided by the Finsava software are for{" "}
               <strong className="text-[var(--foreground)]">informational and educational purposes only</strong>{" "}
-              and should not be treated as professional financial advice. You
+              and should not be treated as professional financial guidance. You
               should always consult a qualified financial professional before
               making significant financial decisions.
             </p>
@@ -329,7 +329,7 @@ export default function TermsOfService() {
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Google Gemini</strong>{" "}
-                — Optional cloud AI advisor (requires explicit opt-in). Financial
+                — Optional cloud AI assistant (requires explicit opt-in). Financial
                 context is sent to Google&apos;s servers when enabled.
               </li>
               <li>

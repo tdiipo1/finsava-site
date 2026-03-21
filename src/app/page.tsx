@@ -63,7 +63,7 @@ export default async function Home() {
             Your rules.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            Self-hosted personal finance with a local AI advisor, bank sync, anomaly detection, and ML-powered categorization. Everything runs on your hardware.
+            Self-hosted personal finance with a local AI assistant, bank sync, anomaly detection, and ML-powered categorization. Everything runs on your hardware.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -100,9 +100,9 @@ export default async function Home() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon="🤖"
-              title="Local AI Advisor"
+              title="Local AI Assistant"
               description="Chat with Phi-4, Mistral, Llama, DeepSeek, or Qwen running on your hardware via Ollama. Get spending analysis and budget insights."
-              disclaimer="AI features are for informational and educational purposes only — not financial advice."
+              disclaimer="AI features are for informational and educational purposes only."
             />
             <FeatureCard
               icon="🏦"
@@ -188,7 +188,7 @@ export default async function Home() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["Local AI Advisor", true, false, false, false],
+                  ["Local AI Assistant", true, false, false, false],
                   ["Anomaly Detection", true, false, false, false],
                   ["Financial Health Score", true, false, false, false],
                   ["Modular Features (17)", true, false, false, false],
@@ -302,7 +302,7 @@ export default async function Home() {
               <div className="text-2xl mb-3">🤖</div>
               <h3 className="font-semibold text-lg">Local AI</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                AI advisor runs on your hardware via Ollama. Your financial
+                AI assistant runs on your hardware via Ollama. Your financial
                 conversations never leave your machine.
               </p>
             </div>
