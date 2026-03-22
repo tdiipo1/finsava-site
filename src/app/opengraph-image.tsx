@@ -43,7 +43,7 @@ export default function OGImage() {
             marginBottom: "32px",
           }}
         >
-          <span style={{ fontSize: "64px" }}>💸</span>
+          <span style={{ fontSize: "40px", fontWeight: "bold", color: "#166534" }}>Finsava</span>
           <span
             style={{
               fontSize: "64px",

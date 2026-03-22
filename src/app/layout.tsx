@@ -2,27 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = "https://finsava.com";
-const siteTitle = "Finsava — Private Finance with Local AI";
+const siteTitle = "Finsava — AI-Powered Personal Finance";
 const siteDescription =
-  "Self-hosted personal finance with a local AI assistant, anomaly detection, and bank sync. Your money, your machine, your rules.";
+  "AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, anomaly detection, and financial health scoring. Your money, your rules.";
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💸</text></svg>",
+    icon: "/logo.png",
   },
   keywords: [
     "personal finance",
-    "self-hosted",
-    "local AI",
-    "budgeting",
-    "privacy",
+    "AI budgeting",
+    "smart budgeting",
     "bank sync",
+    "privacy",
     "anomaly detection",
     "expense tracker",
-    "docker",
-    "ollama",
+    "financial health score",
+    "savings goals",
+    "ML categorization",
   ],
   authors: [{ name: "Finsava", url: siteUrl }],
   metadataBase: new URL(siteUrl),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "Personal finance with a local AI assistant, anomaly detection, and modular feature selection. Self-host or use Finsava Cloud.",
+      "AI-powered personal finance with smart budgeting, anomaly detection, and modular feature selection. Your money, your rules.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,
@@ -57,12 +57,20 @@ const jsonLd = {
     name: "Finsava",
     url: siteUrl,
   },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  license: "https://www.gnu.org/licenses/agpl-3.0.html",
+  offers: [
+    {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Free tier",
+    },
+    {
+      "@type": "Offer",
+      price: "9.99",
+      priceCurrency: "USD",
+      description: "Pro tier — monthly",
+    },
+  ],
 };
 
 export default function RootLayout({

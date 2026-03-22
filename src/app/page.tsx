@@ -9,7 +9,7 @@ export default async function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">💸</span>
+            <img src="/logo.png" alt="Finsava" className="h-7 w-7" />
             <span className="text-xl font-bold">Finsava</span>
           </div>
           <div className="hidden items-center gap-8 sm:flex">
@@ -32,9 +32,7 @@ export default async function Home() {
               Blog
             </a>
             <a
-              href="https://github.com/tdiipo1/Finsava"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#waitlist"
               className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 transition-colors"
             >
               Get Started
@@ -51,25 +49,23 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            Self-hosted &middot; Privacy-first
+            AI-powered &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Your money.
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              Your machine.
+              Your intelligence.
             </span>
             <br />
             Your rules.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            Self-hosted personal finance with a local AI assistant, bank sync, anomaly detection, and ML-powered categorization. Everything runs on your hardware.
+            AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, anomaly detection, and ML-powered categorization.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://github.com/tdiipo1/Finsava"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#waitlist"
               className="rounded-xl bg-[var(--primary)] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
             >
               Get Started — It&apos;s Free
@@ -82,7 +78,7 @@ export default async function Home() {
             </a>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
-            No account needed. No cloud. Just <code className="rounded bg-[var(--card)] px-1.5 py-0.5 text-blue-400">docker compose up</code>
+            Free tier available. No credit card required.
           </p>
         </div>
       </section>
@@ -100,8 +96,8 @@ export default async function Home() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon="🤖"
-              title="Local AI Assistant"
-              description="Chat with Phi-4, Mistral, Llama, DeepSeek, or Qwen running on your hardware via Ollama. Get spending analysis and budget insights."
+              title="AI Assistant"
+              description="Chat with an AI that analyzes your spending, suggests budget adjustments, and updates your budget in one click. Powered by Gemini (cloud) or local models via Ollama."
               disclaimer="AI features are for informational and educational purposes only."
             />
             <FeatureCard
@@ -142,7 +138,7 @@ export default async function Home() {
             <FeatureCard
               icon="🔒"
               title="Privacy-First"
-              description="SQLite on your machine. No cloud, no telemetry, no tracking. Your financial data never leaves your hardware."
+              description="No telemetry, no tracking cookies, no selling your data. Bank credentials are encrypted at rest. Your financial data is yours alone."
             />
             <FeatureCard
               icon="📱"
@@ -180,7 +176,7 @@ export default async function Home() {
               <thead>
                 <tr className="border-b border-[var(--card-border)]">
                   <th className="text-left py-3 px-4 font-medium text-[var(--muted)]">Capability</th>
-                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">Free</span></th>
+                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">From $0</span></th>
                   <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$15/mo</span></th>
                   <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$10/mo</span></th>
                   <th className="py-3 px-4 font-medium text-[var(--muted)]">Actual Budget<br /><span className="text-xs">Free</span></th>
@@ -188,15 +184,15 @@ export default async function Home() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["Local AI Assistant", true, false, false, false],
+                  ["AI Assistant", true, false, false, false],
                   ["Anomaly Detection", true, false, false, false],
                   ["Financial Health Score", true, false, false, false],
                   ["Modular Features (17)", true, false, false, false],
                   ["Per-User ML Categorization", true, false, false, false],
-                  ["Self-Hosted", true, false, false, true],
+                  ["Smart Budget Suggestions", true, false, false, false],
                   ["Bank Sync", true, true, true, true],
-                  ["Docker Deployment", true, false, false, true],
-                  ["Self-Hosted Option", true, false, false, true],
+                  ["FIRE Calculator", true, false, false, false],
+                  ["Net Worth Tracking", true, false, true, false],
                 ].map(([feature, ...supported]) => (
                   <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
                     <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
@@ -221,24 +217,23 @@ export default async function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Up and running in minutes</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">No sign-ups, no credit cards, no cloud accounts.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">No credit card required. Start tracking your finances today.</p>
           </div>
           <div className="space-y-12">
             <Step
               number="1"
-              title="Clone & Start"
-              description="One command gets you the full stack — backend, frontend, and local AI."
-              code="docker compose up -d"
+              title="Create Your Account"
+              description="Sign up in seconds. Pick the features you want from 17 modular options, or start with everything."
             />
             <Step
               number="2"
-              title="Create Your Account"
-              description="Register locally. Your credentials are hashed with bcrypt and stored in your SQLite database."
+              title="Import or Sync"
+              description="Upload a CSV from your bank, connect via SimpleFin for automatic sync, or try with sample data to explore."
             />
             <Step
               number="3"
-              title="Import or Sync"
-              description="Upload a CSV from your bank or connect via SimpleFin for automatic sync. Pick your features and start tracking."
+              title="Get Insights"
+              description="AI-powered categorization, anomaly detection, health scoring, and smart budget suggestions — all working from day one."
             />
           </div>
         </div>
@@ -254,10 +249,10 @@ export default async function Home() {
               "Next.js 15",
               "React 19",
               "TypeScript",
-              "FastAPI",
-              "SQLAlchemy",
-              "SQLite",
-              "Ollama",
+              "FastAPI (async)",
+              "SQLAlchemy 2.0",
+              "PostgreSQL",
+              "Google Gemini",
               "Tailwind CSS",
               "Docker",
               "scikit-learn",
@@ -281,29 +276,53 @@ export default async function Home() {
             Your financial data deserves the highest level of protection. Finsava is built
             with privacy as an architectural principle, not an afterthought.
           </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">🔒</div>
-              <h3 className="font-semibold text-lg">Local-Only Data</h3>
+              <h3 className="font-semibold text-lg">Encrypted at Rest</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Self-hosted deployments keep your database on your own hardware.
-                No cloud sync unless you choose Finsava Cloud.
+                Bank credentials encrypted with Fernet (AES-128-CBC). Passwords hashed with bcrypt.
+                All database queries scoped by user ID.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📡</div>
               <h3 className="font-semibold text-lg">Zero Telemetry</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                No analytics, no tracking cookies, no data collection.
-                The self-hosted version makes zero network calls home.
+                No analytics trackers, no tracking cookies, no third-party data collection.
+                We don&apos;t sell or share your personal information.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">🛡️</div>
+              <h3 className="font-semibold text-lg">Rapid CVE Response</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                Security vulnerabilities are patched within 24 hours. Automated dependency auditing
+                via pip-audit and Dependabot in CI.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">🤖</div>
-              <h3 className="font-semibold text-lg">Local AI</h3>
+              <h3 className="font-semibold text-lg">AI You Control</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                AI assistant runs on your hardware via Ollama. Your financial
-                conversations never leave your machine.
+                Cloud uses Google Gemini. AI-generated suggestions require your explicit
+                approval before any changes are made.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">♿</div>
+              <h3 className="font-semibold text-lg">Accessible</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                Built with WCAG 2.1 AA in mind. Keyboard navigation, skip-to-content,
+                ARIA labels, and screen reader support throughout.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
+              <div className="text-2xl mb-3">📋</div>
+              <h3 className="font-semibold text-lg">477+ Automated Tests</h3>
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                Comprehensive test suite covering auth, budgets, analytics, health score,
+                sync, imports, recurring detection, and more.
               </p>
             </div>
           </div>
@@ -317,7 +336,7 @@ export default async function Home() {
       <footer className="border-t border-[var(--card-border)] py-8 px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2">
-            <span className="text-lg">💸</span>
+            <img src="/logo.png" alt="Finsava" className="h-5 w-5" />
             <span className="font-semibold">Finsava</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
@@ -341,13 +360,6 @@ export default async function Home() {
             </Link>
           </div>
           <div className="flex items-center gap-4">
-            {/* X/Twitter */}
-            <a href="https://x.com/finsava" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="X">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
             {/* X/Twitter */}
             <a href="https://x.com/finsava" target="_blank" rel="noopener noreferrer"
               className="text-[var(--muted)] hover:text-white transition-colors" aria-label="X / Twitter">

@@ -92,7 +92,7 @@ export default async function ChangelogPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">💸</span>
+            <img src="/logo.png" alt="Finsava" className="h-7 w-7" />
             <span className="text-xl font-bold">Finsava</span>
           </Link>
           <div className="hidden items-center gap-8 sm:flex">
@@ -165,7 +165,7 @@ export default async function ChangelogPage() {
       <footer className="border-t border-[var(--card-border)] py-8 px-6">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg">💸</span>
+            <img src="/logo.png" alt="Finsava" className="h-5 w-5" />
             <span className="font-semibold">Finsava</span>
           </Link>
           <p className="text-sm text-[var(--muted)]">&copy; {new Date().getFullYear()} Finsava</p>
