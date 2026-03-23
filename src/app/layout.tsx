@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = "https://finsava.com";
 const siteTitle = "Finsava — AI-Powered Personal Finance";
 const siteDescription =
-  "AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, anomaly detection, and financial health scoring. Your money, your rules.";
+  "AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, FIRE planning, multi-currency support, investment tracking, and anomaly detection. Your money, your intelligence, your rules.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     "financial health score",
     "savings goals",
     "ML categorization",
+    "FIRE calculator",
+    "debt payoff",
+    "multi-currency",
+    "investment tracking",
+    "transfer detection",
+    "net worth",
   ],
   authors: [{ name: "Finsava", url: siteUrl }],
   metadataBase: new URL(siteUrl),
@@ -32,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "AI-powered personal finance with smart budgeting, anomaly detection, and modular feature selection. Your money, your rules.",
+      "Cloud-first personal finance with AI budgeting, 20+ modular features, FIRE planning, and investment tracking. Your money, your intelligence, your rules.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,
@@ -51,7 +57,7 @@ const jsonLd = {
   description: siteDescription,
   url: siteUrl,
   applicationCategory: "FinanceApplication",
-  operatingSystem: "Docker, Windows, Linux, macOS",
+  operatingSystem: "Web, Docker, Windows, Linux, macOS",
   author: {
     "@type": "Organization",
     name: "Finsava",
@@ -60,9 +66,9 @@ const jsonLd = {
   offers: [
     {
       "@type": "Offer",
-      price: "0",
+      price: "4.99",
       priceCurrency: "USD",
-      description: "Free tier",
+      description: "Basic tier — monthly",
     },
     {
       "@type": "Offer",

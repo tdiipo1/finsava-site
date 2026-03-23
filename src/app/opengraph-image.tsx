@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Finsava — Private Finance with Local AI";
+export const alt = "Finsava — AI-Powered Personal Finance";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,7 +43,6 @@ export default function OGImage() {
             marginBottom: "32px",
           }}
         >
-          <span style={{ fontSize: "40px", fontWeight: "bold", color: "#166534" }}>Finsava</span>
           <span
             style={{
               fontSize: "64px",
@@ -67,7 +66,7 @@ export default function OGImage() {
           }}
         >
           <span>Your money.</span>
-          <span style={{ color: "#3b82f6" }}>Your machine.</span>
+          <span style={{ color: "#3b82f6" }}>Your intelligence.</span>
           <span>Your rules.</span>
         </div>
 
@@ -79,7 +78,7 @@ export default function OGImage() {
             marginBottom: "40px",
           }}
         >
-          Self-hosted personal finance with local AI
+          AI-powered personal finance — smart, private, yours
         </span>
 
         {/* Bottom accent bar */}

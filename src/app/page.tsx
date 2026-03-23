@@ -49,7 +49,7 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            AI-powered &middot; Privacy-first
+            20+ features &middot; AI-powered &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Your money.
@@ -61,14 +61,15 @@ export default async function Home() {
             Your rules.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, anomaly detection, and ML-powered categorization.
+            AI-powered personal finance with smart budgeting, bank sync from 200+ institutions,
+            FIRE planning, multi-currency support, investment tracking, and anomaly detection.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="#waitlist"
               className="rounded-xl bg-[var(--primary)] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
             >
-              Get Started — It&apos;s Free
+              Join the Waitlist
             </a>
             <a
               href="#features"
@@ -78,7 +79,7 @@ export default async function Home() {
             </a>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
-            Free tier available. No credit card required.
+            Basic starts at $4.99/mo. No long-term commitment.
           </p>
         </div>
       </section>
@@ -91,13 +92,13 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">17 modular features. Enable what you want, disable what you don&apos;t.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">20+ modular features. Enable what you want, disable what you don&apos;t.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon="🤖"
               title="AI Assistant"
-              description="Chat with an AI that analyzes your spending, suggests budget adjustments, and updates your budget in one click. Powered by Gemini (cloud) or local models via Ollama."
+              description="Chat with an AI that analyzes your actual spending, suggests budget adjustments, and applies changes in one click. Powered by Google Gemini."
               disclaimer="AI features are for informational and educational purposes only."
             />
             <FeatureCard
@@ -106,29 +107,44 @@ export default async function Home() {
               description="Auto-import from 200+ banks via SimpleFin. Staged review — nothing enters your ledger without your approval."
             />
             <FeatureCard
+              icon="🧠"
+              title="Smart Categorization"
+              description="5-level ML cascade: exact match, fuzzy matching, per-user sklearn model, LLM resolve, and manual. Gets smarter as you use it."
+            />
+            <FeatureCard
               icon="📊"
               title="Anomaly Detection"
               description="Modified Z-score on trailing 12-month category spending catches overspending before it becomes a problem."
             />
             <FeatureCard
-              icon="🧠"
-              title="ML Categorization"
-              description="Per-user TF-IDF + LogisticRegression that retrains as you approve suggestions. Gets smarter the more you use it."
-            />
-            <FeatureCard
               icon="💯"
               title="Financial Health Score"
-              description="Composite 0-100 index from savings rate, budget adherence, spending trend, emergency fund, and diversity. Letter grades A–F."
+              description="Composite 0-100 index from savings rate, budget adherence, spending trend, emergency fund, and savings goals. Letter grades A-F."
+            />
+            <FeatureCard
+              icon="🔥"
+              title="Financial Planning"
+              description="FIRE calculator with inflation adjustment and milestone tracking. Savings projection with impact analysis. Debt payoff strategy comparison (avalanche vs. snowball)."
+            />
+            <FeatureCard
+              icon="💹"
+              title="Investment Tracking"
+              description="Track 401(k), IRA, brokerage, and ESPP accounts. Contribution limit progress bars and growth metrics. Auto-populate your FIRE number."
+            />
+            <FeatureCard
+              icon="🌍"
+              title="Multi-Currency"
+              description="18 currencies with daily exchange rates from the European Central Bank. Amounts auto-convert to your preferred currency."
             />
             <FeatureCard
               icon="🔄"
-              title="Recurring Detection"
+              title="Subscriptions & Recurring"
               description="Automatically detect subscriptions and recurring charges. Catch price hikes and see your true annual cost."
             />
             <FeatureCard
               icon="🎯"
               title="Savings Goals"
-              description="Set targets with deadlines and track progress. Visual indicators show if you're on pace."
+              description="Set targets with deadlines and track progress. Visual indicators show if you&apos;re on pace."
             />
             <FeatureCard
               icon="📈"
@@ -136,19 +152,29 @@ export default async function Home() {
               description="Pie charts by category, section, or merchant with drill-down analytics. See where every dollar goes."
             />
             <FeatureCard
-              icon="🔒"
-              title="Privacy-First"
-              description="No telemetry, no tracking cookies, no selling your data. Bank credentials are encrypted at rest. Your financial data is yours alone."
+              icon="🔀"
+              title="Transfer Detection"
+              description="Automatically detect internal transfers between your accounts with confidence scoring. One click to exclude them from spending reports."
             />
             <FeatureCard
-              icon="📱"
-              title="Installable PWA"
-              description="Install Finsava on your phone or desktop as a Progressive Web App. Full offline-capable experience."
+              icon="🏷️"
+              title="Categorization Hub"
+              description="Unified workspace for AI categorization, merchant rules, taxonomy management, and duplicate cleanup — all in one tabbed page."
+            />
+            <FeatureCard
+              icon="📉"
+              title="Forecasting & Analytics"
+              description="30-60 day cashflow projections with 80% confidence intervals. Category trends, year-over-year comparison, and income stability analysis."
+            />
+            <FeatureCard
+              icon="🏠"
+              title="Net Worth Tracking"
+              description="Track assets, liabilities, and total net worth. Joint account detection prevents double-counting. Essential vs. discretionary expense classification."
             />
             <FeatureCard
               icon="🔔"
               title="Smart Notifications"
-              description="Get alerted when you overspend a budget, a subscription raises its price, or you hit a savings goal milestone."
+              description="Budget overages, subscription price hikes, savings goal milestones, anomaly alerts, and bank sync updates — all actionable."
             />
             <FeatureCard
               icon="👥"
@@ -156,9 +182,9 @@ export default async function Home() {
               description="Share read or read-write access with a partner. Each person sees the same data with granular permissions."
             />
             <FeatureCard
-              icon="📉"
-              title="Forecasting"
-              description="30-60 day cashflow projections with 80% confidence intervals. Year-over-year comparison and income stability analysis."
+              icon="🔒"
+              title="Privacy-First"
+              description="No telemetry, no tracking cookies, no selling your data. Bank credentials are encrypted at rest with AES-128. Your data is yours alone."
             />
           </div>
         </div>
@@ -169,17 +195,17 @@ export default async function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Why Finsava?</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">Features you won&apos;t find anywhere else — especially not for free.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">Features you won&apos;t find anywhere else.</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-[var(--card-border)]">
                   <th className="text-left py-3 px-4 font-medium text-[var(--muted)]">Capability</th>
-                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">From $0</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$15/mo</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$10/mo</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Actual Budget<br /><span className="text-xs">Free</span></th>
+                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">From $4.99/mo</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$14.99/mo</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$9.99/mo</span></th>
+                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Copilot<br /><span className="text-xs">$9.99/mo</span></th>
                 </tr>
               </thead>
               <tbody className="text-center">
@@ -187,12 +213,15 @@ export default async function Home() {
                   ["AI Assistant", true, false, false, false],
                   ["Anomaly Detection", true, false, false, false],
                   ["Financial Health Score", true, false, false, false],
-                  ["Modular Features (17)", true, false, false, false],
+                  ["Modular Features (20+)", true, false, false, false],
                   ["Per-User ML Categorization", true, false, false, false],
                   ["Smart Budget Suggestions", true, false, false, false],
+                  ["FIRE + Debt Payoff Planning", true, false, false, false],
+                  ["Multi-Currency (18 currencies)", true, false, false, false],
+                  ["Investment Tracking w/ Limits", true, false, false, false],
+                  ["Transfer Detection", true, false, false, false],
                   ["Bank Sync", true, true, true, true],
-                  ["FIRE Calculator", true, false, false, false],
-                  ["Net Worth Tracking", true, false, true, false],
+                  ["Net Worth Tracking", true, false, true, true],
                 ].map(([feature, ...supported]) => (
                   <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
                     <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
@@ -217,23 +246,23 @@ export default async function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Up and running in minutes</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">No credit card required. Start tracking your finances today.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">Create your account and start tracking today.</p>
           </div>
           <div className="space-y-12">
             <Step
               number="1"
               title="Create Your Account"
-              description="Sign up in seconds. Pick the features you want from 17 modular options, or start with everything."
+              description="Sign up in seconds. Pick the features you want from 20+ modular options, or start with everything."
             />
             <Step
               number="2"
-              title="Import or Sync"
-              description="Upload a CSV from your bank, connect via SimpleFin for automatic sync, or try with sample data to explore."
+              title="Connect Your Bank"
+              description="Link your accounts via SimpleFin for automatic sync. Or upload a CSV, or try with sample data to explore."
             />
             <Step
               number="3"
               title="Get Insights"
-              description="AI-powered categorization, anomaly detection, health scoring, and smart budget suggestions — all working from day one."
+              description="AI-powered categorization, anomaly detection, health scoring, smart budget suggestions, multi-currency support, and FIRE planning — all working from day one."
             />
           </div>
         </div>
@@ -305,8 +334,8 @@ export default async function Home() {
               <div className="text-2xl mb-3">🤖</div>
               <h3 className="font-semibold text-lg">AI You Control</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Cloud uses Google Gemini. AI-generated suggestions require your explicit
-                approval before any changes are made.
+                Powered by Google Gemini. AI-generated suggestions require your explicit
+                approval before any changes are made to your budgets.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
@@ -319,10 +348,10 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">477+ Automated Tests</h3>
+              <h3 className="font-semibold text-lg">561 Automated Tests</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
-                sync, imports, recurring detection, and more.
+                sync, imports, transfer detection, tier enforcement, and more.
               </p>
             </div>
           </div>

@@ -3,39 +3,34 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing — Finsava",
   description:
-    "Simple, transparent pricing. Self-host for free or let us handle the infrastructure with Finsava Cloud.",
+    "Simple, transparent pricing. Start with Basic or unlock the full suite with Pro.",
 };
 
-const freeTierFeatures = [
-  "Dashboard with income, spending & trends",
-  "Transaction search & filtering",
-  "Budget planning & alerts",
-  "Bank sync (SimpleFin / Plaid)",
+const basicFeatures = [
+  "Budget planning",
+  "Bank sync (200+ institutions)",
+  "Auto-categorize (ML-powered)",
+  "Spending reports",
+  "Subscriptions & recurring detection",
+  "Smart notifications",
+  "Categorization hub",
   "CSV import",
-  "AI Assistant (local Ollama)",
-  "Spending reports & breakdowns",
-  "Subscription & recurring detection",
-  "Community support",
+  "Email support",
 ];
 
 const proFeatures = [
-  "Everything in Free, plus:",
-  "Savings goals with deadline tracking",
-  "Forecasting & advanced analytics",
-  "Auto-categorize (AI-powered)",
-  "Category & merchant mapping rules",
-  "Merchant cleanup & dedup",
-  "Transaction filter rules",
+  "Everything in Basic, plus:",
+  "AI Assistant (Gemini)",
+  "Financial planning (FIRE, savings, debt)",
+  "Investment tracking",
+  "Savings goals",
+  "Net worth tracking",
+  "Forecasting & analytics",
+  "Transfer detection",
+  "Multi-currency (18 currencies)",
+  "Filter rules",
+  "Merchant cleanup",
   "Priority support",
-];
-
-const cloudFeatures = [
-  "Everything in Pro, plus:",
-  "Cloud AI Assistant (Gemini)",
-  "No Docker, no servers, no setup",
-  "Automatic daily backups",
-  "Multi-device access",
-  "Team sharing & collaboration",
 ];
 
 export default function PricingPage() {
@@ -65,7 +60,7 @@ export default function PricingPage() {
               href="/#security"
               className="text-sm text-[var(--muted)] hover:text-white transition-colors"
             >
-              Open Source
+              Security
             </a>
             <a
               href="/pricing"
@@ -95,38 +90,35 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-4 text-lg text-[var(--muted)] leading-relaxed">
-            Self-host for free with every feature included. Or let us handle the
-            infrastructure with Finsava Cloud.
+            Start with Basic for core budgeting or unlock the full suite with Pro.
+            No hidden fees, cancel anytime.
           </p>
         </div>
       </section>
 
       {/* Pricing Cards */}
       <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
-          {/* Free Tier */}
+        <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-2">
+          {/* Basic Tier */}
           <div className="flex flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold">Free</h2>
-              <p className="mt-1 text-sm text-[var(--muted)]">Self-Hosted</p>
+              <h2 className="text-2xl font-bold">Basic</h2>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-bold tracking-tight">$0</span>
-                <span className="text-[var(--muted)]">/forever</span>
+                <span className="text-5xl font-bold tracking-tight">$4.99</span>
+                <span className="text-[var(--muted)]">/mo</span>
               </div>
               <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                Core budgeting on your own hardware. No limits, no catches.
+                Core budgeting, bank sync, and smart categorization.
               </p>
             </div>
 
-            <FeatureList features={freeTierFeatures} color="var(--income)" />
+            <FeatureList features={basicFeatures} color="var(--income)" />
 
             <a
-              href="https://github.com/tdiipo1/Finsava"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#waitlist"
               className="mt-auto block w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)] py-3.5 text-center text-base font-semibold hover:border-[var(--muted)] transition-colors"
             >
-              Get Started
+              Join Waitlist
             </a>
           </div>
 
@@ -140,13 +132,12 @@ export default function PricingPage() {
 
             <div className="mb-8">
               <h2 className="text-2xl font-bold">Pro</h2>
-              <p className="mt-1 text-sm text-[var(--muted)]">Self-Hosted</p>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-bold tracking-tight">$4.99</span>
+                <span className="text-5xl font-bold tracking-tight">$9.99</span>
                 <span className="text-[var(--muted)]">/mo</span>
               </div>
               <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                Advanced analytics, AI categorization, and savings goals.
+                Full suite with AI assistant, financial planning, and investment tracking.
               </p>
             </div>
 
@@ -155,36 +146,6 @@ export default function PricingPage() {
             <a
               href="/#waitlist"
               className="mt-auto block w-full rounded-xl bg-[var(--primary)] py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
-            >
-              Join Waitlist
-            </a>
-          </div>
-
-          {/* Cloud / Team Tier */}
-          <div className="relative flex flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <span className="rounded-full bg-[var(--card-border)] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
-                Coming Soon
-              </span>
-            </div>
-
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold">Cloud</h2>
-              <p className="mt-1 text-sm text-[var(--muted)]">Managed</p>
-              <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-bold tracking-tight">$9.99</span>
-                <span className="text-[var(--muted)]">/mo</span>
-              </div>
-              <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                Everything managed for you. No Docker, no servers, no setup.
-              </p>
-            </div>
-
-            <FeatureList features={cloudFeatures} color="var(--primary)" />
-
-            <a
-              href="/#waitlist"
-              className="mt-auto block w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)] py-3.5 text-center text-base font-semibold hover:border-[var(--muted)] transition-colors"
             >
               Join Waitlist
             </a>
@@ -200,24 +161,16 @@ export default function PricingPage() {
           </h2>
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
-              question="Is the free version actually free?"
-              answer="Yes. Self-host Finsava on your own hardware with core budgeting, bank sync, AI assistant, and spending reports included. No trial period, no credit card required."
-            />
-            <FaqItem
-              question="What does Pro add over Free?"
-              answer="Pro unlocks advanced features: savings goals with deadlines, spending forecasts and trend analytics, AI-powered auto-categorization, merchant cleanup tools, and custom filter rules. These are power-user tools that go beyond basic budgeting."
-            />
-            <FaqItem
-              question="What does Cloud add over Pro?"
-              answer="Cloud is fully managed hosting — no Docker, no servers. It includes cloud AI (Google Gemini), automatic daily backups, multi-device access, and team collaboration features. The same app, just managed for you."
+              question="What does Pro add over Basic?"
+              answer="Pro unlocks the full suite: AI assistant powered by Gemini, financial planning tools (FIRE calculator, savings goals, debt payoff), investment tracking, net worth tracking, forecasting and analytics, transfer detection, multi-currency support (18 currencies), filter rules, and merchant cleanup. Basic covers core budgeting; Pro is the complete financial toolkit."
             />
             <FaqItem
               question="Can I switch between tiers?"
-              answer="Yes. Your data format is the same across all tiers. Export from one, import into the other. Upgrading instantly unlocks the additional features."
+              answer="Yes. Your data format is the same across all tiers. Upgrading instantly unlocks the additional features, and you can downgrade at any time."
             />
             <FaqItem
-              question="When will Pro and Cloud launch?"
-              answer="We're building billing infrastructure now. Join the waitlist and you'll be the first to know when paid tiers are available."
+              question="When will Basic and Pro launch?"
+              answer="We're building billing infrastructure now. Join the waitlist and you'll be the first to know when both tiers are available."
             />
           </div>
         </div>

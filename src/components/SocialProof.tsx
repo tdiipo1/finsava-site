@@ -21,7 +21,7 @@ export default async function SocialProof() {
       href: "https://github.com/tdiipo1/Finsava",
     },
     {
-      label: "17 Features",
+      label: "20+ Features",
       href: "#features",
     },
     {

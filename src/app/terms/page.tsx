@@ -41,11 +41,10 @@ export default function TermsOfService() {
               Service Description
             </h2>
             <p>
-              Finsava is a self-hosted personal finance tool that runs on your
-              own hardware. It provides budgeting, transaction tracking, AI-powered
-              financial analysis, bank sync, anomaly detection, and related
-              features. You are responsible for deploying, configuring, and
-              maintaining your own instance.
+              Finsava is a cloud-based personal finance platform that provides
+              budgeting, transaction tracking, AI-powered financial analysis, bank
+              sync, anomaly detection, and related features. A self-managed
+              deployment option is also available for advanced users.
             </p>
           </section>
 
@@ -95,7 +94,7 @@ export default function TermsOfService() {
               User Responsibility for Data
             </h2>
             <p>
-              Because Finsava is self-hosted, you are solely responsible for:
+              You are responsible for:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -115,8 +114,8 @@ export default function TermsOfService() {
               </li>
             </ul>
             <p className="mt-3">
-              We do not have access to your self-hosted data and cannot recover
-              it if lost.
+              For self-managed deployments, we do not have access to your data
+              and cannot recover it if lost.
             </p>
           </section>
 
@@ -130,27 +129,24 @@ export default function TermsOfService() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                <strong className="text-[var(--foreground)]">Free (Self-Hosted):</strong>{" "}
-                Core features at no cost. You host on your own hardware.
+                <strong className="text-[var(--foreground)]">Basic ($4.99/mo):</strong>{" "}
+                Core budgeting, bank sync, ML-powered categorization, spending
+                reports, and email support.
               </li>
               <li>
-                <strong className="text-[var(--foreground)]">Pro (Self-Hosted):</strong>{" "}
-                Advanced features including analytics, auto-categorization, savings
-                goals, and priority support. Billed monthly or annually.
-              </li>
-              <li>
-                <strong className="text-[var(--foreground)]">Cloud (Managed):</strong>{" "}
-                Everything in Pro plus managed hosting, cloud AI, automatic backups,
-                and team collaboration. Billed monthly or annually.
+                <strong className="text-[var(--foreground)]">Pro ($9.99/mo):</strong>{" "}
+                Everything in Basic plus AI assistant (Gemini), financial planning
+                (FIRE, savings, debt), investment tracking, net worth tracking,
+                forecasting, multi-currency, and priority support.
               </li>
             </ul>
             <p className="mt-3">
-              For paid tiers: billing is recurring at the interval selected at checkout.
-              You may cancel at any time; cancellation takes effect at the end of the
-              current billing period. We do not offer refunds for partial billing periods.
-              We reserve the right to change pricing with 30 days&apos; notice to existing
-              subscribers. If payment fails, your account may be downgraded to the Free
-              tier after a 7-day grace period.
+              Billing is recurring at the interval selected at checkout. You may
+              cancel at any time; cancellation takes effect at the end of the
+              current billing period. We do not offer refunds for partial billing
+              periods. We reserve the right to change pricing with 30 days&apos;
+              notice to existing subscribers. If payment fails, your account may
+              be downgraded after a 7-day grace period.
             </p>
           </section>
 
@@ -241,7 +237,7 @@ export default function TermsOfService() {
               institutions and may contain errors or omissions.
             </p>
             <p className="mt-3">
-              For the self-hosted version: you are solely responsible for
+              For self-managed deployments: you are solely responsible for
               maintaining backups of your database and configuration. We do not
               have access to your data and cannot recover it if lost.
             </p>
@@ -390,15 +386,14 @@ export default function TermsOfService() {
               Termination
             </h2>
             <p>
-              For the self-hosted version, these Terms remain in effect as long
-              as you use Finsava. You may stop using the software at any time by
-              uninstalling it.
+              These Terms remain in effect as long as you use Finsava. You may
+              cancel your subscription and stop using the software at any time.
             </p>
             <p className="mt-3">
-              For Finsava Cloud (when available), we reserve the right to
-              suspend or terminate your account for violation of these Terms,
-              with reasonable notice where possible. Upon termination, you may
-              export your data using the built-in data export feature.
+              We reserve the right to suspend or terminate your account for
+              violation of these Terms, with reasonable notice where possible.
+              Upon termination, you may export your data using the built-in
+              data export feature.
             </p>
           </section>
 

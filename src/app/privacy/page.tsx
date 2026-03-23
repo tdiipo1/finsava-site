@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy — Finsava",
   description:
-    "How Finsava handles your data. TL;DR: your financial data stays on your machine.",
+    "How Finsava handles your data. TL;DR: your financial data is protected with encryption at rest and strict access controls.",
 };
 
 export default function PrivacyPolicy() {
@@ -30,10 +30,10 @@ export default function PrivacyPolicy() {
         <div className="mt-12 space-y-10 text-[var(--muted)] leading-relaxed">
           {/* Intro */}
           <p>
-            Finsava is a privacy-first personal finance tool. Privacy
+            Finsava is a privacy-first personal finance platform. Privacy
             is at the core of the project. This policy explains what data is
             collected by the <strong className="text-[var(--foreground)]">finsava.com landing page</strong> and
-            how the <strong className="text-[var(--foreground)]">self-hosted Finsava application</strong> handles
+            how the <strong className="text-[var(--foreground)]">Finsava application</strong> handles
             your information.
           </p>
 
@@ -48,9 +48,10 @@ export default function PrivacyPolicy() {
               voluntarily through the waitlist form.
             </p>
             <p className="mt-3">
-              The self-hosted Finsava application does not send any data to us.
-              All financial data — transactions, budgets, savings goals, AI
-              conversations, and ML models — stays entirely on your machine.
+              The Finsava application protects your financial data with
+              encryption at rest and strict access controls. All financial data
+              — transactions, budgets, savings goals, AI conversations, and ML
+              models — is secured within your account.
             </p>
           </section>
 
@@ -133,14 +134,15 @@ export default function PrivacyPolicy() {
             </p>
           </section>
 
-          {/* Self-Hosted App Privacy */}
+          {/* Self-Managed Deployment */}
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
-              Self-Hosted App Privacy
+              Self-Managed Deployment
             </h2>
             <p>
-              When you run Finsava on your own hardware, all financial data is
-              stored in a local SQLite database on your machine. Specifically:
+              As an alternative option, you can run Finsava on your own
+              hardware. In this configuration, all financial data is stored in a
+              local SQLite database on your machine. Specifically:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>No telemetry or usage tracking is collected.</li>
@@ -160,16 +162,15 @@ export default function PrivacyPolicy() {
             </ul>
           </section>
 
-          {/* Finsava Cloud (Planned) */}
+          {/* Finsava Cloud */}
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
-              Finsava Cloud (Planned Hosted Service)
+              Finsava Cloud Service
             </h2>
             <p>
-              When Finsava Cloud becomes available, it will operate as a hosted
-              service where Finsava acts as a data processor for your financial
-              information. The following additional disclosures apply to the
-              Cloud offering:
+              Finsava operates as a hosted service where Finsava acts as a data
+              processor for your financial information. The following disclosures
+              apply:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -352,10 +353,10 @@ export default function PrivacyPolicy() {
               Security Transparency
             </h2>
             <p>
-              Finsava is built with a local-first architecture. Self-hosted
-              deployments keep all data on your own hardware with zero telemetry
-              or tracking. Bank credentials are encrypted at rest. AI processing
-              runs locally via Ollama unless you explicitly opt into cloud AI.
+              Finsava is built with a privacy-first architecture. All data is
+              encrypted in transit and at rest. Bank credentials are encrypted
+              at rest. AI processing uses Google Gemini with your explicit
+              consent; self-managed deployments can use local AI via Ollama.
             </p>
           </section>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Blog — Finsava",
   description:
-    "Articles about personal finance, self-hosting, local AI, and building Finsava in public.",
+    "Articles about personal finance, AI-powered budgeting, and building Finsava in public.",
 };
 
 interface BlogPost {
@@ -51,7 +51,7 @@ export default function BlogIndex() {
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <h1 className="text-4xl font-bold sm:text-5xl">Blog</h1>
         <p className="mt-4 text-lg text-[var(--muted)]">
-          Building Finsava in public — personal finance, self-hosting, local AI,
+          Building Finsava in public — personal finance, AI-powered budgeting,
           and the journey from side project to product.
         </p>
 
