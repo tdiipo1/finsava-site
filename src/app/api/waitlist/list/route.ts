@@ -1,18 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { kv } from "@vercel/kv";
 
-const WAITLIST_PATH = path.join(process.cwd(), "waitlist.json");
 const ADMIN_SECRET = process.env.WAITLIST_ADMIN_SECRET || "finsava-admin-2026";
-
-function readWaitlist(): string[] {
-  try {
-    const data = fs.readFileSync(WAITLIST_PATH, "utf-8");
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
-}
 
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
@@ -21,12 +10,28 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const emails = readWaitlist();
+  // Get all emails from the set
+  const emails = await kv.smembers("waitlist:emails") as string[];
 
-  // If ?format=csv, return downloadable CSV
+  // Get details for each email
+  const entries = await Promise.all(
+    emails.map(async (email) => {
+      const details = await kv.hgetall(`waitlist:entry:${email}`) as Record<string, string> | null;
+      return {
+        email,
+        source: details?.source || "unknown",
+        signed_up_at: details?.signed_up_at || "unknown",
+      };
+    })
+  );
+
+  // Sort by signup date (newest first)
+  entries.sort((a, b) => b.signed_up_at.localeCompare(a.signed_up_at));
+
   const format = request.nextUrl.searchParams.get("format");
   if (format === "csv") {
-    const csv = "email\n" + emails.join("\n");
+    const csv = "email,source,signed_up_at\n" +
+      entries.map(e => `${e.email},${e.source},${e.signed_up_at}`).join("\n");
     return new NextResponse(csv, {
       headers: {
         "Content-Type": "text/csv",
@@ -36,7 +41,7 @@ export async function GET(request: NextRequest) {
   }
 
   return NextResponse.json({
-    total: emails.length,
-    emails,
+    total: entries.length,
+    entries,
   });
 }
