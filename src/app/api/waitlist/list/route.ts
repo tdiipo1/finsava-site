@@ -1,7 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { createClient } from "redis";
 
 const ADMIN_SECRET = process.env.WAITLIST_ADMIN_SECRET || "finsava-admin-2026";
+
+let redisClient: ReturnType<typeof createClient> | null = null;
+
+async function getRedis() {
+  if (!redisClient) {
+    const url = process.env.REDIS_URL;
+    if (!url) throw new Error("REDIS_URL not set");
+    redisClient = createClient({ url });
+    redisClient.on("error", (err) => console.error("[Redis]", err));
+    await redisClient.connect();
+  }
+  return redisClient;
+}
 
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
@@ -10,38 +23,40 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // Get all emails from the set
-  const emails = await kv.smembers("waitlist:emails") as string[];
+  try {
+    const redis = await getRedis();
 
-  // Get details for each email
-  const entries = await Promise.all(
-    emails.map(async (email) => {
-      const details = await kv.hgetall(`waitlist:entry:${email}`) as Record<string, string> | null;
-      return {
-        email,
-        source: details?.source || "unknown",
-        signed_up_at: details?.signed_up_at || "unknown",
-      };
-    })
-  );
+    const emails = await redis.sMembers("waitlist:emails");
 
-  // Sort by signup date (newest first)
-  entries.sort((a, b) => b.signed_up_at.localeCompare(a.signed_up_at));
+    const entries = await Promise.all(
+      emails.map(async (email) => {
+        const details = await redis.hGetAll(`waitlist:entry:${email}`);
+        return {
+          email,
+          source: details?.source || "unknown",
+          signed_up_at: details?.signed_up_at || "unknown",
+        };
+      })
+    );
 
-  const format = request.nextUrl.searchParams.get("format");
-  if (format === "csv") {
-    const csv = "email,source,signed_up_at\n" +
-      entries.map(e => `${e.email},${e.source},${e.signed_up_at}`).join("\n");
-    return new NextResponse(csv, {
-      headers: {
-        "Content-Type": "text/csv",
-        "Content-Disposition": `attachment; filename="finsava-waitlist-${new Date().toISOString().slice(0, 10)}.csv"`,
-      },
-    });
+    // Sort newest first
+    entries.sort((a, b) => b.signed_up_at.localeCompare(a.signed_up_at));
+
+    const format = request.nextUrl.searchParams.get("format");
+    if (format === "csv") {
+      const csv = "email,source,signed_up_at\n" +
+        entries.map(e => `${e.email},${e.source},${e.signed_up_at}`).join("\n");
+      return new NextResponse(csv, {
+        headers: {
+          "Content-Type": "text/csv",
+          "Content-Disposition": `attachment; filename="finsava-waitlist-${new Date().toISOString().slice(0, 10)}.csv"`,
+        },
+      });
+    }
+
+    return NextResponse.json({ total: entries.length, entries });
+  } catch (error) {
+    console.error("[waitlist-list] Error:", error);
+    return NextResponse.json({ error: "Failed to fetch waitlist." }, { status: 500 });
   }
-
-  return NextResponse.json({
-    total: entries.length,
-    entries,
-  });
 }

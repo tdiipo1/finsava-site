@@ -1,9 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { createClient } from "redis";
 
-// ── Rate limiting (in-memory, resets on cold start — acceptable for landing page) ──
+// ── Redis connection (lazy, reused across requests) ──
+let redisClient: ReturnType<typeof createClient> | null = null;
+
+async function getRedis() {
+  if (!redisClient) {
+    const url = process.env.REDIS_URL;
+    if (!url) throw new Error("REDIS_URL not set");
+    redisClient = createClient({ url });
+    redisClient.on("error", (err) => console.error("[Redis]", err));
+    await redisClient.connect();
+  }
+  return redisClient;
+}
+
+// ── Rate limiting ──
 const RATE_LIMIT_MAX = 5;
-const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 
 interface RateLimitEntry { count: number; resetAt: number; }
 const rateLimitMap = new Map<string, RateLimitEntry>();
@@ -55,22 +69,22 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });
     }
 
+    const redis = await getRedis();
+
     // Check for duplicate
-    const exists = await kv.sismember("waitlist:emails", trimmed);
+    const exists = await redis.sIsMember("waitlist:emails", trimmed);
     if (exists) {
       return NextResponse.json({ message: "You're already on the waitlist!" }, { status: 200 });
     }
 
-    // Add to KV set (deduped) + store with timestamp in a hash
-    await kv.sadd("waitlist:emails", trimmed);
-    await kv.hset(`waitlist:entry:${trimmed}`, {
+    // Add to set (deduped) + store details as hash
+    await redis.sAdd("waitlist:emails", trimmed);
+    await redis.hSet(`waitlist:entry:${trimmed}`, {
       email: trimmed,
       source: body.source || "landing_page",
       signed_up_at: new Date().toISOString(),
     });
-
-    // Increment signup counter
-    await kv.incr("waitlist:count");
+    await redis.incr("waitlist:count");
 
     return NextResponse.json(
       { message: "You're on the list! We'll notify you when Finsava is available." },
