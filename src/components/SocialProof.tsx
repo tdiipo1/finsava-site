@@ -1,24 +1,8 @@
-async function getGitHubStars(): Promise<number> {
-  try {
-    const res = await fetch(
-      "https://api.github.com/repos/tdiipo1/Finsava",
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return 0;
-    const data = await res.json();
-    return data.stargazers_count ?? 0;
-  } catch {
-    return 0;
-  }
-}
-
-export default async function SocialProof() {
-  const stars = await getGitHubStars();
-
+export default function SocialProof() {
   const badges = [
     {
-      label: stars > 0 ? `\u2605 ${stars} stars` : "\u2605 New",
-      href: "https://github.com/tdiipo1/Finsava",
+      label: "632 Tests Passing",
+      href: "#security",
     },
     {
       label: "20+ Features",
@@ -36,9 +20,6 @@ export default async function SocialProof() {
         <a
           key={badge.label}
           href={badge.href}
-          {...(badge.href.startsWith("http")
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
           className="inline-flex items-center rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)] hover:border-[var(--muted)] transition-colors"
         >
           {badge.label}

@@ -35,7 +35,7 @@ export default async function Home() {
               href="#waitlist"
               className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 transition-colors"
             >
-              Get Started
+              Join Waitlist
             </a>
           </div>
         </div>
@@ -52,17 +52,16 @@ export default async function Home() {
             20+ features &middot; AI-powered &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Your money.
+            Plan your path to
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              Your intelligence.
+              financial independence.
             </span>
-            <br />
-            Your rules.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            AI-powered personal finance with smart budgeting, bank sync from 200+ institutions,
-            FIRE planning, multi-currency support, investment tracking, and anomaly detection.
+            FIRE planning, smart budgeting, bank sync from 12,000+ institutions,
+            AI-powered insights, investment tracking, and anomaly detection &mdash;
+            all in one privacy-first platform.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -79,7 +78,7 @@ export default async function Home() {
             </a>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
-            Basic starts at $4.99/mo. No long-term commitment.
+            Start with a 14-day free trial of Pro. Basic from $4.99/mo after.
           </p>
         </div>
       </section>
@@ -98,18 +97,18 @@ export default async function Home() {
             <FeatureCard
               icon="🤖"
               title="AI Assistant"
-              description="Chat with an AI that analyzes your actual spending, suggests budget adjustments, and applies changes in one click. Powered by Google Gemini."
+              description="Chat with an AI that analyzes your actual spending, suggests budget adjustments, and applies changes in one click. Powered by Claude AI."
               disclaimer="AI features are for informational and educational purposes only."
             />
             <FeatureCard
               icon="🏦"
               title="Bank Sync"
-              description="Auto-import from 200+ banks via SimpleFin. Staged review — nothing enters your ledger without your approval."
+              description="Connect via Plaid (12,000+ banks) or SimpleFin. Staged review — nothing enters your ledger without your approval."
             />
             <FeatureCard
               icon="🧠"
               title="Smart Categorization"
-              description="5-level ML cascade: exact match, fuzzy matching, per-user sklearn model, LLM resolve, and manual. Gets smarter as you use it."
+              description="5-level smart cascade: exact match, fuzzy matching, personalized learning, AI resolve, and manual review. Gets smarter as you use it."
             />
             <FeatureCard
               icon="📊"
@@ -210,18 +209,18 @@ export default async function Home() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["AI Assistant", true, false, false, false],
-                  ["Anomaly Detection", true, false, false, false],
+                  ["Bank Sync (Plaid + SimpleFin)", true, true, true, true],
+                  ["Net Worth Tracking", true, true, true, true],
+                  ["AI-Powered Categorization", true, false, true, true],
+                  ["Investment Tracking", true, false, true, true],
+                  ["Multi-Currency Support", true, true, true, false],
+                  ["Budget Suggestions", true, true, false, false],
+                  ["Learns Your Spending Patterns", true, false, false, false],
+                  ["Shared Intelligence Across Users", true, false, false, false],
                   ["Financial Health Score", true, false, false, false],
-                  ["Modular Features (20+)", true, false, false, false],
-                  ["Per-User ML Categorization", true, false, false, false],
-                  ["Smart Budget Suggestions", true, false, false, false],
                   ["FIRE + Debt Payoff Planning", true, false, false, false],
-                  ["Multi-Currency (18 currencies)", true, false, false, false],
-                  ["Investment Tracking w/ Limits", true, false, false, false],
                   ["Transfer Detection", true, false, false, false],
-                  ["Bank Sync", true, true, true, true],
-                  ["Net Worth Tracking", true, false, true, true],
+                  ["Anomaly Detection", true, false, false, false],
                 ].map(([feature, ...supported]) => (
                   <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
                     <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
@@ -257,7 +256,7 @@ export default async function Home() {
             <Step
               number="2"
               title="Connect Your Bank"
-              description="Link your accounts via SimpleFin for automatic sync. Or upload a CSV, or try with sample data to explore."
+              description="Connect your bank instantly via Plaid (12,000+ institutions) or SimpleFin. Or upload a CSV, or try with sample data to explore."
             />
             <Step
               number="3"
@@ -281,7 +280,7 @@ export default async function Home() {
               "FastAPI (async)",
               "SQLAlchemy 2.0",
               "PostgreSQL",
-              "Google Gemini",
+              "Claude AI",
               "Tailwind CSS",
               "Docker",
               "scikit-learn",
@@ -334,7 +333,7 @@ export default async function Home() {
               <div className="text-2xl mb-3">🤖</div>
               <h3 className="font-semibold text-lg">AI You Control</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Powered by Google Gemini. AI-generated suggestions require your explicit
+                Powered by Claude AI. AI-generated suggestions require your explicit
                 approval before any changes are made to your budgets.
               </p>
             </div>
@@ -348,7 +347,7 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">561 Automated Tests</h3>
+              <h3 className="font-semibold text-lg">632 Automated Tests</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
                 sync, imports, transfer detection, tier enforcement, and more.
@@ -358,7 +357,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Waitlist */}
+      {/* CTA */}
       <WaitlistSection />
 
       {/* Footer */}

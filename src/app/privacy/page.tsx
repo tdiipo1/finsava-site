@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
             <p>
               The finsava.com landing page collects only one piece of personal
               information: <strong className="text-[var(--foreground)]">your email address</strong>, submitted
-              voluntarily through the waitlist form.
+              voluntarily through the registration form.
             </p>
             <p className="mt-3">
               The Finsava application protects your financial data with
@@ -61,10 +61,9 @@ export default function PrivacyPolicy() {
               How We Use Your Data
             </h2>
             <p>
-              Email addresses collected through the waitlist are used solely to
-              send notifications about Finsava updates, releases, and launch
-              announcements. We do not sell, share, or rent your email to any
-              third party.
+              Email addresses collected through registration are used solely to
+              operate your account and send notifications about Finsava updates.
+              We do not sell, share, or rent your email to any third party.
             </p>
           </section>
 
@@ -105,21 +104,67 @@ export default function PrivacyPolicy() {
                 .
               </li>
               <li>
-                <strong className="text-[var(--foreground)]">Plaid</strong> — Alternative bank
-                sync provider. If you connect via Plaid, your bank credentials
-                are handled by Plaid and transaction data is routed through
-                their servers. See{" "}
+                <strong className="text-[var(--foreground)]">Plaid</strong> (sub-processor
+                under GDPR Art. 28) — Bank account connection and transaction data
+                retrieval (12,000+ institutions). Plaid acts as a data sub-processor
+                on Finsava&apos;s behalf under a Data Processing Agreement.{" "}
+                <strong className="text-[var(--foreground)]">Credential isolation:</strong>{" "}
+                Your bank login credentials are entered directly into Plaid&apos;s
+                secure hosted interface (Plaid Link) and never touch Finsava&apos;s
+                servers. Finsava receives only a short-lived authorization token.{" "}
+                <strong className="text-[var(--foreground)]">Data Finsava receives from Plaid:</strong>{" "}
+                transaction data (dates, amounts, descriptions, merchant names,
+                currency codes), account metadata (account name, type, balance),
+                and institution information. Finsava does{" "}
+                <strong className="text-[var(--foreground)]">not</strong> receive your
+                bank login credentials, account numbers, or routing numbers.
+                Transaction data is periodically synced, not real-time. See{" "}
                 <a
-                  href="https://plaid.com/legal/"
+                  href="https://plaid.com/legal/end-user-privacy-policy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--primary)] hover:underline"
                 >
-                  Plaid&apos;s Privacy Policy
+                  Plaid&apos;s End User Privacy Policy
                 </a>
                 .
               </li>
             </ul>
+          </section>
+
+          {/* Aggregated Data and Model Training */}
+          <section>
+            <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
+              Aggregated Data and Model Training
+            </h2>
+            <p>
+              To improve transaction categorization accuracy for all users,
+              Finsava may train machine learning models on anonymized, aggregated
+              data. This aggregated data contains{" "}
+              <strong className="text-[var(--foreground)]">only</strong>{" "}
+              merchant/payee description text and spending category labels. It
+              does not contain your name, email, account numbers, transaction
+              amounts, account balances, dates, or any other personally
+              identifiable information.
+            </p>
+            <p className="mt-3">
+              A minimum of two distinct users must independently categorize
+              the same merchant description before any data point enters the
+              aggregated training set. Contested categorizations (where users
+              disagree) are excluded entirely. No individual user&apos;s data
+              can be reconstructed from the aggregated model.
+            </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">Legal basis (GDPR):</strong>{" "}
+              Legitimate interest (Article 6(1)(f)) in improving service
+              quality. The processing involves only anonymized, aggregated
+              data that cannot reasonably identify any individual.
+            </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">Opt out:</strong>{" "}
+              You may request that your categorizations be excluded from
+              future model training by contacting support@finsava.com.
+            </p>
           </section>
 
           {/* Data Retention */}
@@ -128,9 +173,9 @@ export default function PrivacyPolicy() {
               Data Retention
             </h2>
             <p>
-              Waitlist email addresses are retained until you unsubscribe. To
-              remove your email, contact us at the address below and we will
-              delete it promptly.
+              Account data is retained while your account is active. You can
+              delete your account and all associated data at any time from the
+              Settings page, or contact us at the address below.
             </p>
           </section>
 
@@ -180,16 +225,16 @@ export default function PrivacyPolicy() {
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">AI processing:</strong>{" "}
-                If you opt into cloud AI (Google Gemini), your financial context
-                will be sent to Google&apos;s servers for processing. This requires
-                your explicit consent and can be revoked at any time in Settings.
-                Local AI via Ollama is not available in the Cloud version.
+                Cloud AI processing uses Claude (Anthropic). Your financial context
+                is sent to Anthropic&apos;s servers for processing. AI features can
+                be disabled at any time in Settings.
+                Self-managed deployments can use local AI via Ollama instead.
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Sub-processors:</strong>{" "}
                 Finsava Cloud uses the following sub-processors: cloud hosting
-                provider (for database and application hosting), Google Gemini
-                (optional cloud AI), SimpleFin (bank sync), Resend (transactional
+                provider (for database and application hosting), Anthropic Claude
+                (cloud AI), SimpleFin (bank sync), Resend (transactional
                 emails), and Vercel (landing page hosting).
               </li>
               <li>
@@ -211,40 +256,39 @@ export default function PrivacyPolicy() {
             </ul>
           </section>
 
-          {/* Google Gemini AI Disclosure */}
+          {/* Claude AI Disclosure */}
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
-              Google Gemini AI Disclosure
+              Claude AI Disclosure
             </h2>
             <p>
-              Finsava offers an optional integration with Google Gemini for
-              cloud-based AI financial analysis. When enabled:
+              Finsava uses Claude (by Anthropic) for cloud-based AI financial
+              analysis. When AI features are active:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
                 Your financial context (spending summaries, budget data, and
-                category breakdowns) is sent to Google&apos;s Gemini API for
+                category breakdowns) is sent to Anthropic&apos;s API for
                 processing.
               </li>
               <li>
-                This feature requires your <strong className="text-[var(--foreground)]">explicit opt-in consent</strong>,
-                which can be granted or revoked at any time in the Settings page.
+                AI features can be disabled at any time in the Settings page.
               </li>
               <li>
-                Google&apos;s data processing terms apply to data sent to Gemini.
+                Anthropic&apos;s data processing terms apply to data sent to Claude.
                 See{" "}
                 <a
-                  href="https://ai.google.dev/gemini-api/terms"
+                  href="https://www.anthropic.com/policies/terms-of-service"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--primary)] hover:underline"
                 >
-                  Google Gemini API Terms
+                  Anthropic Terms of Service
                 </a>.
               </li>
               <li>
-                When Gemini is not enabled, all AI processing happens locally
-                via Ollama and no financial data leaves your machine.
+                For self-managed deployments, local AI via Ollama is available
+                as an alternative where no financial data leaves your machine.
               </li>
             </ul>
           </section>
@@ -255,11 +299,25 @@ export default function PrivacyPolicy() {
               Cookies
             </h2>
             <p>
-              The Finsava application uses a single httpOnly authentication cookie
-              to maintain your login session. We do not use tracking cookies,
-              analytics cookies, advertising cookies, or third-party cookies.
-              The finsava.com landing page uses only essential cookies set by
-              our hosting provider (Vercel).
+              The Finsava application uses the following cookies:
+            </p>
+            <ul className="mt-2 list-disc space-y-1 pl-6">
+              <li>
+                <strong className="text-[var(--foreground)]">finapp_token</strong> —
+                httpOnly authentication cookie for your login session. Cannot be
+                read by JavaScript.
+              </li>
+              <li>
+                <strong className="text-[var(--foreground)]">finapp_viewing_as</strong> —
+                httpOnly cookie used when viewing a shared account. Set only when
+                the account sharing feature is active. Contains only the numeric
+                user ID of the account being viewed.
+              </li>
+            </ul>
+            <p className="mt-3">
+              We do not use tracking cookies, analytics cookies, advertising
+              cookies, or third-party cookies. The finsava.com landing page uses
+              only essential cookies set by our hosting provider (Vercel).
             </p>
           </section>
 
@@ -355,8 +413,8 @@ export default function PrivacyPolicy() {
             <p>
               Finsava is built with a privacy-first architecture. All data is
               encrypted in transit and at rest. Bank credentials are encrypted
-              at rest. AI processing uses Google Gemini with your explicit
-              consent; self-managed deployments can use local AI via Ollama.
+              at rest. AI processing uses Claude (Anthropic); self-managed
+              deployments can use local AI via Ollama.
             </p>
           </section>
 

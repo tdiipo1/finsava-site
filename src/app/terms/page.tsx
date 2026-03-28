@@ -135,18 +135,36 @@ export default function TermsOfService() {
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Pro ($9.99/mo):</strong>{" "}
-                Everything in Basic plus AI assistant (Gemini), financial planning
+                Everything in Basic plus AI assistant (Claude), financial planning
                 (FIRE, savings, debt), investment tracking, net worth tracking,
                 forecasting, multi-currency, and priority support.
               </li>
             </ul>
             <p className="mt-3">
-              Billing is recurring at the interval selected at checkout. You may
-              cancel at any time; cancellation takes effect at the end of the
-              current billing period. We do not offer refunds for partial billing
-              periods. We reserve the right to change pricing with 30 days&apos;
-              notice to existing subscribers. If payment fails, your account may
-              be downgraded after a 7-day grace period.
+              <strong className="text-[var(--foreground)]">Free Trial:</strong>{" "}
+              New accounts receive a 14-day free trial of the Pro plan. During
+              the trial, all Pro features are unlocked at no charge. After the
+              trial ends, your account reverts to the Basic plan unless you
+              subscribe. No credit card is required to start the trial.
+            </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">Auto-Renewal:</strong>{" "}
+              Paid subscriptions automatically renew at the end of each billing
+              period (monthly) at the then-current price. You will be charged
+              on the same date each month using the payment method on file.
+              You may cancel your subscription at any time through your account
+              settings or by contacting support; cancellation takes effect at
+              the end of the current billing period and you will not be charged
+              again. We do not offer refunds for partial billing periods. We
+              reserve the right to change pricing with 30 days&apos; notice to
+              existing subscribers. If payment fails, your account may be
+              downgraded after a 7-day grace period.
+            </p>
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              California residents: Under California Business and Professions
+              Code Section 17602, you have the right to cancel your subscription
+              at any time. You will receive a confirmation of your cancellation.
+              For questions, contact support@finsava.com.
             </p>
           </section>
 
@@ -158,7 +176,7 @@ export default function TermsOfService() {
             <p>When using the finsava.com website or interacting with our services, you agree not to:</p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                Submit false information through the waitlist or contact forms.
+                Submit false information through registration or contact forms.
               </li>
               <li>
                 Attempt to disrupt or interfere with the finsava.com website.
@@ -233,8 +251,21 @@ export default function TermsOfService() {
               We do not guarantee the accuracy, completeness, or reliability of
               any data, calculations, AI recommendations, forecasts, or
               financial analyses provided by Finsava. Transaction data imported
-              via bank sync (SimpleFin) is provided by third-party financial
-              institutions and may contain errors or omissions.
+              via bank sync (SimpleFin or Plaid) is provided by third-party financial
+              institutions and may contain errors or omissions. Transaction data
+              is periodically synced and may not reflect real-time bank account
+              activity; there may be a delay between bank-side changes (such as
+              pending-to-posted adjustments or transaction removals) and their
+              reflection in Finsava.
+            </p>
+            <p className="mt-3">
+              When multi-currency display is enabled, transaction amounts and account
+              balances may be converted to your preferred display currency using
+              European Central Bank daily reference rates. These converted amounts
+              are <strong className="text-[var(--foreground)]">indicative only</strong> and
+              should not be relied upon for actual currency transactions, tax reporting,
+              or financial decisions. The conversion rate applied by your bank for real
+              transactions may differ materially from the ECB reference rate displayed.
             </p>
             <p className="mt-3">
               For self-managed deployments: you are solely responsible for
@@ -246,6 +277,31 @@ export default function TermsOfService() {
               backup and recovery procedures, we do not guarantee against data
               loss. You are encouraged to regularly export your data using the
               built-in export feature.
+            </p>
+          </section>
+
+          {/* Service Improvement and Aggregated Data */}
+          <section>
+            <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
+              Service Improvement and Aggregated Data
+            </h2>
+            <p>
+              To improve categorization accuracy for all users, Finsava may use{" "}
+              <strong className="text-[var(--foreground)]">anonymized, aggregated</strong>{" "}
+              transaction description data to train machine learning models. This
+              data contains only merchant/payee names and spending category labels.
+              It does not contain your name, email, account numbers, transaction
+              amounts, account balances, or any other personally identifiable
+              information. A minimum of two distinct users must independently
+              categorize the same merchant before any data point enters the
+              aggregated training set. You may opt out of contributing to the
+              aggregated model by contacting support@finsava.com.
+            </p>
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              Legal basis under GDPR: legitimate interest (Art. 6(1)(f)) in
+              improving service quality for all users. The processing involves
+              only anonymized, aggregated data that cannot reasonably be used to
+              identify any individual user.
             </p>
           </section>
 
@@ -312,21 +368,26 @@ export default function TermsOfService() {
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Plaid</strong>{" "}
-                — Bank account synchronization (alternative provider). Your bank
-                data passes through Plaid&apos;s servers. See{" "}
+                — Bank account connection and transaction data retrieval. Your bank
+                login credentials are entered directly into Plaid&apos;s secure interface
+                and never touch Finsava&apos;s servers. Finsava receives only transaction
+                data (dates, amounts, descriptions, merchant names), account metadata
+                (account name, type, balance), and institution information. Transaction
+                data is periodically synced, not real-time; there may be a delay between
+                bank-side changes and their reflection in Finsava. See{" "}
                 <a
-                  href="https://plaid.com/legal/"
+                  href="https://plaid.com/legal/end-user-privacy-policy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--primary)] hover:underline"
                 >
-                  Plaid&apos;s Privacy Policy
+                  Plaid&apos;s End User Privacy Policy
                 </a>.
               </li>
               <li>
-                <strong className="text-[var(--foreground)]">Google Gemini</strong>{" "}
-                — Optional cloud AI assistant (requires explicit opt-in). Financial
-                context is sent to Google&apos;s servers when enabled.
+                <strong className="text-[var(--foreground)]">Claude AI (Anthropic)</strong>{" "}
+                — Cloud AI assistant for financial analysis. Financial
+                context is sent to Anthropic&apos;s servers for processing.
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Ollama</strong>{" "}
@@ -335,6 +396,15 @@ export default function TermsOfService() {
               <li>
                 <strong className="text-[var(--foreground)]">Resend</strong>{" "}
                 — Password reset and notification emails.
+              </li>
+              <li>
+                <strong className="text-[var(--foreground)]">European Central Bank / frankfurter.app</strong>{" "}
+                — Exchange rate data for multi-currency display. Daily reference rates
+                are used for indicative currency conversion of transaction amounts and
+                account balances. ECB rates are reference rates published for informational
+                purposes and are not suitable for actual currency transactions. Real-time
+                market rates may differ materially. Rates may be delayed 1-2 business days
+                due to weekends and market holidays.
               </li>
             </ul>
             <p className="mt-3">

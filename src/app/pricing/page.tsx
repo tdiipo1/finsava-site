@@ -20,7 +20,7 @@ const basicFeatures = [
 
 const proFeatures = [
   "Everything in Basic, plus:",
-  "AI Assistant (Gemini)",
+  "AI Assistant (Claude)",
   "Financial planning (FIRE, savings, debt)",
   "Investment tracking",
   "Savings goals",
@@ -69,12 +69,10 @@ export default function PricingPage() {
               Pricing
             </a>
             <a
-              href="https://github.com/tdiipo1/Finsava"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#waitlist"
               className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 transition-colors"
             >
-              Get Started
+              Join Waitlist
             </a>
           </div>
         </div>
@@ -162,7 +160,7 @@ export default function PricingPage() {
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
               question="What does Pro add over Basic?"
-              answer="Pro unlocks the full suite: AI assistant powered by Gemini, financial planning tools (FIRE calculator, savings goals, debt payoff), investment tracking, net worth tracking, forecasting and analytics, transfer detection, multi-currency support (18 currencies), filter rules, and merchant cleanup. Basic covers core budgeting; Pro is the complete financial toolkit."
+              answer="Pro unlocks the full suite: AI assistant powered by Claude, financial planning tools (FIRE calculator, savings goals, debt payoff), investment tracking, net worth tracking, forecasting and analytics, transfer detection, multi-currency support (18 currencies), filter rules, and merchant cleanup. Basic covers core budgeting; Pro is the complete financial toolkit."
             />
             <FaqItem
               question="Can I switch between tiers?"
@@ -170,7 +168,7 @@ export default function PricingPage() {
             />
             <FaqItem
               question="When will Basic and Pro launch?"
-              answer="We're building billing infrastructure now. Join the waitlist and you'll be the first to know when both tiers are available."
+              answer="Both tiers are available now. Sign up for a 14-day free trial of Pro — no credit card required. After the trial, choose Basic ($4.99/mo) or Pro ($9.99/mo)."
             />
           </div>
         </div>

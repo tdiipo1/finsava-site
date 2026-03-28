@@ -18,6 +18,14 @@ interface BlogPost {
 const posts: BlogPost[] = [
   // Posts are defined here. Add new posts at the top.
   // When you write a post, create a file at /blog/[slug]/page.tsx and add the entry here.
+  {
+    slug: "finsava-vs-copilot-money",
+    title: "Finsava vs Copilot Money: An Honest Comparison",
+    description:
+      "A detailed, factual comparison of pricing, features, bank sync, AI categorization, FIRE planning, and more. Same price, different strengths.",
+    date: "2026-03-25",
+    tags: ["comparison", "copilot money", "personal finance"],
+  },
 ];
 
 export default function BlogIndex() {
