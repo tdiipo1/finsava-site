@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Blog — Finsava",
@@ -19,6 +21,30 @@ const posts: BlogPost[] = [
   // Posts are defined here. Add new posts at the top.
   // When you write a post, create a file at /blog/[slug]/page.tsx and add the entry here.
   {
+    slug: "fire-calculator-monte-carlo",
+    title: "Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)",
+    description:
+      "Most FIRE calculators use a single growth rate. Real markets don't work that way. See how Monte Carlo simulation gives you a realistic range of retirement outcomes.",
+    date: "2026-03-29",
+    tags: ["FIRE", "monte carlo", "retirement planning"],
+  },
+  {
+    slug: "hosting-fintech-7-dollars",
+    title: "How We Run a Full-Stack Fintech App for $7/Month",
+    description:
+      "AI categorization, bank sync, Monte Carlo simulations, and a full Next.js + FastAPI stack — all on a $7/month VPS. Here's the architecture.",
+    date: "2026-03-29",
+    tags: ["engineering", "hosting", "indie hacker"],
+  },
+  {
+    slug: "budget-visualization-vs-ynab",
+    title: "Budget Visualization That Makes YNAB Look Like a Spreadsheet",
+    description:
+      "Interactive bar charts, donut views, YTD sparklines, and 4 AI budget profiles. A side-by-side look at how Finsava reimagines budget visualization.",
+    date: "2026-03-29",
+    tags: ["comparison", "YNAB", "budgeting"],
+  },
+  {
     slug: "finsava-vs-copilot-money",
     title: "Finsava vs Copilot Money: An Honest Comparison",
     description:
@@ -32,28 +58,7 @@ export default function BlogIndex() {
   return (
     <div className="min-h-screen">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-7 w-7" />
-            <span className="text-xl font-bold">Finsava</span>
-          </Link>
-          <div className="hidden items-center gap-8 sm:flex">
-            <Link href="/#features" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Features
-            </Link>
-            <Link href="/pricing" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Pricing
-            </Link>
-            <Link href="/changelog" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Changelog
-            </Link>
-            <Link href="/blog" className="text-sm text-white font-medium transition-colors">
-              Blog
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteNav current="Blog" />
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
@@ -118,18 +123,7 @@ export default function BlogIndex() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] py-8 px-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-5 w-5" />
-            <span className="font-semibold">Finsava</span>
-          </Link>
-          <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

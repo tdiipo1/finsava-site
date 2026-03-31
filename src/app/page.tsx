@@ -1,45 +1,13 @@
 import SocialProof from "@/components/SocialProof";
 import WaitlistSection from "@/components/WaitlistSection";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 
 export default async function Home() {
   return (
     <div className="min-h-screen">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-7 w-7" />
-            <span className="text-xl font-bold">Finsava</span>
-          </div>
-          <div className="hidden items-center gap-8 sm:flex">
-            <a href="#features" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Features
-            </a>
-            <a href="#how-it-works" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              How It Works
-            </a>
-            <a href="#security" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Security
-            </a>
-            <a href="/pricing" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Pricing
-            </a>
-            <a href="/changelog" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Changelog
-            </a>
-            <a href="/blog" className="text-sm text-[var(--muted)] hover:text-white transition-colors">
-              Blog
-            </a>
-            <a
-              href="#waitlist"
-              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 transition-colors"
-            >
-              Join Waitlist
-            </a>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* Hero */}
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
@@ -49,7 +17,7 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            20+ features &middot; AI-powered &middot; Privacy-first
+            25+ features &middot; AI-powered &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Plan your path to
@@ -59,9 +27,9 @@ export default async function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            FIRE planning, smart budgeting, bank sync from 12,000+ institutions,
-            AI-powered insights, investment tracking, and anomaly detection &mdash;
-            all in one privacy-first platform.
+            See exactly when you can retire. Know where every dollar goes.
+            Connect your bank, and your finances organize themselves &mdash;
+            automatically. From $4.99/mo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -91,7 +59,7 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">20+ modular features. Enable what you want, disable what you don&apos;t.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">25+ modular features. Enable what you want, disable what you don&apos;t.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
@@ -122,8 +90,8 @@ export default async function Home() {
             />
             <FeatureCard
               icon="🔥"
-              title="Financial Planning"
-              description="FIRE calculator with inflation adjustment and milestone tracking. Savings projection with impact analysis. Debt payoff strategy comparison (avalanche vs. snowball)."
+              title="FIRE Planning + Monte Carlo"
+              description="Run 1,000 retirement simulations with a stochastic fan chart. Withdrawal rate sensitivity table. Coast FIRE, Lean FIRE, inflation adjustment. Debt payoff comparison (avalanche vs. snowball)."
             />
             <FeatureCard
               icon="💹"
@@ -210,17 +178,19 @@ export default async function Home() {
               <tbody className="text-center">
                 {[
                   ["Bank Sync (Plaid + SimpleFin)", true, true, true, true],
-                  ["Net Worth Tracking", true, true, true, true],
                   ["AI-Powered Categorization", true, false, true, true],
+                  ["Monte Carlo FIRE Simulation (1,000 runs)", true, false, false, false],
+                  ["Interactive Budget Charts (bar + donut + YTD)", true, false, false, true],
+                  ["AI Budget Suggestions (4 profiles)", true, false, false, false],
+                  ["Bulk Transaction Editing", true, false, false, false],
+                  ["Financial Health Score (5 components)", true, false, false, false],
+                  ["Multi-Currency (18 currencies, ECB rates)", true, true, false, false],
+                  ["Learns From Your Corrections", true, false, false, false],
                   ["Investment Tracking", true, false, true, true],
-                  ["Multi-Currency Support", true, true, true, false],
-                  ["Budget Suggestions", true, true, false, false],
-                  ["Learns Your Spending Patterns", true, false, false, false],
-                  ["Shared Intelligence Across Users", true, false, false, false],
-                  ["Financial Health Score", true, false, false, false],
-                  ["FIRE + Debt Payoff Planning", true, false, false, false],
-                  ["Transfer Detection", true, false, false, false],
+                  ["Transfer Auto-Detection", true, false, false, true],
                   ["Anomaly Detection", true, false, false, false],
+                  ["FIRE + Debt Payoff Planning", true, false, false, false],
+                  ["Net Worth Tracking", true, true, true, true],
                 ].map(([feature, ...supported]) => (
                   <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
                     <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
@@ -250,18 +220,23 @@ export default async function Home() {
           <div className="space-y-12">
             <Step
               number="1"
-              title="Create Your Account"
-              description="Sign up in seconds. Pick the features you want from 20+ modular options, or start with everything."
+              title="Sign Up (30 seconds)"
+              description="Start a 14-day free trial of Pro — no credit card required. Pick the features you want from 25+ modular options, or start with everything."
             />
             <Step
               number="2"
-              title="Connect Your Bank"
-              description="Connect your bank instantly via Plaid (12,000+ institutions) or SimpleFin. Or upload a CSV, or try with sample data to explore."
+              title="Connect All Your Banks (1 minute)"
+              description="One click to connect via Plaid (12,000+ institutions) or SimpleFin. AI categorizes every transaction automatically — zero manual work."
             />
             <Step
               number="3"
-              title="Get Insights"
-              description="AI-powered categorization, anomaly detection, health scoring, smart budget suggestions, multi-currency support, and FIRE planning — all working from day one."
+              title="Explore Your Finances (5 minutes)"
+              description="Interactive budget charts show where your money goes. Switch between 4 AI-generated budget profiles. Run 1,000 Monte Carlo retirement simulations. Check your health score across 5 dimensions."
+            />
+            <Step
+              number="4"
+              title="Watch It Get Smarter (Day 7)"
+              description="Finsava learns from your corrections. Health score trends show your first week of progress. Dashboard tells you exactly what changed in your spending."
             />
           </div>
         </div>
@@ -315,10 +290,10 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📡</div>
-              <h3 className="font-semibold text-lg">Zero Telemetry</h3>
+              <h3 className="font-semibold text-lg">No Data Selling</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                No analytics trackers, no tracking cookies, no third-party data collection.
-                We don&apos;t sell or share your personal information.
+                No tracking cookies, no third-party ad trackers. We use anonymous page-view
+                analytics only. We never sell or share your personal or financial information.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
@@ -347,7 +322,7 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">632 Automated Tests</h3>
+              <h3 className="font-semibold text-lg">623 Automated Tests</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
                 sync, imports, transfer detection, tier enforcement, and more.
@@ -360,68 +335,7 @@ export default async function Home() {
       {/* CTA */}
       <WaitlistSection />
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] py-8 px-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-5 w-5" />
-            <span className="font-semibold">Finsava</span>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <Link
-              href="/privacy"
-              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/privacy#ccpa"
-              className="text-sm text-[var(--muted)] hover:text-white transition-colors"
-            >
-              Do Not Sell My Info
-            </Link>
-          </div>
-          <div className="flex items-center gap-4">
-            {/* X/Twitter */}
-            <a href="https://x.com/finsava" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="X / Twitter">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            {/* YouTube */}
-            <a href="https://www.youtube.com/@finsava" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="YouTube">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/company/112999140" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="LinkedIn">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            {/* Substack */}
-            <a href="https://substack.com/@finsava" target="_blank" rel="noopener noreferrer"
-              className="text-[var(--muted)] hover:text-white transition-colors" aria-label="Substack">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-              </svg>
-            </a>
-          </div>
-          <p className="text-sm text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Finsava. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

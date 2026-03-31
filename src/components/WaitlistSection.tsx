@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function WaitlistSection() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "duplicate">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -63,22 +64,36 @@ export default function WaitlistSection() {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-10 flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              required
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-4 py-3 text-white placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
-            />
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="whitespace-nowrap rounded-xl bg-[var(--primary)] px-8 py-3 font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors disabled:opacity-60"
-            >
-              {status === "loading" ? "Joining..." : "Join Waitlist"}
-            </button>
+          <form onSubmit={handleSubmit} className="mt-10 max-w-md mx-auto space-y-3">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-4 py-3 text-white placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading" || !consent}
+                className="whitespace-nowrap rounded-xl bg-[var(--primary)] px-8 py-3 font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors disabled:opacity-60"
+              >
+                {status === "loading" ? "Joining..." : "Join Waitlist"}
+              </button>
+            </div>
+            <label className="flex items-start gap-2 text-left cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-[var(--card-border)] accent-[var(--primary)]"
+              />
+              <span className="text-xs text-[var(--muted)]">
+                I agree to receive product updates from Finsava. View our{" "}
+                <a href="/privacy" className="underline hover:text-white transition-colors">Privacy Policy</a>.
+              </span>
+            </label>
           </form>
         )}
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Changelog — Finsava",
@@ -88,25 +90,7 @@ export default async function ChangelogPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-7 w-7" />
-            <span className="text-xl font-bold">Finsava</span>
-          </Link>
-          <div className="hidden items-center gap-8 sm:flex">
-            <a href="/#features" className="text-sm text-[var(--muted)] hover:text-white transition-colors">Features</a>
-            <a href="/#how-it-works" className="text-sm text-[var(--muted)] hover:text-white transition-colors">How It Works</a>
-            <a href="/pricing" className="text-sm text-[var(--muted)] hover:text-white transition-colors">Pricing</a>
-            <span className="text-sm text-white font-medium">Changelog</span>
-            <a href="https://github.com/tdiipo1/Finsava" target="_blank" rel="noopener noreferrer"
-              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 transition-colors">
-              Get Started
-            </a>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* Header */}
       <section className="pt-32 pb-12 px-6 text-center">
@@ -162,15 +146,7 @@ export default async function ChangelogPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] py-8 px-6">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Finsava" className="h-5 w-5" />
-            <span className="font-semibold">Finsava</span>
-          </Link>
-          <p className="text-sm text-[var(--muted)]">&copy; {new Date().getFullYear()} Finsava</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
