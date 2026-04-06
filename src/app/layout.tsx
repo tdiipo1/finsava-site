@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   description: siteDescription,
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", type: "image/png" },
     ],
-    apple: "/favicon.svg",
+    apple: "/logo.png",
   },
   keywords: [
     "personal finance",
