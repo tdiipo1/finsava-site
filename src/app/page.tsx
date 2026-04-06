@@ -163,7 +163,7 @@ export default async function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Why Finsava?</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">Features you won&apos;t find anywhere else.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">The features that matter, at a fraction of the price.</p>
           </div>
           <ComparisonTable />
           <div className="mt-8 text-center">
