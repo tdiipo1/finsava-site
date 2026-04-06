@@ -158,7 +158,9 @@ export default function TermsOfService() {
               again. We do not offer refunds for partial billing periods. We
               reserve the right to change pricing with 30 days&apos; notice to
               existing subscribers. If payment fails, your account may be
-              downgraded after a 7-day grace period.
+              downgraded after a 7-day grace period. Payments are processed by
+              Stripe, Inc. Your payment information is handled directly by Stripe
+              and is never stored on Finsava&apos;s servers.
             </p>
             <p className="mt-3 text-sm text-[var(--muted)]">
               California residents: Under California Business and Professions

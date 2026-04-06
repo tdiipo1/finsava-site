@@ -130,7 +130,7 @@ export default function PricingPage() {
             />
             <FaqItem
               question="When will Basic and Pro launch?"
-              answer="Both tiers are available now. Sign up for a 14-day free trial of Pro — no credit card required. After the trial, choose Basic ($4.99/mo) or Pro ($9.99/mo)."
+              answer="Both tiers will be available at launch. Join the waitlist for early access — no credit card required. At launch, choose Basic ($4.99/mo) or Pro ($9.99/mo)."
             />
           </div>
         </div>

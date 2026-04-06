@@ -75,10 +75,18 @@ export default function OGImage() {
           style={{
             fontSize: "24px",
             color: "#a1a1aa",
-            marginBottom: "40px",
+            marginBottom: "16px",
           }}
         >
-          AI-powered personal finance — smart, private, yours
+          Local AI insights. Bank sync from 12,000+ institutions. From $4.99/mo.
+        </span>
+        <span
+          style={{
+            fontSize: "18px",
+            color: "#71717a",
+          }}
+        >
+          Your data never leaves your server. Powered by Gemma 4.
         </span>
 
         {/* Bottom accent bar */}

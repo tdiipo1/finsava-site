@@ -234,8 +234,9 @@ export default function PrivacyPolicy() {
                 <strong className="text-[var(--foreground)]">Sub-processors:</strong>{" "}
                 Finsava Cloud uses the following sub-processors: cloud hosting
                 provider (for database and application hosting), Anthropic Claude
-                (cloud AI), SimpleFin (bank sync), Resend (transactional
-                emails), and Vercel (landing page hosting).
+                (cloud AI), Stripe (subscription billing &mdash; receives email,
+                name, payment method), Plaid (bank sync), SimpleFin (bank sync),
+                Resend (transactional emails), and Vercel (landing page hosting).
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Data location:</strong>{" "}

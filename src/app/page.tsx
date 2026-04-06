@@ -3,6 +3,7 @@ import WaitlistSection from "@/components/WaitlistSection";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
+import { ComparisonTable } from "@/components/ComparisonTable";
 
 export default async function Home() {
   return (
@@ -164,48 +165,15 @@ export default async function Home() {
             <h2 className="text-3xl font-bold sm:text-4xl">Why Finsava?</h2>
             <p className="mt-4 text-[var(--muted)] text-lg">Features you won&apos;t find anywhere else.</p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-[var(--card-border)]">
-                  <th className="text-left py-3 px-4 font-medium text-[var(--muted)]">Capability</th>
-                  <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">From $4.99/mo</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$14.99/mo</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$9.99/mo</span></th>
-                  <th className="py-3 px-4 font-medium text-[var(--muted)]">Copilot<br /><span className="text-xs">$9.99/mo</span></th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                {[
-                  ["Bank Sync (Plaid + SimpleFin)", true, true, true, true],
-                  ["AI-Powered Categorization", true, false, true, true],
-                  ["Monte Carlo FIRE Simulation (1,000 runs)", true, false, false, false],
-                  ["Interactive Budget Charts (bar + donut + YTD)", true, false, false, true],
-                  ["AI Budget Suggestions (4 profiles)", true, false, false, false],
-                  ["Bulk Transaction Editing", true, false, false, false],
-                  ["Financial Health Score (5 components)", true, false, false, false],
-                  ["Multi-Currency (18 currencies, ECB rates)", true, true, false, false],
-                  ["Learns From Your Corrections", true, false, false, false],
-                  ["Investment Tracking", true, false, true, true],
-                  ["Transfer Auto-Detection", true, false, false, true],
-                  ["Anomaly Detection", true, false, false, false],
-                  ["FIRE + Debt Payoff Planning", true, false, false, false],
-                  ["Net Worth Tracking", true, true, true, true],
-                ].map(([feature, ...supported]) => (
-                  <tr key={feature as string} className="border-b border-[var(--card-border)]/50">
-                    <td className="text-left py-3 px-4 text-[var(--foreground)]">{feature as string}</td>
-                    {(supported as boolean[]).map((s, i) => (
-                      <td key={i} className="py-3 px-4">
-                        {s
-                          ? <span className="text-[var(--income)] text-lg">&#10003;</span>
-                          : <span className="text-[var(--muted)] opacity-40">—</span>
-                        }
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <ComparisonTable />
+          <div className="mt-8 text-center">
+            <a
+              href="#waitlist"
+              className="inline-block rounded-xl bg-[var(--primary)] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
+            >
+              Start Your Free Trial
+            </a>
+            <p className="mt-3 text-sm text-[var(--muted)]">14-day Pro trial. No credit card required.</p>
           </div>
         </div>
       </section>
@@ -271,6 +239,87 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Bootstrapped */}
+      <section className="py-24 px-6 border-t border-[var(--card-border)]">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold sm:text-4xl">Built lean, priced fair</h2>
+            <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
+              Finsava runs on a single $7/month server. No venture funding, no pressure
+              to monetize your data. We keep costs low so you can too.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
+              <p className="text-3xl font-bold text-[var(--primary)]">$7</p>
+              <p className="text-sm text-[var(--muted)] mt-1">Monthly infrastructure cost</p>
+              <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
+                Hetzner VPS running FastAPI, Next.js, PostgreSQL, and Claude AI
+                &mdash; the entire stack on one box.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
+              <p className="text-3xl font-bold text-[var(--income)]">$0</p>
+              <p className="text-sm text-[var(--muted)] mt-1">Venture capital raised</p>
+              <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
+                100% bootstrapped. No investors to satisfy, no growth-at-all-costs
+                pressure, no reason to sell your data.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
+              <p className="text-3xl font-bold text-[var(--foreground)]">$4.99</p>
+              <p className="text-sm text-[var(--muted)] mt-1">Your cost (Basic plan)</p>
+              <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
+                When your infrastructure cost is $7, you can price honestly. Compare:
+                YNAB $14.99, Monarch $9.99, Copilot $9.99.
+                <span className="block mt-1 opacity-70">Competitor pricing as of March 2026.</span>
+              </p>
+            </div>
+          </div>
+          <p className="mt-8 text-center text-sm text-[var(--muted)]">
+            Read the full breakdown:{" "}
+            <a href="/blog/hosting-fintech-7-dollars" className="text-[var(--primary)] hover:underline">
+              How We Run a Full-Stack Fintech App for $7/Month
+            </a>
+          </p>
+          <div className="mt-6 text-center">
+            <a
+              href="#waitlist"
+              className="inline-block rounded-xl bg-[var(--primary)] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-colors"
+            >
+              Join the Waitlist
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest from the Blog */}
+      <section className="py-24 px-6 border-t border-[var(--card-border)]">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold sm:text-4xl">From the blog</h2>
+            <p className="mt-4 text-[var(--muted)] text-lg">Deep dives on how Finsava works.</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <Link href="/blog/hosting-fintech-7-dollars" className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 hover:border-[var(--muted)] transition-colors">
+              <p className="text-sm text-[var(--primary)] mb-2">Infrastructure</p>
+              <h3 className="font-semibold text-lg">How We Run a Full-Stack Fintech App for $7/Month</h3>
+              <p className="mt-2 text-sm text-[var(--muted)]">FastAPI, Next.js, PostgreSQL, Claude AI, and Ollama — all on a single $7/month VPS.</p>
+            </Link>
+            <Link href="/blog/fire-calculator-monte-carlo" className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 hover:border-[var(--muted)] transition-colors">
+              <p className="text-sm text-[var(--primary)] mb-2">FIRE Planning</p>
+              <h3 className="font-semibold text-lg">Monte Carlo FIRE Calculator: 1,000 Retirement Simulations</h3>
+              <p className="mt-2 text-sm text-[var(--muted)]">Log-normal returns, SWR sensitivity, and stress testing with your real bank data.</p>
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/blog" className="text-sm text-[var(--primary)] hover:underline">
+              View all posts &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Security & Transparency */}
       <section id="security" className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-4xl text-center">
@@ -322,7 +371,7 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">623 Automated Tests</h3>
+              <h3 className="font-semibold text-lg">769 Automated Tests</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
                 sync, imports, transfer detection, tier enforcement, and more.
