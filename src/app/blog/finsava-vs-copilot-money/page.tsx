@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
+import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
   title: "Finsava vs Copilot Money (2026) — Honest Feature Comparison",
@@ -44,6 +46,7 @@ export default function FinsavaVsCopilotMoney() {
       {/* Article */}
       <article className="mx-auto max-w-3xl px-6 pt-28 pb-24">
         <header className="mb-12">
+          <BlogHeader category="Comparison" />
           <p className="text-sm text-[var(--muted)] mb-2">March 25, 2026</p>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
             Finsava vs Copilot Money: An Honest Comparison
@@ -261,6 +264,10 @@ export default function FinsavaVsCopilotMoney() {
           </Link>
           <p className="mt-3 text-sm text-[var(--muted)]">Be first to know when Finsava launches.</p>
         </div>
+        <ShareButtons
+          slug="finsava-vs-copilot-money"
+          title="Finsava vs Copilot Money: An Honest Comparison"
+        />
       </article>
 
       {/* Footer */}

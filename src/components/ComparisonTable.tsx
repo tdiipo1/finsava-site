@@ -43,9 +43,37 @@ export function ComparisonTable() {
     </tr>
   );
 
+  const competitors = ["YNAB", "Monarch", "Copilot"];
+  const renderCard = ([feature, finsava, ...rest]: (string | boolean)[]) => (
+    <div key={feature as string} className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-4">
+      <p className="text-sm font-medium text-[var(--foreground)] mb-2">{feature as string}</p>
+      <div className="grid grid-cols-2 gap-2 text-xs">
+        <div className="flex items-center gap-1.5">
+          <span className="font-semibold text-[var(--foreground)]">Finsava</span>
+          {finsava === "partial"
+            ? <span className="text-yellow-500">Limited</span>
+            : finsava
+              ? <span className="text-[var(--income)]">&#10003;</span>
+              : <span className="text-[var(--muted)] opacity-40">&mdash;</span>}
+        </div>
+        {(rest as (boolean | string)[]).map((val, i) => (
+          <div key={i} className="flex items-center gap-1.5">
+            <span className="text-[var(--muted)]">{competitors[i]}</span>
+            {val === "partial"
+              ? <span className="text-yellow-500">Limited</span>
+              : val
+                ? <span className="text-[var(--income)]">&#10003;</span>
+                : <span className="text-[var(--muted)] opacity-40">&mdash;</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <div>
-      <div className="overflow-x-auto">
+      {/* Desktop / tablet table */}
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-[var(--card-border)]">
@@ -61,6 +89,17 @@ export function ComparisonTable() {
             {expanded && MORE_FEATURES.map(renderRow)}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile card layout */}
+      <div className="md:hidden space-y-3">
+        <div className="text-center mb-2">
+          <p className="text-xs text-[var(--muted)]">
+            <span className="font-semibold text-[var(--income)]">Finsava from $4.99/mo</span> &middot; competitors $14.99/mo
+          </p>
+        </div>
+        {TOP_FEATURES.map(renderCard)}
+        {expanded && MORE_FEATURES.map(renderCard)}
       </div>
 
       {!expanded && (

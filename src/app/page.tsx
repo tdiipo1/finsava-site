@@ -4,8 +4,10 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 import { ComparisonTable } from "@/components/ComparisonTable";
+import { getLatestPosts } from "@/lib/blog-posts";
 
 export default async function Home() {
+  const latestPosts = getLatestPosts(2);
   return (
     <div className="min-h-screen">
       <SiteNav />
@@ -301,16 +303,17 @@ export default async function Home() {
             <p className="mt-4 text-[var(--muted)] text-lg">Deep dives on how Finsava works.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
-            <Link href="/blog/hosting-fintech-7-dollars" className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 hover:border-[var(--muted)] transition-colors">
-              <p className="text-sm text-[var(--primary)] mb-2">Infrastructure</p>
-              <h3 className="font-semibold text-lg">How We Run a Full-Stack Fintech App for $7/Month</h3>
-              <p className="mt-2 text-sm text-[var(--muted)]">FastAPI, Next.js, PostgreSQL, Claude AI, and Ollama — all on a single $7/month VPS.</p>
-            </Link>
-            <Link href="/blog/fire-calculator-monte-carlo" className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 hover:border-[var(--muted)] transition-colors">
-              <p className="text-sm text-[var(--primary)] mb-2">FIRE Planning</p>
-              <h3 className="font-semibold text-lg">Monte Carlo FIRE Calculator: 1,000 Retirement Simulations</h3>
-              <p className="mt-2 text-sm text-[var(--muted)]">Log-normal returns, SWR sensitivity, and stress testing with your real bank data.</p>
-            </Link>
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 hover:border-[var(--muted)] transition-colors"
+              >
+                <p className="text-sm text-[var(--primary)] mb-2">{post.category}</p>
+                <h3 className="font-semibold text-lg">{post.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{post.description}</p>
+              </Link>
+            ))}
           </div>
           <div className="mt-6 text-center">
             <Link href="/blog" className="text-sm text-[var(--primary)] hover:underline">

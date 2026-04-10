@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/*
+  Brand color contract — values mirror the Finsava app (frontend/src/app/globals.css).
+  App uses HSL components (shadcn/ui requirement); site uses hex (no shadcn here).
+  Visual values are identical:
+    --primary  #3b82f6 == hsl(221.2 83.2% 53.3%)
+    --income   #22c55e == hsl(142.1 76.2% 36.3%)
+    --expense  #ef4444 == hsl(0 84.2% 60.2%)
+  Update both repos together when changing brand colors.
+*/
 :root {
   --background: #09090b;
   --foreground: #fafafa;

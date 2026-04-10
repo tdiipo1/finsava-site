@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { getSortedPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog — Finsava",
@@ -9,50 +10,7 @@ export const metadata: Metadata = {
     "Articles about personal finance, AI-powered budgeting, and building Finsava in public.",
 };
 
-interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  tags: string[];
-}
-
-const posts: BlogPost[] = [
-  // Posts are defined here. Add new posts at the top.
-  // When you write a post, create a file at /blog/[slug]/page.tsx and add the entry here.
-  {
-    slug: "fire-calculator-monte-carlo",
-    title: "Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)",
-    description:
-      "Most FIRE calculators use a single growth rate. Real markets don't work that way. See how Monte Carlo simulation gives you a realistic range of retirement outcomes.",
-    date: "2026-03-29",
-    tags: ["FIRE", "monte carlo", "retirement planning"],
-  },
-  {
-    slug: "hosting-fintech-7-dollars",
-    title: "How We Run a Full-Stack Fintech App for $7/Month",
-    description:
-      "AI categorization, bank sync, Monte Carlo simulations, and a full Next.js + FastAPI stack — all on a $7/month VPS. Here's the architecture.",
-    date: "2026-03-29",
-    tags: ["engineering", "hosting", "indie hacker"],
-  },
-  {
-    slug: "budget-visualization-vs-ynab",
-    title: "Budget Visualization That Makes YNAB Look Like a Spreadsheet",
-    description:
-      "Interactive bar charts, donut views, YTD sparklines, and 4 AI budget profiles. A side-by-side look at how Finsava reimagines budget visualization.",
-    date: "2026-03-29",
-    tags: ["comparison", "YNAB", "budgeting"],
-  },
-  {
-    slug: "finsava-vs-copilot-money",
-    title: "Finsava vs Copilot Money: An Honest Comparison",
-    description:
-      "A detailed, factual comparison of pricing, features, bank sync, AI categorization, FIRE planning, and more. Same price, different strengths.",
-    date: "2026-03-25",
-    tags: ["comparison", "copilot money", "personal finance"],
-  },
-];
+const posts = getSortedPosts();
 
 export default function BlogIndex() {
   return (
@@ -62,11 +20,25 @@ export default function BlogIndex() {
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-        <h1 className="text-4xl font-bold sm:text-5xl">Blog</h1>
-        <p className="mt-4 text-lg text-[var(--muted)]">
-          Building Finsava in public — personal finance, AI-powered budgeting,
-          and the journey from side project to product.
-        </p>
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <h1 className="text-4xl font-bold sm:text-5xl">Blog</h1>
+            <p className="mt-4 text-lg text-[var(--muted)]">
+              Building Finsava in public — personal finance, AI-powered budgeting,
+              and the journey from side project to product.
+            </p>
+          </div>
+          <a
+            href="/blog/rss.xml"
+            className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-3 py-1.5 text-xs text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+            aria-label="Subscribe via RSS"
+          >
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248S0 22.546 0 20.752s1.456-3.248 3.252-3.248 3.251 1.454 3.251 3.248zM1.677 6.462v4.423c7.13 0 12.93 5.808 12.93 12.93h4.43c0-9.572-7.792-17.353-17.36-17.353zm0-8.462v4.423c12.74 0 23.105 10.351 23.105 23.105H29.21C29.21 9.18 16.866-3.165 1.677-3.165z" transform="scale(0.83)" />
+            </svg>
+            RSS
+          </a>
+        </div>
 
         <div className="mt-12 space-y-8">
           {posts.length === 0 ? (

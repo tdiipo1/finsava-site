@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
+import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
   title: "Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)",
@@ -27,6 +29,7 @@ export default function FireCalculatorMonteCarloPost() {
       </Link>
 
       <article className="mt-8 prose prose-invert max-w-none">
+        <BlogHeader category="FIRE Planning" />
         <h1 className="text-4xl font-bold leading-tight">
           Why Your FIRE Calculator Is Wrong
           <br />
@@ -153,6 +156,10 @@ export default function FireCalculatorMonteCarloPost() {
             professional before making retirement decisions.
           </em>
         </p>
+        <ShareButtons
+          slug="fire-calculator-monte-carlo"
+          title="Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)"
+        />
       </article>
     </main>
   );

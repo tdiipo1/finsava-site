@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
+import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
   title: "How We Run a Full-Stack Fintech App for $7/Month",
@@ -27,6 +29,7 @@ export default function HostingFintechPost() {
       </Link>
 
       <article className="mt-8 prose prose-invert max-w-none">
+        <BlogHeader category="Infrastructure" />
         <h1 className="text-4xl font-bold leading-tight">
           How We Run a Full-Stack Fintech App for $7/Month
         </h1>
@@ -154,6 +157,10 @@ export default function HostingFintechPost() {
             See Pricing
           </Link>
         </div>
+        <ShareButtons
+          slug="hosting-fintech-7-dollars"
+          title="How We Run a Full-Stack Fintech App for $7/Month"
+        />
       </article>
     </main>
   );

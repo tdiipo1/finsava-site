@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
+import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
   title: "Budget Visualization That Makes YNAB Look Like a Spreadsheet",
@@ -27,6 +29,7 @@ export default function BudgetVisualizationPost() {
       </Link>
 
       <article className="mt-8 prose prose-invert max-w-none">
+        <BlogHeader category="Comparison" />
         <h1 className="text-4xl font-bold leading-tight">
           Budget Visualization That Makes YNAB Look Like a Spreadsheet
         </h1>
@@ -147,6 +150,10 @@ export default function BudgetVisualizationPost() {
             See Pricing
           </Link>
         </div>
+        <ShareButtons
+          slug="budget-visualization-vs-ynab"
+          title="Budget Visualization That Makes YNAB Look Like a Spreadsheet"
+        />
       </article>
     </main>
   );
