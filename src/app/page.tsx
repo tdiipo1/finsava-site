@@ -72,9 +72,9 @@ export default async function Home() {
               disclaimer="AI features are for informational and educational purposes only."
             />
             <FeatureCard
-              icon="🏦"
-              title="Bank Sync"
-              description="Connect via Plaid (12,000+ banks) or SimpleFin. Staged review — nothing enters your ledger without your approval."
+              icon="🔥"
+              title="FIRE Planning Lab"
+              description="5 withdrawal strategies compared head-to-head, goal-based recommender, retirement spending smile, Social Security modeling, and historical backtesting from 1871. Connected to your real bank data."
             />
             <FeatureCard
               icon="🧠"
@@ -154,7 +154,7 @@ export default async function Home() {
             <FeatureCard
               icon="🔒"
               title="Privacy-First"
-              description="No telemetry, no tracking cookies, no selling your data. Bank credentials are encrypted at rest with AES-128. Your data is yours alone."
+              description="No telemetry, no tracking cookies, no selling your data. Bank credentials encrypted at rest with industry-standard encryption. Your data is yours alone."
             />
           </div>
         </div>
@@ -201,7 +201,7 @@ export default async function Home() {
             <Step
               number="3"
               title="Explore Your Finances (5 minutes)"
-              description="Interactive budget charts show where your money goes. Switch between 4 AI-generated budget profiles. Run 1,000 Monte Carlo retirement simulations. Check your health score across 5 dimensions."
+              description="Interactive budget charts show where your money goes. Compare 5 retirement withdrawal strategies side-by-side. Get a personalized strategy recommendation. Check your health score across 5 dimensions."
             />
             <Step
               number="4"
@@ -336,7 +336,7 @@ export default async function Home() {
               <div className="text-2xl mb-3">🔒</div>
               <h3 className="font-semibold text-lg">Encrypted at Rest</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Bank credentials encrypted with Fernet (AES-128-CBC). Passwords hashed with bcrypt.
+                Bank credentials encrypted at rest with industry-standard encryption. Passwords securely hashed.
                 All database queries scoped by user ID.
               </p>
             </div>

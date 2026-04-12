@@ -21,17 +21,17 @@ const basicFeatures = [
 ];
 
 const proFeatures = [
-  "Everything in Basic, plus:",
+  "Everything in Free, plus:",
+  "FIRE Planning Lab (5 withdrawal strategies, goal recommender)",
+  "Retirement spending smile & Social Security modeling",
+  "Historical backtest (S&P 500 from 1871)",
   "AI Assistant (Claude)",
-  "Financial planning (FIRE, savings, debt)",
-  "Investment tracking",
-  "Savings goals",
+  "Savings goals & debt payoff strategy",
   "Net worth tracking",
   "Forecasting & analytics",
-  "Transfer detection",
+  "Investment tracking",
   "Multi-currency (18 currencies)",
-  "Filter rules",
-  "Merchant cleanup",
+  "Merchant cleanup & filter rules",
   "Priority support",
 ];
 
@@ -50,7 +50,7 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-4 text-lg text-[var(--muted)] leading-relaxed">
-            Start with Basic for core budgeting or unlock the full suite with Pro.
+            Start free with core budgeting or unlock the full FIRE planning suite with Pro.
             No hidden fees, cancel anytime.
           </p>
         </div>
@@ -62,13 +62,13 @@ export default function PricingPage() {
           {/* Basic Tier */}
           <div className="flex flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold">Basic</h2>
+              <h2 className="text-2xl font-bold">Free</h2>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-bold tracking-tight">$4.99</span>
-                <span className="text-[var(--muted)]">/mo</span>
+                <span className="text-5xl font-bold tracking-tight">$0</span>
+                <span className="text-[var(--muted)]">/forever</span>
               </div>
               <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                Core budgeting, bank sync, and smart categorization.
+                Core budgeting, bank sync, and smart categorization. No credit card required.
               </p>
             </div>
 

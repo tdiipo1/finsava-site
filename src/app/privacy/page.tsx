@@ -240,9 +240,9 @@ export default function PrivacyPolicy() {
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Data location:</strong>{" "}
-                Cloud data may be stored and processed in the United States. For
-                EU users, data transfers are governed by the EU-US Data Privacy
-                Framework or Standard Contractual Clauses as applicable.
+                Cloud data may be stored and processed in the United States.
+                If you require data to remain in a specific jurisdiction,
+                please consider the self-hosted deployment option.
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Data portability:</strong>{" "}
