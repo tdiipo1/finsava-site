@@ -10,22 +10,23 @@ export const metadata: Metadata = {
 
 const basicFeatures = [
   "Budget planning",
-  "Bank sync (200+ institutions)",
+  "Bank sync via SimpleFin (200+ banks)",
   "Auto-categorize (ML-powered)",
+  "AI insights (Gemma, local)",
   "Spending reports",
   "Subscriptions & recurring detection",
   "Smart notifications",
-  "Categorization hub",
   "CSV import",
   "Email support",
 ];
 
 const proFeatures = [
   "Everything in Free, plus:",
+  "Plaid bank sync (12,000+ institutions)",
+  "AI Assistant (Claude, cloud)",
   "FIRE Planning Lab (5 withdrawal strategies, goal recommender)",
   "Retirement spending smile & Social Security modeling",
   "Historical backtest (S&P 500 from 1871)",
-  "AI Assistant (Claude)",
   "Savings goals & debt payoff strategy",
   "Net worth tracking",
   "Forecasting & analytics",
