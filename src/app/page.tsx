@@ -32,7 +32,7 @@ export default async function Home() {
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
             See exactly when you can retire. Know where every dollar goes.
             Connect your bank, and your finances organize themselves &mdash;
-            automatically. From $4.99/mo.
+            automatically. Free to start, Pro from $9.99/mo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -49,7 +49,7 @@ export default async function Home() {
             </a>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
-            Start with a 14-day free trial of Pro. Basic from $4.99/mo after.
+            Start with a 14-day free trial of Pro. Free plan available after.
           </p>
         </div>
       </section>
@@ -247,41 +247,42 @@ export default async function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold sm:text-4xl">Built lean, priced fair</h2>
             <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
-              Finsava runs on a single $7/month server. No venture funding, no pressure
-              to monetize your data. We keep costs low so you can too.
+              100% bootstrapped. No venture funding, no pressure to monetize your data.
+              We keep costs low so you can too.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
-              <p className="text-3xl font-bold text-[var(--primary)]">$7</p>
-              <p className="text-sm text-[var(--muted)] mt-1">Monthly infrastructure cost</p>
+              <p className="text-3xl font-bold text-[var(--income)]">Free</p>
+              <p className="text-sm text-[var(--muted)] mt-1">To get started</p>
               <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
-                Hetzner VPS running FastAPI, Next.js, PostgreSQL, and Claude AI
-                &mdash; the entire stack on one box.
+                Budget planning, bank sync via SimpleFin, AI insights, spending
+                reports, and subscriptions tracking &mdash; no credit card required.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
-              <p className="text-3xl font-bold text-[var(--income)]">$0</p>
+              <p className="text-3xl font-bold text-[var(--primary)]">$9.99</p>
+              <p className="text-sm text-[var(--muted)] mt-1">Pro plan</p>
+              <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
+                FIRE Planning Lab, Plaid (12,000+ banks), Claude AI Assistant,
+                analytics, and the full financial toolkit. Compare:
+                YNAB $14.99, Monarch $9.99, Copilot $9.99.
+                <span className="block mt-1 opacity-70">Competitor pricing as of March 2026.</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
+              <p className="text-3xl font-bold text-[var(--foreground)]">$0</p>
               <p className="text-sm text-[var(--muted)] mt-1">Venture capital raised</p>
               <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
                 100% bootstrapped. No investors to satisfy, no growth-at-all-costs
                 pressure, no reason to sell your data.
               </p>
             </div>
-            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
-              <p className="text-3xl font-bold text-[var(--foreground)]">$4.99</p>
-              <p className="text-sm text-[var(--muted)] mt-1">Your cost (Basic plan)</p>
-              <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
-                When your infrastructure cost is $7, you can price honestly. Compare:
-                YNAB $14.99, Monarch $9.99, Copilot $9.99.
-                <span className="block mt-1 opacity-70">Competitor pricing as of March 2026.</span>
-              </p>
-            </div>
           </div>
           <p className="mt-8 text-center text-sm text-[var(--muted)]">
             Read the full breakdown:{" "}
             <a href="/blog/hosting-fintech-7-dollars" className="text-[var(--primary)] hover:underline">
-              How We Run a Full-Stack Fintech App for $7/Month
+              How We Built a Full-Stack Fintech App on a Budget
             </a>
           </p>
           <div className="mt-6 text-center">
