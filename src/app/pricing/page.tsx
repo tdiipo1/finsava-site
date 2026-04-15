@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata: Metadata = {
   title: "Pricing — Finsava",
   description:
-    "Simple, transparent pricing. Start with Basic or unlock the full suite with Pro.",
+    "Simple, transparent pricing. Start free or unlock the full suite with Pro.",
 };
 
 const basicFeatures = [
@@ -122,16 +122,16 @@ export default function PricingPage() {
           </h2>
           <div className="mt-12 space-y-8 text-left">
             <FaqItem
-              question="What does Pro add over Basic?"
-              answer="Pro unlocks the full suite: AI assistant powered by Claude, financial planning tools (FIRE calculator, savings goals, debt payoff), investment tracking, net worth tracking, forecasting and analytics, transfer detection, multi-currency support (18 currencies), filter rules, and merchant cleanup. Basic covers core budgeting; Pro is the complete financial toolkit."
+              question="What does Pro add over Free?"
+              answer="Pro unlocks the full suite: Plaid bank sync (12,000+ institutions), Claude AI assistant, financial planning tools (FIRE Planning Lab, savings goals, debt payoff), investment tracking, net worth tracking, forecasting and analytics, multi-currency support (18 currencies), and merchant cleanup. Free covers core budgeting with SimpleFin bank sync and local Gemma AI insights; Pro is the complete financial toolkit."
             />
             <FaqItem
               question="Can I switch between tiers?"
               answer="Yes. Your data format is the same across all tiers. Upgrading instantly unlocks the additional features, and you can downgrade at any time."
             />
             <FaqItem
-              question="When will Basic and Pro launch?"
-              answer="Both tiers will be available at launch. Join the waitlist for early access — no credit card required. At launch, choose Basic ($4.99/mo) or Pro ($9.99/mo)."
+              question="When will Free and Pro launch?"
+              answer="Both tiers will be available at launch. Join the waitlist for early access — no credit card required. Free is $0 forever; Pro is $9.99/mo with a 14-day free trial."
             />
           </div>
         </div>

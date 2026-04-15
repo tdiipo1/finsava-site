@@ -263,20 +263,53 @@ export default function PrivacyPolicy() {
               Claude AI Disclosure
             </h2>
             <p>
-              Finsava uses Claude (by Anthropic) for cloud-based AI financial
-              analysis. When AI features are active:
+              Finsava uses Claude (by Anthropic) for two distinct Pro-tier features.
+              Each sends different data; the scope is different for each.
             </p>
-            <ul className="mt-3 list-disc space-y-2 pl-6">
+
+            <h3 className="mt-4 text-lg font-semibold text-[var(--foreground)]">
+              1. AI categorization (background)
+            </h3>
+            <p className="mt-2">
+              Classifies transactions. Sends only the merchant description and
+              a list of your category labels. <span className="font-semibold">No amounts,
+              no dates, no account names, no balances.</span>
+            </p>
+
+            <h3 className="mt-4 text-lg font-semibold text-[var(--foreground)]">
+              2. AI chat assistant (on-demand)
+            </h3>
+            <p className="mt-2">
+              When you open a chat with the assistant, Finsava builds a
+              financial-context summary and sends it with every message so the
+              model can give specific advice. Concretely, every chat message
+              sends:
+            </p>
+            <ul className="mt-3 list-disc space-y-1 pl-6">
+              <li>Year-to-date spending total and projected annual spending</li>
+              <li>Projected year-end spending by category (all tracked categories)</li>
+              <li>Year-to-date income, monthly income, projected annual income</li>
+              <li>Budget vs. actual for every budget you&apos;ve set</li>
+              <li>Top 15 spending categories (YTD)</li>
+              <li>Last 6 months of monthly income, expenses, and net cash flow</li>
+              <li>Projected annual savings and savings rate</li>
+              <li>Your prior messages in the current chat session</li>
+            </ul>
+            <p className="mt-3">
+              This is more than the summaries sent by the categorization pipeline
+              — it is effectively your financial profile for the current year.
+              We disclose this explicitly so you can make an informed choice. If
+              you do not want this data sent to Anthropic,{" "}
+              <span className="font-semibold">do not open the chat assistant</span>.
+              AI insights on the dashboard (which use local Gemma) are unaffected.
+            </p>
+
+            <h3 className="mt-4 text-lg font-semibold text-[var(--foreground)]">
+              Retention &amp; disabling
+            </h3>
+            <ul className="mt-2 list-disc space-y-2 pl-6">
               <li>
-                Your financial context (spending summaries, budget data, and
-                category breakdowns) is sent to Anthropic&apos;s API for
-                processing.
-              </li>
-              <li>
-                AI features can be disabled at any time in the Settings page.
-              </li>
-              <li>
-                Anthropic&apos;s data processing terms apply to data sent to Claude.
+                Anthropic&apos;s data processing terms apply to all data sent to Claude.
                 See{" "}
                 <a
                   href="https://www.anthropic.com/policies/terms-of-service"
@@ -288,8 +321,13 @@ export default function PrivacyPolicy() {
                 </a>.
               </li>
               <li>
-                For self-managed deployments, local AI via Ollama is available
-                as an alternative where no financial data leaves your machine.
+                AI chat is Pro-only and can be disabled by switching to the Free
+                tier or by simply not opening the chat panel.
+              </li>
+              <li>
+                For self-managed deployments, local AI via Ollama (Gemma 4) is
+                available as an alternative where no financial data leaves your
+                machine.
               </li>
             </ul>
           </section>
