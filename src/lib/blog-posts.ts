@@ -12,6 +12,15 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: "costco-cascade-post-mortem",
+    title: "The Bug That Re-Categorized Your Entire History (And What We Shipped to Prevent It)",
+    description:
+      "A PATCH endpoint silently cascaded category changes across every transaction matching the same merchant. One click, years of prior data rewritten. Here's the fix, the recovery tool, and the audit trail we built so it can't happen invisibly again.",
+    date: "2026-04-14",
+    tags: ["post-mortem", "incident", "engineering", "transparency"],
+    category: "Engineering",
+  },
+  {
     slug: "fire-dashboard-deep-dive",
     title: "The FIRE Dashboard That Models Your Actual Life (Not Just 4% of Your Expenses)",
     description:
