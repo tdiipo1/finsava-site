@@ -73,9 +73,9 @@ const jsonLd = {
   offers: [
     {
       "@type": "Offer",
-      price: "4.99",
+      price: "0",
       priceCurrency: "USD",
-      description: "Basic tier — monthly",
+      description: "Free tier",
     },
     {
       "@type": "Offer",

@@ -78,7 +78,7 @@ export function ComparisonTable() {
           <thead>
             <tr className="border-b border-[var(--card-border)]">
               <th className="text-left py-3 px-4 font-medium text-[var(--muted)]">Capability</th>
-              <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">From $4.99/mo</span></th>
+              <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">Free or $9.99/mo</span></th>
               <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$14.99/mo</span></th>
               <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$14.99/mo</span></th>
               <th className="py-3 px-4 font-medium text-[var(--muted)]">Copilot<br /><span className="text-xs">$14.99/mo</span></th>
@@ -95,7 +95,7 @@ export function ComparisonTable() {
       <div className="md:hidden space-y-3">
         <div className="text-center mb-2">
           <p className="text-xs text-[var(--muted)]">
-            <span className="font-semibold text-[var(--income)]">Finsava from $4.99/mo</span> &middot; competitors $14.99/mo
+            <span className="font-semibold text-[var(--income)]">Finsava Free or $9.99/mo</span> &middot; competitors $14.99/mo
           </p>
         </div>
         {TOP_FEATURES.map(renderCard)}

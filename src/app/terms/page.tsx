@@ -129,22 +129,22 @@ export default function TermsOfService() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                <strong className="text-[var(--foreground)]">Basic ($4.99/mo):</strong>{" "}
-                Core budgeting, bank sync, ML-powered categorization, spending
-                reports, and email support.
+                <strong className="text-[var(--foreground)]">Free ($0):</strong>{" "}
+                Core budgeting, SimpleFin bank sync, smart categorization, spending
+                reports, and local Gemma AI insights. No credit card required.
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Pro ($9.99/mo):</strong>{" "}
-                Everything in Basic plus AI assistant (Claude), financial planning
-                (FIRE, savings, debt), investment tracking, net worth tracking,
-                forecasting, multi-currency, and priority support.
+                Everything in Free plus AI assistant (Claude), Plaid bank sync,
+                financial planning (FIRE, savings, debt), investment tracking, net
+                worth tracking, forecasting, multi-currency, and priority support.
               </li>
             </ul>
             <p className="mt-3">
               <strong className="text-[var(--foreground)]">Free Trial:</strong>{" "}
               New accounts receive a 14-day free trial of the Pro plan. During
               the trial, all Pro features are unlocked at no charge. After the
-              trial ends, your account reverts to the Basic plan unless you
+              trial ends, your account reverts to the Free plan unless you
               subscribe. No credit card is required to start the trial.
             </p>
             <p className="mt-3">

@@ -41,12 +41,12 @@ export default async function Home() {
             >
               Join the Waitlist
             </a>
-            <a
-              href="#features"
+            <Link
+              href="/demo"
               className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-8 py-3.5 text-base font-medium text-[var(--foreground)] hover:border-[var(--muted)] transition-colors"
             >
-              See Features
-            </a>
+              See a live demo
+            </Link>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
             Start with a 14-day free trial of Pro. Free plan available after.

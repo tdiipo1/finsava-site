@@ -78,7 +78,7 @@ export default function OGImage() {
             marginBottom: "16px",
           }}
         >
-          Local AI insights. Bank sync from 12,000+ institutions. From $4.99/mo.
+          Local AI insights. Bank sync from 12,000+ institutions. Free, or Pro $9.99/mo.
         </span>
         <span
           style={{

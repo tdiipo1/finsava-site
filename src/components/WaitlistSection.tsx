@@ -102,7 +102,7 @@ export default function WaitlistSection() {
         )}
 
         <p className="mt-4 text-sm text-[var(--muted)]">
-          No spam. Unsubscribe anytime. Basic from $4.99/mo &middot; Pro $9.99/mo.
+          No spam. Unsubscribe anytime. Free &middot; Pro $9.99/mo.
         </p>
       </div>
     </section>
