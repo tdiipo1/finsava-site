@@ -242,7 +242,7 @@ export default function GuardrailsVs4PercentRule() {
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
             <h3 className="text-2xl font-bold">Try the guardrails simulation on your own data</h3>
             <p className="mt-3 text-[var(--muted)]">
-              Finsava runs 1,000 Monte Carlo simulations using your actual portfolio
+              Finsava runs 2,000 Monte Carlo simulations using your actual portfolio
               and expenses. Free 14-day trial.
             </p>
             <Link

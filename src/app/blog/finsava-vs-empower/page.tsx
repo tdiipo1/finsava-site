@@ -70,8 +70,8 @@ export default function FinsavaVsEmpower() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">Finsava</p>
-              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$4.99/mo</p>
-              <p className="mt-1 text-xs text-[var(--muted)]">Basic &middot; $9.99/mo Pro &middot; 14-day trial</p>
+              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$9.99/mo</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">Pro &middot; Free tier available &middot; 14-day trial</p>
             </div>
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">Empower</p>
@@ -96,11 +96,11 @@ export default function FinsavaVsEmpower() {
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava doesn&apos;t have an advisory business, doesn&apos;t sell leads,
-            and doesn&apos;t have any revenue model tied to your data. The Gemma 4
-            AI runs locally — your financial data never leaves your server unless
-            you explicitly enable Claude AI for ambiguous categorization, and
-            even then only descriptions (not amounts, dates, or identifying info)
-            are sent.
+            and doesn&apos;t have any revenue model tied to your data. Self-host it
+            and the Gemma AI runs locally, so your financial data stays on your own
+            server; on our hosted version, Pro&apos;s Claude features send merchant
+            descriptions (not amounts, dates, or identifying info) to Anthropic,
+            and the free tier sticks to local AI only.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Where Finsava pulls ahead</h2>
@@ -189,7 +189,7 @@ export default function FinsavaVsEmpower() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["Direct price", "$4.99/mo", "Free"],
+                  ["Direct price", "$9.99/mo (free tier available)", "Free"],
                   ["Indirect cost (advisory upsell)", "None", "Up to 0.89% AUM"],
                   ["Monte Carlo retirement", "yes", "yes"],
                   ["Guardrails withdrawal strategy", "yes", "no"],

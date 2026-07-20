@@ -109,14 +109,14 @@ export default function BudgetVisualizationPost() {
             <tr><td>AI budget suggestions (4 profiles)</td><td>Yes</td><td>No</td><td>No</td></tr>
             <tr><td>Monte Carlo FIRE simulation</td><td>Yes</td><td>No</td><td>No</td></tr>
             <tr><td>Multi-currency budget display</td><td>Yes (18 currencies)</td><td>No</td><td>No</td></tr>
-            <tr><td>Price</td><td>From $4.99/mo</td><td>$14.99/mo</td><td>$9.99/mo</td></tr>
+            <tr><td>Price</td><td>Free, Pro $9.99/mo</td><td>$14.99/mo</td><td>$14.99/mo</td></tr>
           </tbody>
         </table>
 
         <h2>The Numbers Speak</h2>
 
         <p>
-          YNAB costs $14.99/month. Monarch costs $9.99/month. Finsava starts at $4.99/month
+          YNAB costs $14.99/month. Monarch costs $14.99/month. Finsava starts free, with Pro at $9.99/month
           and includes features neither of them offer: Monte Carlo FIRE simulation, AI budget
           profiles, multi-provider bank sync, and interactive budget visualization.
         </p>

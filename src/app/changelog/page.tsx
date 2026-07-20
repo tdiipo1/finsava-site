@@ -33,7 +33,7 @@ async function getChangelog(): Promise<
 
   // Try releases first
   try {
-    const res = await fetch("https://api.github.com/repos/tdiipo1/Finsava/releases?per_page=20", {
+    const res = await fetch("https://api.github.com/repos/MyLifePlatform/finsava/releases?per_page=20", {
       next: { revalidate: 3600 },
       headers: { Accept: "application/vnd.github.v3+json" },
     });
@@ -54,7 +54,7 @@ async function getChangelog(): Promise<
   // Fallback to commits if no releases
   if (entries.length === 0) {
     try {
-      const res = await fetch("https://api.github.com/repos/tdiipo1/Finsava/commits?per_page=30", {
+      const res = await fetch("https://api.github.com/repos/MyLifePlatform/finsava/commits?per_page=30", {
         next: { revalidate: 3600 },
         headers: { Accept: "application/vnd.github.v3+json" },
       });

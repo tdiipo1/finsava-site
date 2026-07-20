@@ -5,7 +5,7 @@ import "./globals.css";
 const siteUrl = "https://finsava.com";
 const siteTitle = "Finsava — AI-Powered Personal Finance";
 const siteDescription =
-  "AI-powered personal finance with smart budgeting, bank sync from 200+ institutions, FIRE planning, multi-currency support, investment tracking, and anomaly detection. Your money, your intelligence, your rules.";
+  "AI-powered personal finance with smart budgeting, bank sync via Plaid and SimpleFin, FIRE planning, multi-currency support, investment tracking, and anomaly detection. Your money, your intelligence, your rules.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "Cloud-first personal finance with AI budgeting, 20+ modular features, FIRE planning, and investment tracking. Your money, your intelligence, your rules.",
+      "Cloud-first personal finance with AI budgeting, 19 modules, FIRE planning, and investment tracking. Your money, your intelligence, your rules.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,

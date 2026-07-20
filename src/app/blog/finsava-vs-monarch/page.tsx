@@ -55,8 +55,8 @@ export default function FinsavaVsMonarch() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">Finsava</p>
-              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$4.99/mo</p>
-              <p className="mt-1 text-xs text-[var(--muted)]">Basic &middot; $9.99/mo Pro &middot; 14-day trial</p>
+              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$9.99/mo</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">Pro &middot; Free tier available &middot; 14-day trial</p>
             </div>
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">Monarch Money</p>
@@ -65,9 +65,10 @@ export default function FinsavaVsMonarch() {
             </div>
           </div>
           <p className="mt-4 text-sm text-[var(--muted)]">
-            Monarch is 3x the price of Finsava Basic. That&apos;s a meaningful gap,
-            especially when you factor in that the FIRE features most Monarch users
-            wish existed... don&apos;t.
+            Monarch costs 50% more than Finsava Pro, and Finsava also has a free
+            tier to start on. That&apos;s a meaningful gap, especially when you
+            factor in that the FIRE features most Monarch users wish existed...
+            don&apos;t.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Philosophy: household finance vs. FIRE planning</h2>
@@ -79,7 +80,7 @@ export default function FinsavaVsMonarch() {
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava is a specialist. We built it for the FIRE community, with a
-            focus on modeling the future — 1,000-simulation Monte Carlo, 5 FIRE
+            focus on modeling the future — 2,000-simulation Monte Carlo, 5 FIRE
             variants, 4 historical stress tests, guardrails withdrawals, retirement
             survival analysis. If you&apos;re trying to answer &ldquo;when can I
             quit my job?&rdquo; and &ldquo;how confident should I be in that
@@ -178,7 +179,7 @@ export default function FinsavaVsMonarch() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["Price/month", "$4.99", "$14.99"],
+                  ["Price/month", "$9.99 (free tier available)", "$14.99"],
                   ["Bank sync (Plaid)", "yes", "yes"],
                   ["Monte Carlo FIRE simulator", "yes", "no"],
                   ["Guardrails withdrawal strategy", "yes", "no"],
@@ -229,7 +230,7 @@ export default function FinsavaVsMonarch() {
             <li>&bull; You&apos;re pursuing FIRE and want real Monte Carlo modeling</li>
             <li>&bull; You want ML categorization that improves over time</li>
             <li>&bull; You value privacy and self-hosting as an option</li>
-            <li>&bull; You want to pay a third as much</li>
+            <li>&bull; You want to pay a third less, or start free</li>
             <li>&bull; You care about statistical rigor (anomaly detection, calibration, SE disclosure)</li>
           </ul>
 

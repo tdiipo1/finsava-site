@@ -410,7 +410,7 @@ export default function TermsOfService() {
               </li>
             </ul>
             <p className="mt-3">
-              AI models (Phi-4, Mistral, Llama, DeepSeek, Qwen) are subject to
+              AI models (Gemma via Ollama, and any others you choose to run) are subject to
               their own licenses. Users are responsible for reviewing and
               complying with the license terms of any models they download and
               use via Ollama.

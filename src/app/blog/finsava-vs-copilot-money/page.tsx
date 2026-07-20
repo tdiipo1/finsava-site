@@ -69,8 +69,8 @@ export default function FinsavaVsCopilotMoney() {
               native UI. Finsava is web-based and works on any device.
             </p>
             <p>
-              Finsava also offers a Basic tier at $4.99/mo with budgeting, bank sync, and
-              AI categorization — there&apos;s no equivalent lower-priced Copilot tier.
+              Finsava also has a genuinely free tier with budgeting, CSV import, SimpleFin
+              bank sync, and local AI categorization — Copilot has no free tier at all.
               New Finsava accounts start with a 14-day free trial of Pro.
             </p>
           </section>
@@ -106,7 +106,7 @@ export default function FinsavaVsCopilotMoney() {
                     ["Configurable Transaction Lookback", true, false],
                     ["Web App (any device)", true, false],
                     ["Native iOS/Mac App", false, true],
-                    ["Lower-Priced Tier ($4.99/mo)", true, false],
+                    ["Free Tier ($0)", true, false],
                     ["14-Day Free Trial", true, false],
                   ].map(([feature, finsava, copilot]) => (
                     <tr key={feature as string} className="border-b border-[var(--card-border)]/30">
@@ -154,12 +154,12 @@ export default function FinsavaVsCopilotMoney() {
               with interest savings projections. Copilot doesn&apos;t offer either.
             </p>
 
-            <h3 className="text-xl font-medium text-[var(--foreground)] mt-6">$4.99 Basic Tier</h3>
+            <h3 className="text-xl font-medium text-[var(--foreground)] mt-6">Free Tier</h3>
             <p>
-              If you don&apos;t need FIRE planning, investments, or the AI assistant,
-              Finsava Basic gives you budgeting, bank sync, AI categorization, and
-              spending reports for half the price. Copilot has a single $9.99 tier
-              with no lower option.
+              If you don&apos;t need FIRE planning, investments, or the Claude AI
+              assistant, Finsava&apos;s free tier gives you budgeting, CSV import,
+              SimpleFin bank sync, and local AI categorization at no cost. Copilot
+              has a single $9.99 tier with no free option.
             </p>
           </section>
 
@@ -202,8 +202,8 @@ export default function FinsavaVsCopilotMoney() {
                     <td className="py-2.5 px-4 text-center text-[var(--muted)]">7 days</td>
                   </tr>
                   <tr className="border-b border-[var(--card-border)]/30">
-                    <td className="py-2.5 px-4 text-[var(--foreground)]">Basic / Budget Tier</td>
-                    <td className="py-2.5 px-4 text-center text-[var(--income)]">$4.99/mo</td>
+                    <td className="py-2.5 px-4 text-[var(--foreground)]">Free Tier</td>
+                    <td className="py-2.5 px-4 text-center text-[var(--income)]">$0</td>
                     <td className="py-2.5 px-4 text-center text-[var(--muted)]">—</td>
                   </tr>
                   <tr className="border-b border-[var(--card-border)]/30">
@@ -230,8 +230,8 @@ export default function FinsavaVsCopilotMoney() {
             <p>
               If you want FIRE planning, debt strategy, multi-provider bank sync,
               ML-powered categorization that improves over time, multi-currency
-              support, and a lower entry price — Finsava gives you more at the same
-              price point ($9.99) or less ($4.99 Basic).
+              support, and a real free tier — Finsava gives you more at the same
+              price point ($9.99), or lets you start at $0.
             </p>
             <p>
               Both are good apps. We built Finsava because we wanted features that

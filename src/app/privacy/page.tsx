@@ -173,9 +173,13 @@ export default function PrivacyPolicy() {
               Data Retention
             </h2>
             <p>
-              Account data is retained while your account is active. You can
-              delete your account and all associated data at any time from the
-              Settings page, or contact us at the address below.
+              Account data is retained while your account is active. Operational
+              data (prediction logs, notifications, processed staging rows) is
+              automatically purged after 12 months by default; you can opt out
+              of auto-purge, shorten the window, or run it on demand in
+              Settings. You can delete your account and all associated data at
+              any time from the Settings page, or contact us at the address
+              below.
             </p>
           </section>
 

@@ -132,9 +132,9 @@ export default function HostingFintechPost() {
         <h2>What This Means for Users</h2>
 
         <p>
-          Our infrastructure cost is $7/month. Finsava Basic is $4.99/month. The math is
+          Our infrastructure cost is $7/month. Finsava Pro is $9.99/month, and the free tier is genuinely free. The math is
           simple: we can offer a genuinely full-featured finance app at a fraction of the
-          price of YNAB ($14.99) or Monarch ($9.99) because our cost structure allows it.
+          price of YNAB ($14.99) or Monarch ($14.99) because our cost structure allows it.
         </p>
 
         <p>

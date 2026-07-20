@@ -20,19 +20,21 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            25+ features &middot; AI-powered &middot; Privacy-first
+            5 withdrawal strategies &middot; 154 years of market data &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Plan your path to
+            Stress-test your retirement against
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              financial independence.
+              150 years of market history.
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            See exactly when you can retire. Know where every dollar goes.
-            Connect your bank, and your finances organize themselves &mdash;
-            automatically. Free to start, Pro from $9.99/mo.
+            Compare five withdrawal strategies &mdash; the 4% rule, guardrails,
+            VPW, constant percentage, and 1/N &mdash; head-to-head on
+            2,000-path Monte Carlo simulations and every real market cohort
+            since 1871, fed by your actual bank data. Free to start, Pro from
+            $9.99/mo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -45,7 +47,7 @@ export default async function Home() {
               href="/demo"
               className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-8 py-3.5 text-base font-medium text-[var(--foreground)] hover:border-[var(--muted)] transition-colors"
             >
-              See a live demo
+              Try the Strategy Lab in the live demo
             </Link>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)]">
@@ -62,7 +64,7 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">25+ modular features. Enable what you want, disable what you don&apos;t.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">19 modules. Enable what you want, disable what you don&apos;t.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
@@ -94,7 +96,7 @@ export default async function Home() {
             <FeatureCard
               icon="🔥"
               title="FIRE Planning + Monte Carlo"
-              description="Run 1,000 retirement simulations with a stochastic fan chart. Withdrawal rate sensitivity table. Coast FIRE, Lean FIRE, inflation adjustment. Debt payoff comparison (avalanche vs. snowball)."
+              description="Run 2,000 retirement simulations with a stochastic fan chart. Withdrawal rate sensitivity table. Coast FIRE, Lean FIRE, inflation adjustment. Debt payoff comparison (avalanche vs. snowball)."
             />
             <FeatureCard
               icon="💹"
@@ -191,7 +193,7 @@ export default async function Home() {
             <Step
               number="1"
               title="Sign Up (30 seconds)"
-              description="Start a 14-day free trial of Pro — no credit card required. Pick the features you want from 25+ modular options, or start with everything."
+              description="Start a 14-day free trial of Pro — no credit card required. Pick what you want from 19 modules, or start with everything."
             />
             <Step
               number="2"
@@ -266,7 +268,7 @@ export default async function Home() {
               <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
                 FIRE Planning Lab, Plaid (12,000+ banks), Claude AI Assistant,
                 analytics, and the full financial toolkit. Compare:
-                YNAB $14.99, Monarch $9.99, Copilot $9.99.
+                YNAB $14.99, Monarch $14.99, Copilot $9.99.
                 <span className="block mt-1 opacity-70">Competitor pricing as of March 2026.</span>
               </p>
             </div>
@@ -375,7 +377,7 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">769 Automated Tests</h3>
+              <h3 className="font-semibold text-lg">900+ Automated Tests</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
                 sync, imports, transfer detection, tier enforcement, and more.

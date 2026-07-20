@@ -56,8 +56,8 @@ export default function FinsavaVsYnab() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">Finsava</p>
-              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$4.99/mo</p>
-              <p className="mt-1 text-xs text-[var(--muted)]">Basic &middot; $9.99/mo Pro &middot; 14-day trial</p>
+              <p className="mt-2 text-3xl font-bold text-[var(--income)]">$9.99/mo</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">Pro &middot; Free tier available &middot; 14-day trial</p>
             </div>
             <div className="rounded-lg border border-[var(--card-border)] bg-[var(--card)] p-5">
               <p className="font-semibold text-[var(--foreground)]">YNAB</p>
@@ -66,8 +66,8 @@ export default function FinsavaVsYnab() {
             </div>
           </div>
           <p className="mt-4 text-sm text-[var(--muted)]">
-            At $14.99/month, YNAB is 3x the price of Finsava Basic and 50% more than
-            Finsava Pro. That gap is a direct reflection of cost structure: YNAB is
+            At $14.99/month, YNAB costs 50% more than Finsava Pro, and Finsava also
+            has a free tier. That gap is a direct reflection of cost structure: YNAB is
             venture-backed with a large team. Finsava runs on a $7/month VPS with no
             outside investors, so we can price honestly.
           </p>
@@ -100,7 +100,7 @@ export default function FinsavaVsYnab() {
           <h3 className="mt-6 text-xl font-semibold">1. FIRE Planning</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
             YNAB has no FIRE calculator. Finsava has a full FIRE Dashboard with
-            1,000-simulation Monte Carlo, guardrails withdrawal strategy, 40-year
+            2,000-simulation Monte Carlo, guardrails withdrawal strategy, 40-year
             retirement survival modeling, 4 historical stress tests, 5 FIRE variants
             (Standard, Lean, Barista, Coast, Fat), and a kids impact scenario. If
             you&apos;re in the FIRE community, the gap here is enormous.
@@ -185,7 +185,7 @@ export default function FinsavaVsYnab() {
               </thead>
               <tbody className="text-center">
                 {[
-                  ["Price/month", "$4.99", "$14.99"],
+                  ["Price/month", "$9.99 (free tier available)", "$14.99"],
                   ["Bank sync (Plaid + SimpleFin)", "yes", "yes"],
                   ["Envelope / zero-based budgeting", "partial", "yes"],
                   ["AI categorization with calibration", "yes", "no"],

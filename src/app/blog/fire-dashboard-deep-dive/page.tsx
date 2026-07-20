@@ -8,7 +8,7 @@ import BlogHeader from "@/components/BlogHeader";
 export const metadata: Metadata = {
   title: "The FIRE Dashboard That Models Your Actual Life (Not Just 4% of Your Expenses)",
   description:
-    "A deep dive into Finsava's FIRE Dashboard: 1,000-simulation Monte Carlo, guardrails withdrawals, 40-year retirement survival, 4 historical stress tests, and a kids impact scenario. Built for people who actually want to retire early.",
+    "A deep dive into Finsava's FIRE Dashboard: 2,000-simulation Monte Carlo, guardrails withdrawals, 40-year retirement survival, 4 historical stress tests, and a kids impact scenario. Built for people who actually want to retire early.",
   keywords: [
     "FIRE dashboard",
     "Monte Carlo FIRE calculator",
@@ -77,7 +77,7 @@ export default function FireDashboardDeepDivePost() {
           </p>
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
-            Finsava runs 1,000 simulated futures, each with randomized annual returns
+            Finsava runs 2,000 simulated futures, each with randomized annual returns
             drawn from a log-normal distribution (geometric Brownian motion, the same
             math finance professionals use for options pricing). We track the 10th,
             25th, 50th, 75th, and 90th percentiles separately so you see the full fan
@@ -88,12 +88,12 @@ export default function FireDashboardDeepDivePost() {
             <li><strong className="text-[var(--foreground)]">p50 (median):</strong> Half the simulations do better, half do worse. This is your &ldquo;most likely&rdquo; timeline.</li>
             <li><strong className="text-[var(--foreground)]">p10 (pessimistic):</strong> Only 10% of futures are worse than this. Your &ldquo;bad luck&rdquo; scenario.</li>
             <li><strong className="text-[var(--foreground)]">p90 (optimistic):</strong> Only 10% of futures are better than this. Your &ldquo;good luck&rdquo; scenario.</li>
-            <li><strong className="text-[var(--foreground)]">Success probability:</strong> What fraction of all 1,000 simulations reach the FIRE number within 50 years.</li>
+            <li><strong className="text-[var(--foreground)]">Success probability:</strong> What fraction of all 2,000 simulations reach the FIRE number within 50 years.</li>
           </ul>
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
-            The standard error on a success probability estimate from 1,000 simulations
-            is about ±1.3 percentage points. That&apos;s tight enough to be useful and
+            The standard error on a success probability estimate from 2,000 simulations
+            is about ±1 percentage point. That&apos;s tight enough to be useful and
             loose enough to be honest — we show it in the chart footer.
           </p>
 
@@ -151,7 +151,7 @@ export default function FireDashboardDeepDivePost() {
           </ul>
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
-            In 1,000 simulated retirements, a fixed 4% strategy has around an 86%
+            In 2,000 simulated retirements, a fixed 4% strategy has around an 86%
             survival rate over 40 years. The guardrails strategy on the same portfolio
             typically hits 95%+ because it responds to reality instead of pretending
             the future is smooth.
@@ -310,7 +310,7 @@ export default function FireDashboardDeepDivePost() {
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
             <h3 className="text-2xl font-bold">Try the FIRE Dashboard</h3>
             <p className="mt-3 text-[var(--muted)]">
-              Part of Finsava&apos;s free tier. No credit card required.
+              Included in Finsava Pro — every new account starts with a 14-day free trial. No credit card required.
             </p>
             <Link
               href="/#waitlist"

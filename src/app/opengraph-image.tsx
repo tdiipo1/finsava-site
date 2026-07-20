@@ -86,7 +86,7 @@ export default function OGImage() {
             color: "#71717a",
           }}
         >
-          Your data never leaves your server. Powered by Gemma 4.
+          Self-hostable with local AI — your data can stay home.
         </span>
 
         {/* Bottom accent bar */}

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const TOP_FEATURES = [
   ["Local AI Insights (Gemma 4, self-hosted)", true, false, false, false],
-  ["Monte Carlo FIRE Simulation (1,000 runs)", true, false, false, false],
+  ["Monte Carlo FIRE Simulation (2,000 runs)", true, false, false, false],
   ["AI Budget Suggestions (4 profiles)", true, false, false, false],
   ["Dynamic Financial Health Score (5 components)", true, false, "partial", false],
   ["Statistical Anomaly Detection", true, false, false, false],
@@ -81,7 +81,7 @@ export function ComparisonTable() {
               <th className="py-3 px-4 font-semibold text-[var(--foreground)]">Finsava<br /><span className="text-xs font-normal text-[var(--income)]">Free or $9.99/mo</span></th>
               <th className="py-3 px-4 font-medium text-[var(--muted)]">YNAB<br /><span className="text-xs">$14.99/mo</span></th>
               <th className="py-3 px-4 font-medium text-[var(--muted)]">Monarch<br /><span className="text-xs">$14.99/mo</span></th>
-              <th className="py-3 px-4 font-medium text-[var(--muted)]">Copilot<br /><span className="text-xs">$14.99/mo</span></th>
+              <th className="py-3 px-4 font-medium text-[var(--muted)]">Copilot<br /><span className="text-xs">$9.99/mo</span></th>
             </tr>
           </thead>
           <tbody className="text-center">

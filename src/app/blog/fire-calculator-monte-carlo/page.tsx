@@ -4,9 +4,9 @@ import ShareButtons from "@/components/ShareButtons";
 import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
-  title: "Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)",
+  title: "Why Your FIRE Calculator Is Wrong (And How 2,000 Monte Carlo Simulations Fix It)",
   description:
-    "Most FIRE calculators use a single growth rate. Real markets don't work that way. See how Monte Carlo simulation with 1,000 scenarios gives you a realistic range of retirement outcomes.",
+    "Most FIRE calculators use a single growth rate. Real markets don't work that way. See how Monte Carlo simulation with 2,000 scenarios gives you a realistic range of retirement outcomes.",
   keywords: [
     "fire calculator",
     "monte carlo retirement",
@@ -34,7 +34,7 @@ export default function FireCalculatorMonteCarloPost() {
           Why Your FIRE Calculator Is Wrong
           <br />
           <span className="text-[var(--muted)] text-2xl font-normal">
-            And How 1,000 Monte Carlo Simulations Fix It
+            And How 2,000 Monte Carlo Simulations Fix It
           </span>
         </h1>
 
@@ -158,7 +158,7 @@ export default function FireCalculatorMonteCarloPost() {
         </p>
         <ShareButtons
           slug="fire-calculator-monte-carlo"
-          title="Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)"
+          title="Why Your FIRE Calculator Is Wrong (And How 2,000 Monte Carlo Simulations Fix It)"
         />
       </article>
     </main>
