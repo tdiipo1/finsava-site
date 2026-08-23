@@ -19,7 +19,7 @@ type Strategy = "four" | "guardrails" | "vpw";
 
 const STRATEGIES: Array<{ key: Strategy; label: string; blurb: string }> = [
   { key: "four", label: "4% rule", blurb: "Withdraw a fixed, inflation-adjusted 4% of your starting pot." },
-  { key: "guardrails", label: "Guardrails", blurb: "Start at 5%, cut spending 10% in bad markets, raise it in good ones." },
+  { key: "guardrails", label: "Guardrails", blurb: "Cut spending 10% when withdrawals run hot, raise 10% when markets are kind." },
   { key: "vpw", label: "VPW", blurb: "Recalculate the withdrawal each year from the balance and years remaining." },
 ];
 
@@ -71,6 +71,7 @@ function simulate(age: number, savings: number, monthly: number,
     let retired = false;
     let spend = targetSpend;
     let spendShortfall = 0;
+    let depletedEarly = false;
     let fireAge: number | null = null;
     balances[0].push(bal);
 
@@ -85,30 +86,44 @@ function simulate(age: number, savings: number, monthly: number,
           spend = targetSpend;
         }
       } else {
-        const yearsLeft = Math.max(END_AGE - (age + y), 1);
+        // +1: the current year's draw is still ahead of us — without it the
+        // annuity factor hits "1 year left" at 89 and drains the pot a year
+        // early, making VPW look like it always goes broke.
+        const yearsLeft = Math.max(END_AGE - (age + y) + 1, 1);
         if (strategy === "guardrails") {
+          // Guyton-style bands around the initial 4% rate: brake EARLY and
+          // shallow (±20% bands) instead of waiting for a deep drawdown.
           const rate = bal > 0 ? spend / bal : 1;
-          if (rate > 0.06) spend *= 0.9;       // bad market: tighten
-          else if (rate < 0.04) spend *= 1.1;  // good market: loosen
+          if (rate > 0.048) spend *= 0.9;      // bad market: tighten
+          else if (rate < 0.032) spend *= 1.1; // good market: loosen
           spend = Math.min(spend, targetSpend * 1.5);
         } else if (strategy === "vpw") {
           const rr = 0.05;
           spend = (bal * rr) / (1 - Math.pow(1 + rr, -yearsLeft));
         }
         const drawn = Math.min(Math.max(bal, 0), spend);
-        if (drawn < targetSpend * 0.85) spendShortfall++;
+        // Only a SEVERE cut (below 60% of the target lifestyle) counts
+        // against the plan — mild flexing is what Guardrails/VPW are FOR.
+        if (drawn < targetSpend * 0.6) spendShortfall++;
         bal -= drawn;
-        if (bal < 0) bal = 0;
+        if (bal <= 0) {
+          bal = 0;
+          // Broke BEFORE the horizon = failure. VPW legitimately lands
+          // near $0 exactly AT the horizon — that's spending the pot as
+          // designed, not running out.
+          if (y < years) depletedEarly = true;
+        }
       }
       balances[y].push(bal);
     }
 
     if (fireAge !== null) fireAges.push(fireAge);
-    // Success: reached FIRE, money lasted to 90, and (for flexible
-    // strategies) spending rarely fell far below the target lifestyle.
-    const lasted = retired && bal > 0;
-    const livedWell = spendShortfall <= Math.max(2, (END_AGE - (fireAge ?? END_AGE)) * 0.2);
-    if (lasted && livedWell) successes++;
+    // Success = the FIRE promise holds: retired by 65, never went broke
+    // before 90, and spending rarely fell far below the target lifestyle.
+    const retiredInTime = fireAge !== null && fireAge <= 65;
+    const retirementYears = retiredInTime ? END_AGE - (fireAge as number) : 0;
+    const livedWell = spendShortfall <= Math.max(3, Math.round(retirementYears * 0.25));
+    if (retiredInTime && !depletedEarly && livedWell) successes++;
   }
 
   const pct = (arr: number[], q: number) => {
@@ -225,7 +240,7 @@ export default function StrategyLabDemo() {
             <span className={`text-4xl font-bold ${sim.successPct >= 70 ? "text-[var(--income)]" : sim.successPct >= 45 ? "text-amber-400" : "text-red-400"}`}>
               {sim.successPct}%
             </span>
-            <span className="text-sm text-[var(--muted)]">chance your plan holds to {END_AGE}</span>
+            <span className="text-sm text-[var(--muted)]">chance you retire by 65 and the money lasts to {END_AGE}</span>
           </div>
           <p className="text-sm text-[var(--muted)]">
             {sim.medianFireAge !== null
