@@ -46,14 +46,15 @@ export default function WaitlistSection() {
       <div className="mx-auto max-w-xl text-center">
         <h2 className="text-3xl font-bold sm:text-4xl">Join the Waitlist</h2>
         <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
-          Be the first to know when Finsava launches. Get early access with a 14-day free trial of Pro.
+          Finsava is in a closed pilot. Join the waitlist and we&apos;ll send invites in waves &mdash;
+          every invite starts with a 14-day free trial of Pro.
         </p>
 
         {status === "success" ? (
           <div className="mt-10 rounded-xl bg-green-500/10 border border-green-500/30 px-6 py-4">
             <p className="text-green-400 font-semibold">You&apos;re on the list!</p>
             <p className="text-sm text-[var(--muted)] mt-1">
-              We&apos;ll notify you when Finsava is available.
+              We&apos;ll email your invite when your wave opens up.
             </p>
           </div>
         ) : status === "duplicate" ? (

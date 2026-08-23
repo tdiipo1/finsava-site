@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import StrategyLabDemo from "@/components/StrategyLabDemo";
 
 export const metadata: Metadata = {
   title: "Live Demo — Finsava",
   description:
-    "A read-only preview of Finsava with sample data: net worth, cashflow, spending breakdown, FIRE projection, and recent transactions. No signup required.",
+    "Try the interactive Strategy Lab in your browser — drag sliders, switch withdrawal strategies, watch your FIRE odds move — plus a sample-data preview of the dashboard. No signup required.",
   alternates: { canonical: "/demo" },
 };
 
@@ -68,8 +69,9 @@ export default function DemoPage() {
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">See Finsava in action</h1>
             <p className="mt-2 max-w-xl text-[var(--muted)]">
-              A read-only snapshot with fabricated data &mdash; no signup, no real accounts. This is
-              the shape of your finances once your bank is connected.
+              The Strategy Lab below runs live in your browser &mdash; no signup, no real accounts.
+              Everything else is a sample-data snapshot of what your dashboard looks like once a
+              bank is connected.
             </p>
           </div>
           <a
@@ -80,8 +82,11 @@ export default function DemoPage() {
           </a>
         </div>
 
+        {/* Interactive Strategy Lab — the homepage promises this; keep it first. */}
+        <StrategyLabDemo />
+
         {/* KPIs */}
-        <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <section className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
           <Kpi label="Net Worth" value={usd(snapshot.netWorth.total)} hint={`${usd(snapshot.netWorth.assets)} assets`} />
           <Kpi label="Monthly Net" value={usd(snapshot.monthly.net)} hint={`${usd(snapshot.monthly.income)} in`} />
           <Kpi label="Savings Rate" value={`${snapshot.monthly.savingsRatePct}%`} hint="of take-home" />

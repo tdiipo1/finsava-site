@@ -1,11 +1,11 @@
 export default function SocialProof() {
   const badges = [
     {
-      label: "900+ Tests Passing",
+      label: "1,100+ Tests Passing",
       href: "#security",
     },
     {
-      label: "19 Modules",
+      label: "21 Modules",
       href: "#features",
     },
     {

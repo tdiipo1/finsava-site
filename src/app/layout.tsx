@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description:
-      "Cloud-first personal finance with AI budgeting, 19 modules, FIRE planning, and investment tracking. Your money, your intelligence, your rules.",
+      "Cloud-first personal finance with AI budgeting, 21 modules, FIRE planning, and investment tracking. Your money, your intelligence, your rules.",
     type: "website",
     siteName: "Finsava",
     url: siteUrl,

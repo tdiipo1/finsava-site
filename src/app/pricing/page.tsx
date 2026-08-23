@@ -130,8 +130,8 @@ export default function PricingPage() {
               answer="Yes. Your data format is the same across all tiers. Upgrading instantly unlocks the additional features, and you can downgrade at any time."
             />
             <FaqItem
-              question="When will Free and Pro launch?"
-              answer="Both tiers will be available at launch. Join the waitlist for early access — no credit card required. Free is $0 forever; Pro is $9.99/mo with a 14-day free trial."
+              question="How do I get access?"
+              answer="Finsava is currently in a closed pilot: join the waitlist and we send invites in waves. Every invite starts with a 14-day free trial of Pro — no credit card required. Free is $0 forever; Pro is $9.99/mo."
             />
           </div>
         </div>
