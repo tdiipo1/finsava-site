@@ -15,7 +15,7 @@ export const posts: BlogPost[] = [
     slug: "fire-dashboard-deep-dive",
     title: "The FIRE Dashboard That Models Your Actual Life (Not Just 4% of Your Expenses)",
     description:
-      "A deep dive into Finsava's FIRE Dashboard: 2,000-simulation Monte Carlo, guardrails withdrawals, 40-year retirement survival, 4 historical stress tests, and a kids impact scenario.",
+      "A deep dive into Finsava's FIRE Dashboard: 1,000-simulation Monte Carlo, guardrails withdrawals, 40-year retirement survival, 4 historical stress tests, and a kids impact scenario.",
     date: "2026-04-09",
     tags: ["FIRE", "monte carlo", "guardrails", "retirement planning"],
     category: "FIRE Planning",
@@ -58,7 +58,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "fire-calculator-monte-carlo",
-    title: "Why Your FIRE Calculator Is Wrong (And How 2,000 Monte Carlo Simulations Fix It)",
+    title: "Why Your FIRE Calculator Is Wrong (And How 1,000 Monte Carlo Simulations Fix It)",
     description:
       "Most FIRE calculators use a single growth rate. Real markets don't work that way. See how Monte Carlo simulation gives you a realistic range of retirement outcomes.",
     date: "2026-03-29",

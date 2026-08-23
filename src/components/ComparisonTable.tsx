@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const TOP_FEATURES = [
   ["Local AI Insights (Gemma 4, self-hosted)", true, false, false, false],
-  ["Monte Carlo FIRE Simulation (2,000 runs)", true, false, false, false],
+  ["Monte Carlo FIRE Simulation (1,000 runs)", true, false, false, false],
   ["AI Budget Suggestions (4 profiles)", true, false, false, false],
   ["Dynamic Financial Health Score (5 components)", true, false, "partial", false],
   ["Statistical Anomaly Detection", true, false, false, false],
