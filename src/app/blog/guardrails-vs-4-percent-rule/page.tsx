@@ -243,7 +243,8 @@ export default function GuardrailsVs4PercentRule() {
             <h3 className="text-2xl font-bold">Try the guardrails simulation on your own data</h3>
             <p className="mt-3 text-[var(--muted)]">
               Finsava runs 1,000 Monte Carlo simulations using your actual portfolio
-              and expenses. Free 14-day trial.
+              and expenses. Invite-only pilot — every invited account starts with
+              a 14-day Pro trial.
             </p>
             <Link
               href="/#waitlist"

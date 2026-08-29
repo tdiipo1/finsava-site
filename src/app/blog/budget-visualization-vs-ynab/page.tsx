@@ -132,8 +132,9 @@ export default function BudgetVisualizationPost() {
         <h2>Try It Free</h2>
 
         <p>
-          14-day free trial of Pro, no credit card required. Connect your bank and the budget
-          visualization populates automatically.
+          The pilot is invite-only — every invited account starts with a 14-day Pro trial,
+          no credit card required. Connect your bank and the budget visualization populates
+          automatically.
         </p>
 
         <div className="mt-8 flex gap-4">

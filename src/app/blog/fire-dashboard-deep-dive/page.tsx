@@ -310,7 +310,7 @@ export default function FireDashboardDeepDivePost() {
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
             <h3 className="text-2xl font-bold">Try the FIRE Dashboard</h3>
             <p className="mt-3 text-[var(--muted)]">
-              Included in Finsava Pro — every new account starts with a 14-day free trial. No credit card required.
+              Included in Finsava Pro. The pilot is invite-only — join the waitlist and every invited account starts with a 14-day Pro trial, no credit card required.
             </p>
             <Link
               href="/#waitlist"

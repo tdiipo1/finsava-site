@@ -129,7 +129,8 @@ export default function FireCalculatorMonteCarloPost() {
         <h2>Try It Yourself</h2>
 
         <p>
-          Finsava includes Monte Carlo FIRE simulation in the free 14-day trial. Connect your
+          Finsava includes Monte Carlo FIRE simulation in every invited account&apos;s
+          14-day Pro trial. The pilot is invite-only — join the waitlist, connect your
           banks, and the simulation runs on your actual data. No credit card required.
         </p>
 

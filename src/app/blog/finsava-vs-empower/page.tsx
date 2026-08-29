@@ -264,9 +264,9 @@ export default function FinsavaVsEmpower() {
           </ul>
 
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
-            <h3 className="text-2xl font-bold">Try Finsava free for 14 days</h3>
+            <h3 className="text-2xl font-bold">Want an invite?</h3>
             <p className="mt-3 text-[var(--muted)]">
-              No advisory calls. No data-as-product. No credit card required.
+              No advisory calls. No data-as-product. The pilot is invite-only — join the waitlist and every invited account starts with a 14-day Pro trial, no credit card required.
             </p>
             <Link
               href="/#waitlist"
