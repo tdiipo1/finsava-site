@@ -12,6 +12,15 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: "finsava-is-live-invite-only",
+    title: "Finsava Is Live, Invite-Only: What Shipped and What Didn't",
+    description:
+      "Finsava's closed pilot is live. An engineer's launch note: the Python + Next.js build story, what's in Free vs Pro, and what we deliberately haven't turned on.",
+    date: "2026-08-29",
+    tags: ["engineering", "indie hacker"],
+    category: "Infrastructure",
+  },
+  {
     slug: "fire-dashboard-deep-dive",
     title: "The FIRE Dashboard That Models Your Actual Life (Not Just 4% of Your Expenses)",
     description:
