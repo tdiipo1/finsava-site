@@ -17,6 +17,16 @@ const csp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        // Post removed 2026-08-29 (founder decision F-d in docs/blog-pipeline.md)
+        source: "/blog/hosting-fintech-7-dollars",
+        destination: "/blog",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

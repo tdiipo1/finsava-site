@@ -67,10 +67,8 @@ export default function FinsavaIsLivePost() {
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             The stack is deliberately boring: a Python FastAPI backend, a Next.js
-            frontend, PostgreSQL, Docker Compose, all on a{" "}
-            <Link href="/blog/hosting-fintech-7-dollars" className="text-[var(--primary)] hover:underline">
-              $7/month VPS
-            </Link>{" "}
+            frontend, PostgreSQL, Docker Compose, all on a
+            $7/month VPS{" "}
             (plus a few dollars for encrypted storage and offsite backups). Two
             people, no outside money. Boring infrastructure is a feature: every
             dollar not spent on hosting is a dollar we don&apos;t have to charge

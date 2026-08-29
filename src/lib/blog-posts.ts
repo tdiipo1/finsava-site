@@ -75,15 +75,6 @@ export const posts: BlogPost[] = [
     category: "FIRE Planning",
   },
   {
-    slug: "hosting-fintech-7-dollars",
-    title: "How We Run a Full-Stack Fintech App on a $7/Month VPS",
-    description:
-      "AI categorization, bank sync, Monte Carlo simulations, and a full Next.js + FastAPI stack — all on a $7/month VPS. Here's the architecture.",
-    date: "2026-03-29",
-    tags: ["engineering", "hosting", "indie hacker"],
-    category: "Infrastructure",
-  },
-  {
     slug: "budget-visualization-vs-ynab",
     title: "Budget Visualization That Makes YNAB Look Like a Spreadsheet",
     description:
