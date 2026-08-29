@@ -1,5 +1,7 @@
 # Blog Pipeline — 2026-08-29
 
+> **Decisions log (2026-08-29):** F-a → option 1 DECIDED & APPLIED (invite-honest waitlist copy across all posts). F-b → RESOLVED (attribution to Plaid fixed in 3 sites). F-c → RESOLVED (UI verified: all 5 variants surfaced; claim stands). F-d → DECIDED: hosting-fintech-7-dollars REMOVED (registry + page deleted, 301 → /blog). F-e → recommendation delivered: park the post-mortem until the blog is larger; fold its lessons into a future data-protection engineering post. Post #8 stays parked.
+
 Authored per `docs/blog-persona.md` ("Evidence-First Builder"). Every suggestion below inherits the persona's claim hygiene: tier truth, invite-only pilot framing, no hype vocabulary, verify numbers in the app before publishing. Product context: invite-only pilot live at app.finsava.com.
 
 ## 1. Pipeline: suggested posts
