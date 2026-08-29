@@ -173,7 +173,7 @@ export default function FinsavaVsEmpower() {
           <h3 className="mt-6 text-xl font-semibold">3. Larger Account Coverage</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
             Empower has been around longer and supports more niche account types
-            natively. Finsava supports 12,000+ institutions via Plaid and SimpleFin,
+            natively. Finsava supports 12,000+ institutions via Plaid, plus direct connections through SimpleFin,
             which covers the vast majority but may miss some edge cases.
           </p>
 

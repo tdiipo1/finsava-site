@@ -6,7 +6,7 @@ import BlogHeader from "@/components/BlogHeader";
 export const metadata: Metadata = {
   title: "How We Run a Full-Stack Fintech App on a $7/Month VPS",
   description:
-    "AI categorization, bank sync from 12,000+ institutions, Monte Carlo simulations, and a full Next.js + FastAPI stack — all running on a $7/month VPS. Here's how.",
+    "AI categorization, Plaid bank sync (12,000+ institutions), Monte Carlo simulations, and a full Next.js + FastAPI stack — all running on a $7/month VPS. Here's how.",
   keywords: [
     "cheap hosting fintech",
     "hetzner coolify",
@@ -40,7 +40,7 @@ export default function HostingFintechPost() {
 
         <p className="text-lg leading-relaxed mt-8">
           Finsava is a personal finance app with AI-powered categorization, bank sync from
-          12,000+ institutions, Monte Carlo retirement simulations, interactive budget charts,
+          12,000+ institutions via Plaid (plus SimpleFin), Monte Carlo retirement simulations, interactive budget charts,
           and a health score engine. The core of it runs on a single $7/month VPS — plus a few dollars a month for encrypted storage and offsite backups.
         </p>
 
