@@ -41,34 +41,7 @@ export default function BlogIndex() {
         </div>
 
         <div className="mt-12 space-y-8">
-          {posts.length === 0 ? (
-            <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-12 text-center">
-              <p className="text-5xl mb-4">✍️</p>
-              <h2 className="text-xl font-semibold mb-2">Coming Soon</h2>
-              <p className="text-[var(--muted)] max-w-md mx-auto">
-                We&apos;re working on our first articles. Follow us on{" "}
-                <a
-                  href="https://substack.com/@finsava"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--primary)] hover:underline"
-                >
-                  Substack
-                </a>{" "}
-                or{" "}
-                <a
-                  href="https://x.com/finsava"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--primary)] hover:underline"
-                >
-                  X/Twitter
-                </a>{" "}
-                to get notified when we publish.
-              </p>
-            </div>
-          ) : (
-            posts.map((post) => (
+          {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -90,8 +63,7 @@ export default function BlogIndex() {
                   ))}
                 </div>
               </Link>
-            ))
-          )}
+            ))}
         </div>
       </main>
 

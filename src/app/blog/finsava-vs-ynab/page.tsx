@@ -100,7 +100,7 @@ export default function FinsavaVsYnab() {
           <h3 className="mt-6 text-xl font-semibold">1. FIRE Planning</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
             YNAB has no FIRE calculator. Finsava has a full FIRE Dashboard with
-            2,000-simulation Monte Carlo, guardrails withdrawal strategy, 40-year
+            1,000-simulation Monte Carlo, guardrails withdrawal strategy, 40-year
             retirement survival modeling, 4 historical stress tests, 5 FIRE variants
             (Standard, Lean, Barista, Coast, Fat), and a kids impact scenario. If
             you&apos;re in the FIRE community, the gap here is enormous.

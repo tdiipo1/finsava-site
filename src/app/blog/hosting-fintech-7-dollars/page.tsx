@@ -4,7 +4,7 @@ import ShareButtons from "@/components/ShareButtons";
 import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
-  title: "How We Run a Full-Stack Fintech App for $7/Month",
+  title: "How We Run a Full-Stack Fintech App on a $7/Month VPS",
   description:
     "AI categorization, bank sync from 12,000+ institutions, Monte Carlo simulations, and a full Next.js + FastAPI stack — all running on a $7/month VPS. Here's how.",
   keywords: [
@@ -31,7 +31,7 @@ export default function HostingFintechPost() {
       <article className="mt-8 prose prose-invert max-w-none">
         <BlogHeader category="Infrastructure" />
         <h1 className="text-4xl font-bold leading-tight">
-          How We Run a Full-Stack Fintech App for $7/Month
+          How We Run a Full-Stack Fintech App on a $7/Month VPS
         </h1>
 
         <p className="text-[var(--muted)] text-sm mt-2">
@@ -41,7 +41,7 @@ export default function HostingFintechPost() {
         <p className="text-lg leading-relaxed mt-8">
           Finsava is a personal finance app with AI-powered categorization, bank sync from
           12,000+ institutions, Monte Carlo retirement simulations, interactive budget charts,
-          and a health score engine. Our entire infrastructure costs $7/month.
+          and a health score engine. The core of it runs on a single $7/month VPS — plus a few dollars a month for encrypted storage and offsite backups.
         </p>
 
         <p>Here&apos;s how we do it.</p>
@@ -132,7 +132,7 @@ export default function HostingFintechPost() {
         <h2>What This Means for Users</h2>
 
         <p>
-          Our infrastructure cost is $7/month. Finsava Pro is $9.99/month, and the free tier is genuinely free. The math is
+          Our core VPS costs $7/month. Finsava Pro is $9.99/month, and the free tier is genuinely free. The math is
           simple: we can offer a genuinely full-featured finance app at a fraction of the
           price of YNAB ($14.99) or Monarch ($14.99) because our cost structure allows it.
         </p>

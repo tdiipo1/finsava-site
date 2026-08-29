@@ -80,7 +80,7 @@ export default function FinsavaVsMonarch() {
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava is a specialist. We built it for the FIRE community, with a
-            focus on modeling the future — 2,000-simulation Monte Carlo, 5 FIRE
+            focus on modeling the future — 1,000-simulation Monte Carlo, 5 FIRE
             variants, 4 historical stress tests, guardrails withdrawals, retirement
             survival analysis. If you&apos;re trying to answer &ldquo;when can I
             quit my job?&rdquo; and &ldquo;how confident should I be in that
