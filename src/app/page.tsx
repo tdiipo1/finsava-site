@@ -20,21 +20,20 @@ export default async function Home() {
         <div className="relative z-10 max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-sm text-[var(--muted)]">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
-            5 withdrawal strategies &middot; 154 years of market data &middot; Privacy-first
+            5 withdrawal strategies &middot; Market data back to 1871 &middot; Privacy-first
           </div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Stress-test your retirement against
+            See whether your savings will actually
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              150 years of market history.
+              last as long as you do.
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--muted)] leading-relaxed">
-            Compare five withdrawal strategies &mdash; the 4% rule, guardrails,
-            VPW, constant percentage, and 1/N &mdash; head-to-head on
-            1,000-path Monte Carlo simulations and every real market cohort
-            since 1871, fed by your actual bank data. Free to start, Pro from
-            $9.99/mo.
+            Finsava projects your retirement against every market since 1871 &mdash;
+            including the crashes &mdash; so you find out how much you can safely
+            spend, and for how long. It reads your real accounts, so the answer
+            reflects your actual life. Free to start, Pro from $9.99/mo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
@@ -65,7 +64,7 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
-            <p className="mt-4 text-[var(--muted)] text-lg">21 modules. Enable what you want, disable what you don&apos;t.</p>
+            <p className="mt-4 text-[var(--muted)] text-lg">Turn on what you need, hide the rest.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
@@ -194,12 +193,12 @@ export default async function Home() {
             <Step
               number="1"
               title="Sign Up (30 seconds)"
-              description="Start a 14-day free trial of Pro — no credit card required. Pick what you want from 21 modules, or start with everything."
+              description="Start a 14-day free trial of Pro — no credit card required. Turn on the parts you want, or start with everything."
             />
             <Step
               number="2"
               title="Connect All Your Banks (1 minute)"
-              description="One click to connect via Plaid (12,000+ institutions) or SimpleFin. AI categorizes every transaction automatically — zero manual work."
+              description="Connect via SimpleFin on the free plan, or Plaid (12,000+ banks) on Pro. Either way, every transaction is categorized for you."
             />
             <Step
               number="3"
@@ -216,33 +215,6 @@ export default async function Home() {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-24 px-6 border-t border-[var(--card-border)]">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Built with modern tools</h2>
-          <p className="mt-4 text-[var(--muted)] text-lg mb-12">Production-grade stack you can trust.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              "Next.js 15",
-              "React 19",
-              "TypeScript",
-              "FastAPI (async)",
-              "SQLAlchemy 2.0",
-              "PostgreSQL",
-              "Claude AI",
-              "Tailwind CSS",
-              "Docker",
-              "scikit-learn",
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-2 text-sm font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Bootstrapped */}
       <section className="py-24 px-6 border-t border-[var(--card-border)]">
@@ -259,8 +231,8 @@ export default async function Home() {
               <p className="text-3xl font-bold text-[var(--income)]">Free</p>
               <p className="text-sm text-[var(--muted)] mt-1">To get started</p>
               <p className="text-xs text-[var(--muted)] mt-3 leading-relaxed">
-                Budget planning, bank sync via SimpleFin, AI insights, spending
-                reports, and subscriptions tracking &mdash; no credit card required.
+                Dashboard, transactions, budget planning, bank sync via SimpleFin,
+                AI insights and CSV import &mdash; no credit card required.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center">
@@ -354,10 +326,10 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">🛡️</div>
-              <h3 className="font-semibold text-lg">Rapid CVE Response</h3>
+              <h3 className="font-semibold text-lg">Security Patched Quickly</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Security vulnerabilities are patched within 24 hours. Automated dependency auditing
-                via pip-audit and Dependabot in CI.
+                We monitor our dependencies for known vulnerabilities automatically and aim to
+                patch anything serious within a day.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
@@ -378,7 +350,7 @@ export default async function Home() {
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
               <div className="text-2xl mb-3">📋</div>
-              <h3 className="font-semibold text-lg">1,100+ Automated Tests</h3>
+              <h3 className="font-semibold text-lg">Tested Before It Ships</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                 Comprehensive test suite covering auth, budgets, analytics, health score,
                 sync, imports, transfer detection, tier enforcement, and more.

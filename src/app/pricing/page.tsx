@@ -9,31 +9,28 @@ export const metadata: Metadata = {
 };
 
 const basicFeatures = [
+  "Dashboard — your money at a glance",
+  "Transactions, searchable and editable",
   "Budget planning",
-  "Bank sync via SimpleFin (200+ banks)",
-  "Auto-categorize (ML-powered)",
-  "AI insights (Gemma, local)",
-  "Spending reports",
-  "Subscriptions & recurring detection",
-  "Smart notifications",
+  "Bank sync via SimpleFin",
+  "Categorization that learns your corrections",
+  "AI insights that run on our own hardware",
+  "Debt payoff planning",
   "CSV import",
-  "Email support",
 ];
 
 const proFeatures = [
   "Everything in Free, plus:",
-  "Plaid bank sync (12,000+ institutions)",
-  "AI Assistant (Claude, cloud)",
-  "FIRE Planning Lab (5 withdrawal strategies, goal recommender)",
-  "Retirement spending smile & Social Security modeling",
-  "Historical backtest (S&P 500 from 1871)",
-  "Savings goals & debt payoff strategy",
+  "Plaid bank sync (12,000+ banks)",
+  "AI Assistant powered by Claude",
+  "FIRE Planning Lab — 5 withdrawal strategies, tested against markets back to 1871",
+  "Analytics and spending forecasts",
+  "Savings goals",
   "Net worth tracking",
-  "Forecasting & analytics",
   "Investment tracking",
+  "Subscriptions and recurring charge detection",
   "Multi-currency (18 currencies)",
-  "Merchant cleanup & filter rules",
-  "Priority support",
+  "Merchant cleanup and filter rules",
 ];
 
 export default function PricingPage() {
@@ -87,7 +84,7 @@ export default function PricingPage() {
           <div className="relative flex flex-col rounded-2xl border-2 border-[var(--primary)] bg-[var(--card)] p-8">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span className="rounded-full bg-[var(--primary)] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                Most Popular
+                Full access
               </span>
             </div>
 
