@@ -86,7 +86,7 @@ export default function OGImage() {
             color: "#71717a",
           }}
         >
-          Self-hostable with local AI — your data can stay home.
+          AI insights on our own hardware — your data is never sold.
         </span>
 
         {/* Bottom accent bar */}
