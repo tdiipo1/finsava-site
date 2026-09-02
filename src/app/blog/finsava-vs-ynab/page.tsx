@@ -83,9 +83,9 @@ export default function FinsavaVsYnab() {
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava&apos;s core idea is <em>your data has patterns; let AI find
             them</em>. Instead of assigning every dollar manually, you connect your
-            accounts and Finsava&apos;s ML pipeline categorizes every transaction,
-            flags anomalies, detects subscriptions, and suggests budgets based on
-            four different AI-generated profiles. It&apos;s an insight system more
+            accounts and Finsava categorizes every transaction for you, flags
+            spending that is unusual for you, finds your subscriptions, and suggests
+            budgets in four styles from cautious to aggressive. It&apos;s an insight system more
             than a discipline system.
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">

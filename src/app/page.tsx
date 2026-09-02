@@ -312,8 +312,8 @@ export default async function Home() {
               <div className="text-2xl mb-3">🔒</div>
               <h3 className="font-semibold text-lg">Encrypted at Rest</h3>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                Bank credentials encrypted at rest with industry-standard encryption. Passwords securely hashed.
-                All database queries scoped by user ID.
+                Your bank credentials are encrypted where they are stored, and passwords are never
+                kept in a readable form. Your data is walled off from every other account.
               </p>
             </div>
             <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-left">
