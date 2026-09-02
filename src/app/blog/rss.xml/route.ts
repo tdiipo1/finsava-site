@@ -45,7 +45,7 @@ ${categories}
     <title>Finsava Blog</title>
     <link>${SITE_URL}/blog</link>
     <atom:link href="${SITE_URL}/blog/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Building Finsava in public — personal finance, AI-powered budgeting, FIRE planning, and indie hacker engineering.</description>
+    <description>Practical writing on budgeting, retirement planning, and deciding when you can afford to stop working.</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
 ${items}

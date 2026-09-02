@@ -96,11 +96,12 @@ export default function FinsavaVsEmpower() {
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava doesn&apos;t have an advisory business, doesn&apos;t sell leads,
-            and doesn&apos;t have any revenue model tied to your data. Self-host it
-            and the Gemma AI runs locally, so your financial data stays on your own
-            server; on our hosted version, Pro&apos;s Claude features send merchant
-            descriptions (not amounts, dates, or identifying info) to Anthropic,
-            and the free tier sticks to local AI only.
+            and has no revenue model tied to your data. The free plan&apos;s insights
+            are generated on our own machines, so your spending is not handed to an
+            outside AI company. On Pro, the assistant sends merchant names &mdash; not
+            amounts, dates, or anything identifying you &mdash; to Anthropic to write
+            its answers. That is the whole of it, and you can read the same detail in
+            our privacy policy.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Where Finsava pulls ahead</h2>
@@ -140,17 +141,17 @@ export default function FinsavaVsEmpower() {
 
           <h3 className="mt-6 text-xl font-semibold">5. Anomaly Detection and Categorization</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Empower&apos;s categorization is rules-based and often wrong. Finsava
-            uses ML with confidence calibration and learns from corrections.
-            Empower has no statistical anomaly detection; Finsava flags unusual
-            transactions automatically.
+            Empower categorizes by fixed rules and gets it wrong often enough to be
+            annoying. Finsava learns from your corrections, and says so when it is
+            unsure rather than guessing quietly. It also tells you when a category
+            has jumped well beyond your own normal; Empower leaves you to notice.
           </p>
 
-          <h3 className="mt-6 text-xl font-semibold">6. Self-hostable and Privacy-first</h3>
+          <h3 className="mt-6 text-xl font-semibold">6. Nobody is reading your balances to sell you something</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava can be run on your own hardware via Docker. Local AI via
-            Gemma 4 means your data stays on your machine. Empower is SaaS with
-            cloud-based analysis — there&apos;s no equivalent option.
+            The difference is structural rather than a promise. Empower needs to know
+            which users are worth calling. We make money when you pay $9.99, so your
+            portfolio size is not a sales signal to us.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Where Empower pulls ahead</h2>
@@ -201,8 +202,7 @@ export default function FinsavaVsEmpower() {
                   ["Real budgeting with AI profiles", "yes", "partial"],
                   ["Portfolio fee analyzer", "partial", "yes"],
                   ["Financial health score", "yes", "partial"],
-                  ["Local AI (Gemma 4)", "yes", "no"],
-                  ["Self-hostable (Docker)", "yes", "no"],
+                  ["AI insights on our own hardware", "yes", "no"],
                   ["Data used for advisory lead-gen", "no", "yes"],
                 ].map(([feature, a, b]) => (
                   <tr key={feature} className="border-b border-[var(--card-border)]/50">
@@ -227,10 +227,12 @@ export default function FinsavaVsEmpower() {
 
           <h2 className="mt-12 text-2xl font-bold">The math on &ldquo;free&rdquo;</h2>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
-            Let&apos;s say you&apos;re 35 with a $250k portfolio and you sign up for
-            Empower Wealth Management at 0.89% AUM. Over 30 years, assuming a 7%
-            real return and no additional contributions, that 0.89% fee compounds
-            into approximately $470,000 in lost wealth vs. a no-fee alternative.
+            Say you&apos;re 35 with a $250k portfolio and you sign up for Empower
+            Wealth Management at 0.89% of assets a year. Leave it 30 years, assume a
+            7% return after inflation and no further contributions, and the fee costs
+            you roughly $422,000. The arithmetic is checkable: $250,000 growing at 7%
+            for 30 years is about $1.90M, and at 6.11% &mdash; the same 7% minus the
+            0.89% fee &mdash; about $1.48M. The gap is the fee, compounded.
           </p>
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             Finsava Pro at $120/year for 30 years is $3,600 nominal. Even if you
@@ -260,7 +262,7 @@ export default function FinsavaVsEmpower() {
             <li>&bull; You need proper budgeting, not just retirement projection</li>
             <li>&bull; You&apos;re tired of declining advisory sales calls</li>
             <li>&bull; You want ML categorization that improves over time</li>
-            <li>&bull; You might eventually want to self-host</li>
+            <li>&bull; You want your financial data kept out of a sales funnel</li>
           </ul>
 
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
@@ -278,11 +280,16 @@ export default function FinsavaVsEmpower() {
 
           <p className="mt-8 text-xs text-[var(--muted)] border-t border-[var(--card-border)] pt-6">
             <em>
-              Competitor pricing, features, and advisory fees as of April 2026 and
-              may have changed. The 0.89% AUM figure reflects Empower&apos;s
-              publicly disclosed tiered pricing and may vary. This comparison
-              reflects the author&apos;s understanding of each product&apos;s
-              publicly documented capabilities.
+              This post is for educational and informational purposes only and is not
+              investment advice. The fee projection is an illustration under the stated
+              assumptions &mdash; a 7% return after inflation, no further contributions,
+              and a flat 0.89% fee for 30 years. Real returns vary, fees are tiered, and
+              your outcome will differ. Consult a qualified financial professional before
+              making investment decisions. Competitor pricing, features, and advisory
+              fees are as of April 2026 and may have changed; the 0.89% figure reflects
+              Empower&apos;s publicly disclosed tiered pricing and may vary. This
+              comparison reflects the Finsava team&apos;s understanding of each
+              product&apos;s publicly documented capabilities.
             </em>
           </p>
 

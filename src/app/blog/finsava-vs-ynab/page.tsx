@@ -99,48 +99,47 @@ export default function FinsavaVsYnab() {
 
           <h3 className="mt-6 text-xl font-semibold">1. FIRE Planning</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            YNAB has no FIRE calculator. Finsava has a full FIRE Dashboard with
-            1,000-simulation Monte Carlo, guardrails withdrawal strategy, 40-year
-            retirement survival modeling, 4 historical stress tests, 5 FIRE variants
-            (Standard, Lean, Barista, Coast, Fat), and a kids impact scenario. If
-            you&apos;re in the FIRE community, the gap here is enormous.
+            YNAB tells you where this month&apos;s money went. It has nothing to say
+            about whether you can afford to stop working. Finsava answers that
+            directly: how large your savings are likely to be, how much you could
+            safely spend each year, and how often that plan still works when markets
+            behave like 2008 or the 1970s rather than like a spreadsheet. It also
+            handles the versions people actually live &mdash; retiring lean, going
+            part-time, or stopping saving and letting it grow.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold">2. AI-Powered Categorization</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            YNAB has some auto-categorization via rules and machine learning, but
-            it leans heavily on manual adjustment. Finsava uses a 5-layer ML pipeline
-            with Claude AI for ambiguous cases, confidence calibration, and automatic
-            retraining when drift is detected. It learns from your corrections and
-            gets smarter over time without you doing anything.
+            YNAB can auto-categorize, but it leans on you to correct it &mdash; every
+            month, forever. Finsava learns. Correct a merchant once and it stays
+            corrected, including for shops it has never seen. When it genuinely cannot
+            tell, it says so rather than guessing quietly, asks you once, and
+            remembers. The work shrinks over time instead of staying flat.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold">3. Anomaly Detection</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava uses statistical anomaly detection (MAD-based z-scores) to flag
-            unusual transactions and spending shifts. YNAB has no equivalent — you
-            notice anomalies by manually reviewing categories.
+            Finsava compares each category against your own normal, not a limit you
+            set months ago and forgot. If groceries jump well beyond what they usually
+            are for you, it says so. YNAB leaves you to spot that by reading down the
+            columns yourself.
           </p>
 
-          <h3 className="mt-6 text-xl font-semibold">4. Local AI Insights</h3>
+          <h3 className="mt-6 text-xl font-semibold">4. Plain-English insights, on our own hardware</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava runs Gemma 4 locally via Ollama to generate plain-language
-            insights about your spending, health score, and FIRE trajectory. Nothing
-            is sent to OpenAI or a third-party LLM. YNAB has no local AI option.
+            Finsava writes you a readable summary of what changed in your spending and
+            what it means for your retirement date. On the free plan that runs on our
+            own machines rather than being handed to an outside AI company. YNAB
+            offers nothing comparable.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold">5. Financial Health Score</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava computes a 5-component health score (savings rate, budget
-            adherence, emergency fund, spending trend, goal progress) with an
-            expandable breakdown and 12-month history. YNAB doesn&apos;t have a
-            unified health metric.
-          </p>
-
-          <h3 className="mt-6 text-xl font-semibold">6. Self-hostable</h3>
-          <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava is distributed as a Docker Compose stack that runs entirely on
-            your own hardware if you want. YNAB is SaaS-only.
+            One number, A to F, covering how much you save, whether you stick to your
+            budget, how healthy your emergency fund is, which way your spending is
+            trending, and how your goals are going. Open it up to see which part is
+            dragging, and watch it move over a year. YNAB has no single measure like
+            this.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Where YNAB pulls ahead</h2>
@@ -188,15 +187,14 @@ export default function FinsavaVsYnab() {
                   ["Price/month", "$9.99 (free tier available)", "$14.99"],
                   ["Bank sync (Plaid + SimpleFin)", "yes", "yes"],
                   ["Envelope / zero-based budgeting", "partial", "yes"],
-                  ["AI categorization with calibration", "yes", "no"],
-                  ["Monte Carlo FIRE calculator", "yes", "no"],
-                  ["Guardrails withdrawal strategy", "yes", "no"],
-                  ["5 FIRE variants (Lean/Coast/Barista/Fat)", "yes", "no"],
-                  ["Statistical anomaly detection", "yes", "no"],
+                  ["Categorization that learns your corrections", "yes", "no"],
+                  ["Retirement projection across 1,000 markets", "yes", "no"],
+                  ["Adjusts spending when markets fall", "yes", "no"],
+                  ["Models part-time or early semi-retirement", "yes", "no"],
+                  ["Flags spending unusual for you", "yes", "no"],
                   ["Financial health score", "yes", "no"],
-                  ["Local AI (Gemma 4)", "yes", "no"],
+                  ["AI insights on our own hardware", "yes", "no"],
                   ["Multi-currency (18 currencies)", "yes", "yes"],
-                  ["Self-hostable (Docker)", "yes", "no"],
                   ["Investment tracking", "yes", "no"],
                   ["Subscription audit", "yes", "partial"],
                 ].map(([feature, a, b]) => (
@@ -225,7 +223,7 @@ export default function FinsavaVsYnab() {
             <li>&bull; You want strict envelope budgeting discipline</li>
             <li>&bull; You love YNAB&apos;s Four Rules methodology</li>
             <li>&bull; You want to manage budgets from a polished native mobile app</li>
-            <li>&bull; You don&apos;t care about FIRE planning, ML categorization, or self-hosting</li>
+            <li>&bull; You don&apos;t care about retirement planning and prefer to categorize by hand</li>
             <li>&bull; The price isn&apos;t a concern</li>
           </ul>
 
@@ -236,7 +234,7 @@ export default function FinsavaVsYnab() {
             <li>&bull; You value privacy and local AI over cloud-based analysis</li>
             <li>&bull; You bounced off YNAB because envelope budgeting felt like too much work</li>
             <li>&bull; You want to pay a third as much</li>
-            <li>&bull; You might eventually want to self-host</li>
+            <li>&bull; You want a free plan that still connects to your bank</li>
           </ul>
 
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">

@@ -8,7 +8,7 @@ import BlogHeader from "@/components/BlogHeader";
 export const metadata: Metadata = {
   title: "Finsava Is Live, Invite-Only: What Shipped and What Didn't",
   description:
-    "Finsava's closed pilot is live. An engineer's launch note: the Python + Next.js build story, what's in Free vs Pro, and what we deliberately haven't turned on.",
+    "Finsava is live as a closed pilot. What you get free, what Pro adds, and the things we have deliberately not switched on yet.",
   keywords: [
     "personal finance python",
     "FastAPI Next.js app",
@@ -33,7 +33,7 @@ export default function FinsavaIsLivePost() {
         </Link>
 
         <article className="mt-8 prose prose-invert max-w-none">
-          <BlogHeader category="Infrastructure" />
+          <BlogHeader category="Money Guides" />
           <h1 className="text-4xl font-bold leading-tight mt-6">
             Finsava Is Live, Invite-Only: What Shipped and What Didn&apos;t
           </h1>
@@ -45,11 +45,10 @@ export default function FinsavaIsLivePost() {
           </div>
 
           <p className="mt-8 text-lg leading-relaxed text-[var(--muted)]">
-            Finsava is running in production at app.finsava.com. It&apos;s a
-            closed, invite-only pilot — not a launch party. This is the post we
-            should have written months ago, so it&apos;s going to do double duty:
-            the build story, and an honest inventory of what&apos;s live, what
-            isn&apos;t, and why we&apos;re gating the door.
+            Finsava is live at app.finsava.com, as a closed pilot rather than a
+            launch party. Here is what it does for your money today, what the free
+            plan covers, what Pro adds &mdash; and, just as usefully, the things we
+            have deliberately not switched on yet and why.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">What Finsava is</h2>
@@ -66,13 +65,12 @@ export default function FinsavaIsLivePost() {
           </p>
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
-            The stack is deliberately boring: a Python FastAPI backend, a Next.js
-            frontend, PostgreSQL, Docker Compose, all on a
-            $7/month VPS{" "}
-            (plus a few dollars for encrypted storage and offsite backups). Two
-            people, no outside money. Boring infrastructure is a feature: every
-            dollar not spent on hosting is a dollar we don&apos;t have to charge
-            you.
+            We run Finsava for about $7 a month, plus a few dollars for encrypted
+            storage and offsite backups. Two people, no outside money, nothing
+            clever. That matters to you rather than to us: every dollar we don&apos;t
+            spend running the thing is a dollar we don&apos;t have to charge you for
+            it, and there is no investor expecting us to find another way to make
+            money from your data later.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">What&apos;s live in the pilot</h2>
@@ -147,7 +145,7 @@ export default function FinsavaIsLivePost() {
             <strong className="text-[var(--foreground)]">A pretty roadmap.</strong>{" "}
             We keep one, but publishing dates we might miss helps nobody. What we
             will publish is what just shipped, every time it ships — this blog is
-            the changelog with reasoning attached.
+            a plain account of what changed and why it matters to you.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Why this post exists</h2>

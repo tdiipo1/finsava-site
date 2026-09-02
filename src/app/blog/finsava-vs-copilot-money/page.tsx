@@ -71,7 +71,7 @@ export default function FinsavaVsCopilotMoney() {
             <p>
               Finsava also has a genuinely free tier with budgeting, CSV import, SimpleFin
               bank sync, and local AI categorization — Copilot has no free tier at all.
-              New Finsava accounts start with a invite-only pilot's 14-day Pro trial of Pro.
+              Finsava is in an invite-only pilot, and every invite starts with a 14-day Pro trial.
             </p>
           </section>
 
