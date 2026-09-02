@@ -32,3 +32,7 @@ npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 .verify/
+
+# Exported waitlist CSVs — never commit signup emails
+waitlist-*.csv
+.env.local
