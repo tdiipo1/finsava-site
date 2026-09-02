@@ -26,8 +26,16 @@ export default function WaitlistAdmin() {
     setError("");
 
     try {
-      const res = await fetch(`/api/waitlist/list?secret=${encodeURIComponent(secret)}`);
-      if (res.status === 401) {
+      // Secret travels in a header, not the query string: query params end up
+      // in proxy logs, browser history and Referer headers.
+      const res = await fetch("/api/waitlist/list", {
+        headers: { "x-admin-secret": secret },
+      });
+      if (res.status === 503) {
+        setError("Server is missing WAITLIST_ADMIN_SECRET.");
+        setData(null);
+        setAuthenticated(false);
+      } else if (res.status === 401) {
         setError("Invalid secret.");
         setData(null);
         setAuthenticated(false);
@@ -42,8 +50,23 @@ export default function WaitlistAdmin() {
     setLoading(false);
   };
 
-  const downloadCsv = () => {
-    window.open(`/api/waitlist/list?secret=${encodeURIComponent(secret)}&format=csv`);
+  const downloadCsv = async () => {
+    // window.open cannot set headers, so fetch the CSV and save it from a blob.
+    try {
+      const res = await fetch("/api/waitlist/list?format=csv", {
+        headers: { "x-admin-secret": secret },
+      });
+      if (!res.ok) { setError("Export failed."); return; }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `finsava-waitlist-${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      setError("Export failed.");
+    }
   };
 
   const formatDate = (iso: string) => {
