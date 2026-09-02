@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButtons from "@/components/ShareButtons";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import BlogHeader from "@/components/BlogHeader";
 
 export const metadata: Metadata = {
@@ -20,7 +22,10 @@ export const metadata: Metadata = {
 
 export default function BudgetVisualizationPost() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-24">
+    <div className="min-h-screen">
+      <SiteNav current="Blog" />
+
+      <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
       <Link
         href="/blog"
         className="text-sm text-[var(--muted)] hover:text-white transition-colors"
@@ -156,6 +161,9 @@ export default function BudgetVisualizationPost() {
           title="Budget Visualization That Makes YNAB Look Like a Spreadsheet"
         />
       </article>
-    </main>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }

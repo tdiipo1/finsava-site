@@ -24,8 +24,8 @@ export default function BlogIndex() {
           <div>
             <h1 className="text-4xl font-bold sm:text-5xl">Blog</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Building Finsava in public — personal finance, AI-powered budgeting,
-              and the journey from side project to product.
+              Practical writing on budgeting, retirement planning, and working out
+              when you can afford to stop working.
             </p>
           </div>
           <a

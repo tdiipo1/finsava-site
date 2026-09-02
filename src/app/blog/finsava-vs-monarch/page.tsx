@@ -99,35 +99,28 @@ export default function FinsavaVsMonarch() {
             reason Finsava exists.
           </p>
 
-          <h3 className="mt-6 text-xl font-semibold">2. ML Categorization with Calibration</h3>
+          <h3 className="mt-6 text-xl font-semibold">2. Categorization that learns</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Monarch uses rules-based categorization with some ML. Finsava uses a
-            5-layer pipeline (exact match &rarr; merchant memory &rarr; ML classifier
-            &rarr; Claude AI &rarr; global model) with confidence calibration and
-            automatic retraining when drift is detected. The result: higher first-pass
-            accuracy and fewer manual corrections over time.
+            Monarch categorizes mostly by rules you maintain. Finsava learns from you
+            instead: correct a merchant once and it stays corrected, including for
+            shops it has not seen before. When it genuinely cannot tell, it says so
+            and asks once rather than guessing quietly. Fewer corrections each month,
+            rather than the same number forever.
           </p>
 
-          <h3 className="mt-6 text-xl font-semibold">3. Statistical Anomaly Detection</h3>
+          <h3 className="mt-6 text-xl font-semibold">3. Spending alerts based on your own history</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava uses MAD-based z-scores to flag unusual transactions and spending
-            shifts (e.g., a category suddenly spending 3 standard deviations above
-            its 6-month mean). Monarch has alerts but no statistical anomaly system.
+            Finsava compares each category against your own six-month normal, so
+            &ldquo;unusual&rdquo; means unusual for you rather than over a number you
+            picked once. Monarch has alerts, but you set the thresholds yourself.
           </p>
 
-          <h3 className="mt-6 text-xl font-semibold">4. Privacy and Local AI</h3>
+          <h3 className="mt-6 text-xl font-semibold">4. Your data is not handed to an AI company</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava runs Gemma 4 locally via Ollama for AI insights. None of your
-            financial data is sent to OpenAI, Anthropic, or any third-party LLM
-            for the local-AI path. Monarch is a cloud-only SaaS with no privacy
-            equivalent.
-          </p>
-
-          <h3 className="mt-6 text-xl font-semibold">5. Self-hostable</h3>
-          <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Finsava ships as a Docker Compose stack you can run on your own hardware.
-            If you want your financial data to never leave your home network, that&apos;s
-            an option. Monarch is SaaS-only.
+            The insights on the free plan are generated on our own machines, so your
+            spending is not sent to an outside AI provider to produce them. If you use
+            the Pro assistant, we say plainly what is sent and what is not. Monarch
+            offers no equivalent choice.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold">6. Kids Impact on FIRE</h3>
@@ -186,14 +179,13 @@ export default function FinsavaVsMonarch() {
                   ["5 FIRE variants (Lean/Coast/Barista/Fat)", "yes", "no"],
                   ["Historical stress tests (4 scenarios)", "yes", "no"],
                   ["Kids impact on FIRE", "yes", "no"],
-                  ["ML categorization with calibration", "yes", "partial"],
+                  ["Categorization that learns your corrections", "yes", "partial"],
                   ["Statistical anomaly detection", "yes", "no"],
-                  ["Local AI (Gemma 4)", "yes", "no"],
+                  ["AI insights on our own hardware", "yes", "no"],
                   ["Financial health score", "yes", "no"],
                   ["Household / couples collaboration", "partial", "yes"],
                   ["Native mobile apps", "no", "yes"],
                   ["Bill tracking with reminders", "partial", "yes"],
-                  ["Self-hostable (Docker)", "yes", "no"],
                   ["Multi-currency (18 currencies)", "yes", "partial"],
                 ].map(([feature, a, b]) => (
                   <tr key={feature} className="border-b border-[var(--card-border)]/50">
@@ -229,9 +221,9 @@ export default function FinsavaVsMonarch() {
           <ul className="mt-4 space-y-2 text-[var(--muted)]">
             <li>&bull; You&apos;re pursuing FIRE and want real Monte Carlo modeling</li>
             <li>&bull; You want ML categorization that improves over time</li>
-            <li>&bull; You value privacy and self-hosting as an option</li>
+            <li>&bull; You want your financial data kept out of an AI company&apos;s hands</li>
             <li>&bull; You want to pay a third less, or start free</li>
-            <li>&bull; You care about statistical rigor (anomaly detection, calibration, SE disclosure)</li>
+            <li>&bull; You want the maths shown, with its uncertainty, not a single confident number</li>
           </ul>
 
           <div className="mt-12 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">

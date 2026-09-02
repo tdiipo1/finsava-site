@@ -15,13 +15,9 @@ const CATEGORY_GRADIENTS: Record<string, { gradient: string; icon: string }> = {
     gradient: "from-blue-500/20 via-indigo-500/15 to-transparent",
     icon: "⚖️",
   },
-  "Infrastructure": {
+  "Money Guides": {
     gradient: "from-emerald-500/20 via-teal-500/15 to-transparent",
-    icon: "🛠",
-  },
-  "Engineering": {
-    gradient: "from-violet-500/20 via-purple-500/15 to-transparent",
-    icon: "⚙️",
+    icon: "💡",
   },
 };
 

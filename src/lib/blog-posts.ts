@@ -13,12 +13,12 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     slug: "finsava-is-live-invite-only",
-    title: "Finsava Is Live, Invite-Only: What Shipped and What Didn't",
+    title: "Finsava Is Live: What You Get, and What We Have Not Built Yet",
     description:
-      "Finsava's closed pilot is live. An engineer's launch note: the Python + Next.js build story, what's in Free vs Pro, and what we deliberately haven't turned on.",
+      "Finsava is live as a closed pilot. What you get free, what Pro adds, and the things we have deliberately not switched on yet.",
     date: "2026-08-29",
-    tags: ["engineering", "indie hacker"],
-    category: "Infrastructure",
+    tags: ["budgeting", "FIRE"],
+    category: "Money Guides",
   },
   {
     slug: "fire-dashboard-deep-dive",
