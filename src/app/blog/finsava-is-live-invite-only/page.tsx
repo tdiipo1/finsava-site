@@ -78,8 +78,8 @@ export default function FinsavaIsLivePost() {
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             The <strong className="text-[var(--foreground)]">free tier</strong> is
             the core toolkit: budgeting, dashboard, transactions, CSV import,
-            SimpleFin bank sync, and AI insights that run on Gemma —{" "}
-            <em>on our own hardware</em>, not shipped to a third-party model API.
+            SimpleFin bank sync, and AI insights generated{" "}
+            <em>on our own hardware</em> rather than handed to an outside AI company.
           </p>
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
@@ -134,10 +134,10 @@ export default function FinsavaIsLivePost() {
 
           <p className="mt-4 leading-relaxed text-[var(--muted)]">
             <strong className="text-[var(--foreground)]">Real brokerage holdings.</strong>{" "}
-            The pipeline for live positions — tickers, quantities, market values,
-            unrealized gains — is built and tested, but it depends on a Plaid
-            data product that&apos;s still in their approval queue for our
-            account. Until users can actually see it, we&apos;re not blogging it
+            Seeing the individual shares inside your investment accounts — what you
+            hold, what it cost, what it is worth now — was waiting on approval from
+            our bank-data provider. That has since come through. Until you could
+            actually see it, we were not going to write about it
             as a feature. It ships when it&apos;s visible, not when it compiles.
           </p>
 

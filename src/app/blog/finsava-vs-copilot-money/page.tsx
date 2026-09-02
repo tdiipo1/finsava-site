@@ -138,11 +138,10 @@ export default function FinsavaVsCopilotMoney() {
 
             <h3 className="text-xl font-medium text-[var(--foreground)] mt-6">ML That Gets Smarter With You</h3>
             <p>
-              Every time you categorize a transaction, Finsava&apos;s per-user ML
-              classifier learns your preferences. A separate global model (trained on
-              anonymized, aggregated data from all users) helps new accounts get
-              accurate categorization from day one — no training period needed. Your
-              data stays private: the global model uses only merchant names and
+              Every time you correct a category, Finsava remembers it for you
+              specifically. New accounts also benefit from what it has learned across
+              everyone, so it is useful on day one rather than after months of
+              training. That shared learning uses only merchant names and
               category labels, never amounts or account details.
             </p>
 

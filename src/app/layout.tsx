@@ -64,7 +64,7 @@ const jsonLd = {
   description: siteDescription,
   url: siteUrl,
   applicationCategory: "FinanceApplication",
-  operatingSystem: "Web, Docker, Windows, Linux, macOS",
+  operatingSystem: "Web",
   author: {
     "@type": "Organization",
     name: "Finsava",
