@@ -15,14 +15,21 @@ export default function WaitlistSection() {
     setStatus("loading");
     setErrorMsg("");
 
+    // A request that never answers must still answer the visitor. When the
+    // store became unreachable the route hung until the platform killed it,
+    // so this promise never settled and the button span forever.
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15_000);
+
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim() }),
+        signal: controller.signal,
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       if (res.status === 429) {
         setStatus("error");
@@ -30,14 +37,24 @@ export default function WaitlistSection() {
       } else if (res.status === 400) {
         setStatus("error");
         setErrorMsg(data.error || "Please enter a valid email.");
+      } else if (!res.ok) {
+        // Anything else that failed is NOT a signup. This branch used to fall
+        // through to success, so a 500 would have told someone they were on
+        // the list when nothing had been stored.
+        setStatus("error");
+        setErrorMsg(data.error || "We couldn't save your address. Please email hello@finsava.com and we'll add you.");
       } else if (data.message?.includes("already")) {
         setStatus("duplicate");
       } else {
         setStatus("success");
       }
-    } catch {
+    } catch (err) {
       setStatus("error");
-      setErrorMsg("Something went wrong. Please try again.");
+      setErrorMsg((err as Error)?.name === "AbortError"
+        ? "That took too long. Please email hello@finsava.com and we'll add you."
+        : "Something went wrong. Please try again.");
+    } finally {
+      clearTimeout(timeout);
     }
   };
 
