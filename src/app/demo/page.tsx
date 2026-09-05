@@ -40,10 +40,10 @@ const snapshot = {
   // Tiles sum to marketValue; marketValue - costBasis is the stated gain.
   investments: {
     marketValue: 96_400,
-    costBasis: 71_250,
-    unrealizedGain: 25_150,
-    gainPct: 35.3,
-    coveragePct: 100,
+    costBasis: 68_929.38,
+    unrealizedGain: 21_370.62,
+    gainPct: 31.0,
+    coveragePct: 93.7,
     incomeTtm: 1_284,
     contributionsYtd: 14_600,
     positions: [
