@@ -11,22 +11,33 @@ npm run verify:demo  # type-checks and sanity-checks the Strategy Lab demo
 
 ## The waitlist
 
+**This site has no database.** A signup is forwarded to the Finsava app,
+which stores it in the same Postgres as everything else and backs it up with
+everything else.
+
+That is deliberate. The site used to keep its own Redis store, which meant a
+service nobody was watching: it lapsed, its hostname stopped resolving, and
+every signup hung until the platform killed the request — which is what "the
+button is broken" looked like. The app already had a `waitlist_signups` table
+documented as "forwarded from finsava-site", so this is the arrangement the
+product was designed for.
+
 ### Getting the list
 
-There is **no admin page and no API endpoint** that returns the list — one
-existed, it could be downloaded by anyone, and it was removed rather than
-given a password. The export is a local script, and your Vercel login is the
-authentication:
+Sign in to Finsava as an admin, then:
 
-```bash
-npx vercel login                 # once
-npx vercel link                  # once — pick the finsava-site project
-npx vercel env pull .env.local   # pulls REDIS_URL; only works if you have access
-npm run waitlist:export          # writes waitlist-YYYY-MM-DD.csv in the repo root
+```
+https://app.finsava.com/api/waitlist              # JSON
+https://app.finsava.com/api/waitlist?format=csv   # CSV download
 ```
 
-The CSV is gitignored. Email addresses are escaped so one beginning `=`, `+`,
-`-` or `@` cannot execute as a formula when opened in Excel.
+Admin auth is the only credential — no separate secret to store or lose.
+Email addresses in the CSV are escaped so one beginning `=`, `+`, `-` or `@`
+cannot execute as a formula in a spreadsheet.
+
+There is deliberately **no endpoint on this site that can return the list**.
+One existed, anyone could download it, and it was removed rather than given
+a password.
 
 ### Checking whether signups are working
 
@@ -34,27 +45,22 @@ The CSV is gitignored. Email addresses are escaped so one beginning `=`, `+`,
 curl https://finsava.com/api/waitlist
 ```
 
-Returns `{"ok":true,"store":"reachable","signups":N}` when the store is
-healthy, or `{"ok":false,"store":"unreachable"|"unconfigured"}` when it is
-not. It deliberately returns **no addresses** — just whether the thing works
-and how many rows exist, so you can diagnose the button without submitting a
-real signup or exposing anyone's email.
+`{"ok":true,...}` means the site can reach the app and signups will land.
+`{"ok":false,...}` means they will not. It submits nothing and returns no
+personal data, so it is safe to call any time.
 
 ### If signups are failing
 
-The store is a Redis instance reached through `REDIS_URL`, set in the Vercel
-project's environment variables. If the probe above says `unreachable`, that
-instance is down, expired, or the URL is stale — check the Redis provider
-first, then `npx vercel env ls` to confirm the variable is present for the
-Production environment.
+The site forwards to `APP_URL` (defaults to `https://app.finsava.com`), so
+"failing" almost always means the app is down or unreachable — check the app
+first, not this site.
 
-Signups attempted while the store is down are **not silently dropped**: the
-route logs each one on its own line before returning an error, so they can be
-recovered from the platform logs:
+Nothing is silently dropped in the meantime. Each failed attempt is logged on
+its own line before the error is returned:
 
 ```bash
 npx vercel logs --since 30d | grep WAITLIST_MISSED
 ```
 
 Visitors are never told they joined when nothing was stored — a failed
-submission shows an error with a mailto fallback instead.
+submission shows an error with a mailto fallback.
