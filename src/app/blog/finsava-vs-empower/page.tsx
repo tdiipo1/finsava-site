@@ -165,10 +165,14 @@ export default function FinsavaVsEmpower() {
 
           <h3 className="mt-6 text-xl font-semibold">2. Investment Analysis Tools</h3>
           <p className="mt-3 leading-relaxed text-[var(--muted)]">
-            Empower has strong portfolio analysis features — asset allocation
-            breakdowns, fee analyzer, retirement fee calculator. Finsava has basic
-            investment tracking but Empower&apos;s investment tooling is more
-            developed for people with complex portfolios.
+            Empower&apos;s fee analyzer and retirement fee calculator have no
+            equivalent in Finsava, and if you want a tool to tell you what your
+            funds are costing you, that is a real reason to use Empower.
+            Allocation analysis is no longer the gap it once was: Finsava reads
+            real positions from your brokerages and breaks them down by holding,
+            security type and sector, tracks dividend and interest income, and
+            reports realized gains — labeling the method it used rather than
+            implying tax-lot precision it does not have.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold">3. Larger Account Coverage</h3>

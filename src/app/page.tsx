@@ -101,7 +101,7 @@ export default async function Home() {
             <FeatureCard
               icon="💹"
               title="Investment Tracking"
-              description="Track 401(k), IRA, brokerage, and ESPP accounts. Contribution limit progress bars and growth metrics. Auto-populate your FIRE number."
+              description="Real positions from your brokerages — holdings, allocation, dividends and realized gains, with about two years of history on first connect. Every figure says what it covers. Auto-populates your FIRE number."
             />
             <FeatureCard
               icon="🌍"

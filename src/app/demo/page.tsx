@@ -36,7 +36,36 @@ const snapshot = {
   ],
   fire: { probabilityPct: 78, yearsP50: 14, yearsP10: 11, yearsP90: 19, fireNumber: 1_250_000 },
   healthScore: { score: 82, grade: "B+" },
+  // Same numbers the API preview returns, so the two demos cannot disagree.
+  // Tiles sum to marketValue; marketValue - costBasis is the stated gain.
+  investments: {
+    marketValue: 96_400,
+    costBasis: 71_250,
+    unrealizedGain: 25_150,
+    gainPct: 35.3,
+    coveragePct: 100,
+    incomeTtm: 1_284,
+    contributionsYtd: 14_600,
+    positions: [
+      { ticker: "VTI", name: "Vanguard Total Stock Market ETF", value: 31_200, gainPct: 42.1, isCash: false },
+      { ticker: "VXUS", name: "Vanguard Total International Stock ETF", value: 14_800, gainPct: 11.4, isCash: false },
+      { ticker: "VOO", name: "Vanguard S&P 500 ETF", value: 12_400, gainPct: 38.7, isCash: false },
+      { ticker: "BND", name: "Vanguard Total Bond Market ETF", value: 9_600, gainPct: -3.2, isCash: false },
+      { ticker: "QQQM", name: "Invesco NASDAQ 100 ETF", value: 8_900, gainPct: 61.5, isCash: false },
+      { ticker: "SCHD", name: "Schwab US Dividend Equity ETF", value: 7_300, gainPct: 9.8, isCash: false },
+      { ticker: "AAPL", name: "Apple Inc.", value: 6_100, gainPct: 128.4, isCash: false },
+      { ticker: "CASH", name: "Settlement cash", value: 6_100, gainPct: null, isCash: true },
+    ] as Array<{ ticker: string; name: string; value: number; gainPct: number | null; isCash: boolean }>,
+  },
 };
+
+/** Same ramp the app ships: near-grey at 0, log magnitude, white stays legible. */
+function heat(gainPct: number | null, isCash: boolean): string {
+  if (isCash) return "#0f766e";
+  if (gainPct === null) return "hsl(215, 10%, 45%)";
+  const mag = Math.min(1, Math.log10(1 + Math.abs(gainPct) / 8) / Math.log10(1 + 100 / 8));
+  return `hsl(${gainPct >= 0 ? 142 : 0}, ${8 + Math.round(62 * mag)}%, ${35 - Math.round(7 * mag)}%)`;
+}
 
 const usd = (n: number) =>
   n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -91,6 +120,49 @@ export default function DemoPage() {
           <Kpi label="Monthly Net" value={usd(snapshot.monthly.net)} hint={`${usd(snapshot.monthly.income)} in`} />
           <Kpi label="Savings Rate" value={`${snapshot.monthly.savingsRatePct}%`} hint="of take-home" />
           <Kpi label="Health Score" value={`${snapshot.healthScore.score}`} hint={`Grade ${snapshot.healthScore.grade}`} />
+        </section>
+
+        {/* Holdings — real positions are the thing this product owns, and the
+            demo showed none of them. Tile size is market value, colour is gain
+            against cost. */}
+        <section className="mt-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6">
+          <h2 className="text-lg font-semibold">Holdings</h2>
+          <p className="text-xs text-[var(--muted)]">
+            {usd(snapshot.investments.marketValue)} &middot;{" "}
+            <span className="text-[var(--income)]">
+              +{usd(snapshot.investments.unrealizedGain)} ({snapshot.investments.gainPct}%)
+            </span>{" "}
+            vs cost &middot; covers {snapshot.investments.coveragePct}% of portfolio value
+          </p>
+          <div className="mt-4 flex flex-wrap gap-1">
+            {snapshot.investments.positions.map((h) => (
+              <div
+                key={h.ticker}
+                title={`${h.name} — ${h.isCash ? "cash position" : `${h.gainPct! >= 0 ? "up" : "down"} ${Math.abs(h.gainPct!).toFixed(1)}% vs cost`}`}
+                style={{
+                  background: heat(h.gainPct, h.isCash),
+                  flexGrow: h.value,
+                  flexBasis: 0,
+                  minWidth: "78px",
+                }}
+                className="rounded p-2 text-white"
+              >
+                <p className="text-xs font-semibold">{h.ticker}</p>
+                <p className="text-[10px] opacity-90">
+                  {((h.value / snapshot.investments.marketValue) * 100).toFixed(1)}%
+                  {h.gainPct !== null && (
+                    <> &middot; {h.gainPct >= 0 ? "+" : ""}{h.gainPct}%</>
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-[var(--muted)]">
+            {usd(snapshot.investments.incomeTtm)} of dividends and interest over the
+            last year &middot; {usd(snapshot.investments.contributionsYtd)} contributed
+            year to date, with rollovers between your own accounts excluded &mdash; a
+            $250k custodian change is not $250k of new savings.
+          </p>
         </section>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-5">

@@ -94,7 +94,7 @@ export default function FinsavaVsCopilotMoney() {
                     ["Learns Your Spending Patterns", true, false],
                     ["Shared Intelligence Across Users", true, false],
                     ["Investment Tracking", true, true],
-                    ["Contribution Limit Tracking (401k/IRA)", true, false],
+                    ["Rollover-Aware Contribution Tracking", true, false],
                     ["Net Worth Tracking", true, true],
                     ["Budget Suggestions", true, false],
                     ["FIRE Calculator", true, false],
