@@ -34,7 +34,7 @@ export default function FinsavaVsYnab() {
 
         <article className="mt-8 prose prose-invert max-w-none">
           <BlogHeader category="Comparison" />
-          <h1 className="text-4xl font-bold leading-tight mt-6">
+          <h1 className="text-4xl text-display leading-tight mt-6">
             Finsava vs YNAB: An Honest Comparison
           </h1>
 

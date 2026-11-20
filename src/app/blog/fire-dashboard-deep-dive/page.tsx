@@ -38,7 +38,7 @@ export default function FireDashboardDeepDivePost() {
 
         <article className="mt-8 prose prose-invert max-w-none">
           <BlogHeader category="FIRE Planning" />
-          <h1 className="text-4xl font-bold leading-tight mt-6">
+          <h1 className="text-4xl text-display leading-tight mt-6">
             The FIRE Dashboard That Models Your Actual Life (Not Just 4% of Your Expenses)
           </h1>
 

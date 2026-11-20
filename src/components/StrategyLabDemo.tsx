@@ -123,7 +123,7 @@ export default function StrategyLabDemo() {
             </p>
           ) : (
             <div>
-              <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
+              <p className="text-label text-[var(--muted)]">
                 Projected at age {RETIRE_AGE}
               </p>
               <p className="text-4xl font-bold tabular-nums">{compact(sim.atRetirement.p50)}</p>

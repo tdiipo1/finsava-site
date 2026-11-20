@@ -75,7 +75,7 @@ const usdCents = (n: number) =>
 function Kpi({ label, value, hint }: { label: string; value: string; hint?: string }) {
   return (
     <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-5">
-      <p className="text-xs uppercase tracking-wider text-[var(--muted)]">{label}</p>
+      <p className="text-label text-[var(--muted)]">{label}</p>
       <p className="mt-2 text-2xl font-bold tracking-tight">{value}</p>
       {hint && <p className="mt-1 text-xs text-[var(--muted)]">{hint}</p>}
     </div>
@@ -96,7 +96,7 @@ export default function DemoPage() {
               <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
               Interactive demo &middot; sample data
             </div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">See Finsava in action</h1>
+            <h1 className="text-3xl text-display tracking-tight sm:text-4xl">See Finsava in action</h1>
             <p className="mt-2 max-w-xl text-[var(--muted)]">
               The Strategy Lab below runs live in your browser &mdash; no signup, no real accounts.
               Everything else is a sample-data snapshot of what your dashboard looks like once a

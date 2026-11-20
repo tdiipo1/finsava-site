@@ -34,7 +34,7 @@ export default function FinsavaIsLivePost() {
 
         <article className="mt-8 prose prose-invert max-w-none">
           <BlogHeader category="Money Guides" />
-          <h1 className="text-4xl font-bold leading-tight mt-6">
+          <h1 className="text-4xl text-display leading-tight mt-6">
             Finsava Is Live, Invite-Only: What Shipped and What Didn&apos;t
           </h1>
 

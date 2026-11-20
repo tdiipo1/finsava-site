@@ -61,7 +61,7 @@ export default function WaitlistSection() {
   return (
     <section id="waitlist" className="py-24 px-6 border-t border-[var(--card-border)]">
       <div className="mx-auto max-w-xl text-center">
-        <h2 className="text-3xl font-bold sm:text-4xl">Join the Waitlist</h2>
+        <h2 className="text-3xl text-display font-normal sm:text-4xl">Join the Waitlist</h2>
         <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
           Finsava is in a closed pilot. Join the waitlist and we&apos;ll send invites in waves &mdash;
           every invite starts with a 14-day free trial of Pro.

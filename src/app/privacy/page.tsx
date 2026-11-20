@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-        <h1 className="text-4xl font-bold sm:text-5xl">Privacy Policy</h1>
+        <h1 className="text-4xl text-display sm:text-5xl">Privacy Policy</h1>
         <p className="mt-4 text-sm text-[var(--muted)]">
           Last updated: March 19, 2026
         </p>

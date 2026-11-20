@@ -22,7 +22,7 @@ export default function TermsOfService() {
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-        <h1 className="text-4xl font-bold sm:text-5xl">Terms of Service</h1>
+        <h1 className="text-4xl text-display sm:text-5xl">Terms of Service</h1>
         <p className="mt-4 text-sm text-[var(--muted)]">
           Last updated: March 19, 2026
         </p>
@@ -222,7 +222,7 @@ export default function TermsOfService() {
             <h2 className="mb-4 text-2xl font-semibold text-[var(--foreground)]">
               Financial Disclaimer
             </h2>
-            <p className="font-semibold text-[var(--foreground)] uppercase text-sm tracking-wide">
+            <p className="text-label text-sm text-[var(--foreground)]">
               FINSAVA IS NOT A FINANCIAL ADVISORY SERVICE, INVESTMENT SERVICE, TAX
               SERVICE, OR LEGAL SERVICE. FINSAVA DOES NOT PROVIDE PROFESSIONAL FINANCIAL,
               INVESTMENT, TAX, OR LEGAL GUIDANCE.
@@ -445,7 +445,7 @@ export default function TermsOfService() {
               (AAA) under its Commercial Arbitration Rules. Arbitration shall
               take place in the State of Texas.
             </p>
-            <p className="mt-3 font-semibold text-[var(--foreground)] uppercase text-sm tracking-wide">
+            <p className="mt-3 text-label text-sm text-[var(--foreground)]">
               YOU AGREE TO RESOLVE DISPUTES ON AN INDIVIDUAL BASIS. YOU WAIVE
               YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION, CLASS-WIDE
               ARBITRATION, OR ANY REPRESENTATIVE PROCEEDING.

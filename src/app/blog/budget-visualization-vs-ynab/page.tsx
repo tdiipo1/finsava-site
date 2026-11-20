@@ -35,7 +35,7 @@ export default function BudgetVisualizationPost() {
 
       <article className="mt-8 prose prose-invert max-w-none">
         <BlogHeader category="Comparison" />
-        <h1 className="text-4xl font-bold leading-tight">
+        <h1 className="text-4xl text-display leading-tight">
           Budget Visualization That Makes YNAB Look Like a Spreadsheet
         </h1>
 
