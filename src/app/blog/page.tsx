@@ -22,7 +22,7 @@ export default function BlogIndex() {
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
-            <h1 className="text-4xl text-display sm:text-5xl">Blog</h1>
+            <h1 className="text-4xl font-bold sm:text-5xl">Blog</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
               Practical writing on budgeting, retirement planning, and working out
               when you can afford to stop working.

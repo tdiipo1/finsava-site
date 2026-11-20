@@ -35,7 +35,7 @@ export default function FireCalculatorMonteCarloPost() {
 
       <article className="mt-8 prose prose-invert max-w-none">
         <BlogHeader category="FIRE Planning" />
-        <h1 className="text-4xl text-display leading-tight">
+        <h1 className="text-4xl font-bold leading-tight">
           Why Your FIRE Calculator Is Wrong
           <br />
           <span className="text-[var(--muted)] text-2xl font-normal">

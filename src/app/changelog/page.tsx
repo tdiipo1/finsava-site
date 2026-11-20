@@ -94,7 +94,7 @@ export default async function ChangelogPage() {
 
       {/* Header */}
       <section className="pt-32 pb-12 px-6 text-center">
-        <h1 className="text-4xl text-display">Changelog</h1>
+        <h1 className="text-4xl font-bold">Changelog</h1>
         <p className="mt-3 text-[var(--muted)] text-lg">Latest updates and improvements to Finsava</p>
       </section>
 

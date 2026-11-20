@@ -1,28 +1,6 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Sans, Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
-// Typography rule (globals.css header). Mirrors the Finsava app; only these weights load.
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-// Space Mono has no Medium cut on Google Fonts; Regular is the label weight.
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-space-mono",
-  display: "swap",
-});
 
 const siteUrl = "https://finsava.com";
 const siteTitle = "Finsava — AI-Powered Personal Finance";
@@ -114,14 +92,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${dmSans.variable} ${spaceMono.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>

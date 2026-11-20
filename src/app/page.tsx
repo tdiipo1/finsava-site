@@ -22,7 +22,7 @@ export default async function Home() {
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--income)]" />
             5 withdrawal strategies &middot; Market data back to 1871 &middot; Privacy-first
           </div>
-          <h1 className="text-5xl text-display leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             See whether your savings will actually
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
@@ -63,7 +63,7 @@ export default async function Home() {
       <section id="features" className="py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl text-display font-normal sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">Everything you need, nothing you don&apos;t</h2>
             <p className="mt-4 text-[var(--muted)] text-lg">Turn on what you need, hide the rest.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -166,7 +166,7 @@ export default async function Home() {
       <section className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl text-display font-normal sm:text-4xl">Why Finsava?</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">Why Finsava?</h2>
             <p className="mt-4 text-[var(--muted)] text-lg">The features that matter, at a fraction of the price.</p>
           </div>
           <ComparisonTable />
@@ -186,7 +186,7 @@ export default async function Home() {
       <section id="how-it-works" className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl text-display font-normal sm:text-4xl">Up and running in minutes</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">Up and running in minutes</h2>
             <p className="mt-4 text-[var(--muted)] text-lg">Create your account and start tracking today.</p>
           </div>
           <div className="space-y-12">
@@ -220,7 +220,7 @@ export default async function Home() {
       <section className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl text-display font-normal sm:text-4xl">Built lean, priced fair</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">Built lean, priced fair</h2>
             <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
               100% bootstrapped. No venture funding, no pressure to monetize your data.
               We keep costs low so you can too.
@@ -275,7 +275,7 @@ export default async function Home() {
       <section className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl text-display font-normal sm:text-4xl">From the blog</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">From the blog</h2>
             <p className="mt-4 text-[var(--muted)] text-lg">Deep dives on how Finsava works.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -302,7 +302,7 @@ export default async function Home() {
       {/* Security & Transparency */}
       <section id="security" className="py-24 px-6 border-t border-[var(--card-border)]">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl text-display font-normal sm:text-4xl">Security & Transparency</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Security & Transparency</h2>
           <p className="mt-4 text-[var(--muted)] text-lg leading-relaxed">
             Your financial data deserves the highest level of protection. Finsava is built
             with privacy as an architectural principle, not an afterthought.

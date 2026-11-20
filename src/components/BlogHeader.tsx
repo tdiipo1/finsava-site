@@ -43,7 +43,7 @@ export default function BlogHeader({ category, icon, gradient }: BlogHeaderProps
           {finalIcon}
         </div>
         <div>
-          <p className="text-label text-[var(--muted)]">
+          <p className="text-xs uppercase tracking-widest text-[var(--muted)]">
             Finsava / {category}
           </p>
           <p className="mt-1 text-sm text-[var(--foreground)]/80">

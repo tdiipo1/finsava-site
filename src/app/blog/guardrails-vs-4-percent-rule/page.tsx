@@ -36,7 +36,7 @@ export default function GuardrailsVs4PercentRule() {
 
         <article className="mt-8 prose prose-invert max-w-none">
           <BlogHeader category="FIRE Planning" />
-          <h1 className="text-4xl text-display leading-tight mt-6">
+          <h1 className="text-4xl font-bold leading-tight mt-6">
             Guardrails vs the 4% Rule: The Withdrawal Strategy That Raises Success Rates
           </h1>
 

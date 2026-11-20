@@ -9,18 +9,6 @@ npm run build
 npm run verify:demo  # type-checks and sanity-checks the Strategy Lab demo
 ```
 
-## Typography — design rule
-
-Same rule as the app. Three families load in `src/app/layout.tsx`; Tailwind maps them in `src/app/globals.css`.
-
-| Role | Family | Weights | Class |
-|---|---|---|---|
-| Body text + headlines | Plus Jakarta Sans | 400 / 500 / 600 | default (`font-sans`) |
-| Display headlines, `text-4xl`+ | DM Sans | 300 Light, 400 Regular | `text-display` (+ `font-normal` for Regular) |
-| Small uppercase labels, page numbers | Space Mono | 400 | `text-label` |
-
-`font-bold` renders as 600. Never add 700+ or another family without changing the app repo's `CLAUDE.md` rule at the same time.
-
 ## The waitlist
 
 **This site has no database.** A signup is forwarded to the Finsava app,

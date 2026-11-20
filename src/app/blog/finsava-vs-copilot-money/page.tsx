@@ -48,7 +48,7 @@ export default function FinsavaVsCopilotMoney() {
         <header className="mb-12">
           <BlogHeader category="Comparison" />
           <p className="text-sm text-[var(--muted)] mb-2">March 25, 2026</p>
-          <h1 className="text-4xl text-display leading-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
             Finsava vs Copilot Money: An Honest Comparison
           </h1>
           <p className="mt-4 text-lg text-[var(--muted)]">

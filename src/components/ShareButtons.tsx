@@ -51,7 +51,7 @@ export default function ShareButtons({ slug, title }: ShareButtonsProps) {
 
   return (
     <div className="mt-8 flex items-center gap-3 border-t border-[var(--card-border)] pt-6">
-      <span className="text-label text-[var(--muted)]">Share</span>
+      <span className="text-xs text-[var(--muted)] uppercase tracking-wide">Share</span>
       {links.map((link) => (
         <a
           key={link.name}
